@@ -9,6 +9,12 @@ public class Pieces{
     Color=Colorimput;
     Played=false;
   }
+  public Pieces(char Lettervalue,int Scorevalue){
+    Letter=Lettervalue;
+    Score=Scorevalue;
+    Color="WHITE";//CHANGE TO WHATEVER STANDARD COLOR IS
+    Played=false;
+  }
   public String toString(){
     return "" + Letter;
   }
@@ -21,7 +27,7 @@ public class Pieces{
   public void gotplayed(){
     Played=true;
   }
-
-
-
+  public int scorevalueof(char letter){
+    return 0;//PUT IN 2D array of letters followed by their values. Eventually the constructors wont need score value?
+  }
 }
