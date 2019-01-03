@@ -18,6 +18,9 @@ public class Pieces{
   public boolean wasplayed(){
     return Played;
   }
+  public void gotplayed(){
+    Played=true;
+  }
 
 
 
