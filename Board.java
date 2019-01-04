@@ -1,11 +1,13 @@
 import java.util.ArrayList;
 public class Board extends Pieces{
-  int size;
+  int rows;
+  int columns;
   ArrayList<Pieces> pieces = new ArrayList<Pieces>();
-  Pieces[][] ary;
+  ArrayList<ArrayList<Pieces>>
   // Constructor for Board takes in an integer and 2D array of pieces
-  public Board(int s, ArrayList<Pieces> p, Pieces[][] a){
-    size = s;
+  public Board(int r, int c, ArrayList<Pieces> p, Pieces[][] a){
+    rows = r;
+    columns = c;
     pieces = p;
     ary = a;
   }
