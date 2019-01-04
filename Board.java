@@ -36,4 +36,13 @@ public class Board extends Pieces{
       }
     }
   }
+  public String toString(){
+    String toString = "";
+    for (int i = 0; i < pieces.size(); i++){
+      for(int a = 0; a < pieces.get(i).size(); a++){
+        toString += pieces.get(i).get(a);
+      }
+      toString += "\n";
+    }
+  }
 }
