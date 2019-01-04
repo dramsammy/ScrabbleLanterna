@@ -24,9 +24,13 @@ public class Pieces{
   public String toString(){
     String toString = "";
     toString += "---";
+    toString += "\n";
     toString += "|" + " " + "|";
+    toString += "\n";
     toString += "|" + Character.toString(Letter) + "|";
+    toString += "\n";
     toString += "|" + Integer.toString(Score) + "|";
+    toString += "\n";
     toString += "---";
     return toString;
   }
@@ -46,5 +50,9 @@ public class Pieces{
   }
   public int scorevalueof(char letter){
     return 0;//PUT IN 2D array of letters followed by their values. Eventually the constructors wont need score value?
+  }
+  public static void main(String args[]){
+    Pieces a = new Pieces(' ', 0);
+    System.out.println(a);
   }
 }
