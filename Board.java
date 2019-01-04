@@ -6,6 +6,11 @@ public class Board extends Pieces{
     size = s;
     pieces = p;
   }
+  // Added clear method for a future restart method to be added in the game
+  public void clear(){
+    size = null;
+    Pieces = new pieces[][];
+  }
   // Accessor method for size
   public int getSize(){
     return size;
