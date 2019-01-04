@@ -39,14 +39,14 @@ public class Board extends Pieces{
     pieces.add(p);
   }
   // Method that will initialize the 2D ArrayList and make it a board of pieces that are blank
-  public void addBlanks(){
+  /*public void addBlanks(){
     for (int i = 0; i < rows; i++){
       board.add(new ArrayList());
       for (int a = 0; a < columns; a++){
         board.get(i).add(Pieces(' ', 0, "white"));
       }
     }
-  }
+  }*/
   // toString method that will display board as a 2D ArrayList of pieces
   public String toString(){
     String toString = "";
