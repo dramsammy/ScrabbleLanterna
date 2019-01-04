@@ -30,7 +30,7 @@ public class Pieces{
   public void clear(){
     Letter=' ';
     Color="WHITE";
-    Score="0";
+    Score=0;
   }
   public boolean wasplayed(){
     return Played;
