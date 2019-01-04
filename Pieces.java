@@ -15,6 +15,12 @@ public class Pieces{
     Color="WHITE";//CHANGE TO WHATEVER STANDARD COLOR IS
     Played=false;
   }
+  public Pieces(){
+    Letter=' ';
+    Score=0;
+    Color="WHITE";//CHANGE TO WHATEVER STANDARD COLOR IS
+    Played=false;
+  }
   public String toString(){
     return "" + Letter;
   }

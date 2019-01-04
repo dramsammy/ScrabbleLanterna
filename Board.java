@@ -11,12 +11,12 @@ public class Board extends Pieces{
     pieces = p;
     board = a;
   }
-  public static void main(String args[]){
-    ArrayList<Pieces> p = new ArrayList<Pieces>();
-    ArrayList<ArrayList<Pieces>> a = new ArrayList<ArrayList<Pieces>>();
-    Board test = new Board(8, 8, p, a);
-    System.out.println(toString());
-  }
+  // public static void main(String args[]){
+  //   ArrayList<Pieces> p = new ArrayList<Pieces>();
+  //   ArrayList<ArrayList<Pieces>> a = new ArrayList<ArrayList<Pieces>>();
+  //   Board test = new Board(8, 8, p, a);
+  //   System.out.println(toString());
+  // }
   // Added clear method for a future restart method to be added in the game
   public void clear(){
     board.removeAll();
