@@ -22,7 +22,9 @@ public class Pieces{
     Played=false;
   }
   public String toString(){
-    return "" + Letter;
+    String toString = "";
+    toString += "---";
+    toString += ""
   }
   public String getColor(){
     return Color;
