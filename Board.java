@@ -6,4 +6,7 @@ public class Board extends Pieces{
     size = s;
     pieces = p;
   }
-}
+  // Accessor method for size
+  public int getSize(){
+    return size;
+  }
