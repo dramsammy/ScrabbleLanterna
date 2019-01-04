@@ -19,8 +19,13 @@ public class Board extends Pieces{
   // }
   // Added clear method for a future restart method to be added in the game
   public void clear(){
-    board.removeAll();
+    for(int i=0;i<board.size();i++){
+      for(int l=0;l<board.get(i).size();l++){
+        board.get(i).get(l).clear();
+    }
   }
+}
+
   // Accessor method for rows
   public int getRows(){
     return rows;

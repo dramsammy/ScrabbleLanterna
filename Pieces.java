@@ -27,6 +27,11 @@ public class Pieces{
   public String getColor(){
     return Color;
   }
+  public void clear(){
+    Letter=" ";
+    Color="WHITE";
+    Score="0";
+  }
   public boolean wasplayed(){
     return Played;
   }
