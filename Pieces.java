@@ -24,7 +24,11 @@ public class Pieces{
   public String toString(){
     String toString = "";
     toString += "---";
-    toString += "|" + char.toString
+    toString += "|" + " " + "|";
+    toString += "|" + Character.toString(Letter) + "|";
+    toString += "|" + Integer.toString(Score) + "|";
+    toString += "---";
+    return toString;
   }
   public String getColor(){
     return Color;
