@@ -28,7 +28,7 @@ public class Pieces{
     return Color;
   }
   public void clear(){
-    Letter=" ";
+    Letter=' ';
     Color="WHITE";
     Score="0";
   }
