@@ -3,7 +3,7 @@ public class Board extends Pieces{
   int rows;
   int columns;
   ArrayList<Pieces> pieces = new ArrayList<Pieces>();
-  ArrayList<ArrayList<Pieces>> board = new ArrayList<ArrayList<Pieces>>;
+  ArrayList<ArrayList<Pieces>> board = new ArrayList<ArrayList<Pieces>>();
   // Constructor for Board takes in an integer and 2D ArrayList of pieces
   public Board(int r, int c, ArrayList<Pieces> p, ArrayList<ArrayList<Pieces>> a){
     rows = r;
@@ -12,7 +12,7 @@ public class Board extends Pieces{
     board = a;
   }
   public static void main(String args[]){
-    ArrayList<peices> p = new ArrayList<peices>();
+    ArrayList<Pieces> p = new ArrayList<Pieces>();
     ArrayList<ArrayList<Pieces>> a = new ArrayList<ArrayList<Pieces>>();
     Board test = new Board(8, 8, p, a);
     System.out.println(toString());
