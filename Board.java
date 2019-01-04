@@ -1,8 +1,9 @@
+import java.util.ArrayList;
 public class Board extends Pieces{
   int size;
-  Pieces pieces[][];
+  ArrayList<Pieces> pieces = new ArrayList<Pieces>();
   // Constructor for Board takes in an integer and 2D array of pieces
-  public Board(int s, Pieces p[][]){
+  public Board(int s, ArrayList<Pieces> p){
     size = s;
     pieces = p;
   }
@@ -14,4 +15,7 @@ public class Board extends Pieces{
   // Accessor method for size
   public int getSize(){
     return size;
+  }
+  public void addPieces(Pieces p){
+
   }
