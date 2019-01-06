@@ -34,9 +34,9 @@ public class Board extends Pieces{
     return columns;
   }
   // Method to add pieces to array list in order to prepare to have pieces sorted randomly in ArrayList
-  public void addPiecesList(Pieces p){
+  /*public void addPiecesList(Pieces p){
     pieces.add(p);
-  }
+  }*/
   // Method that will initialize the 2D ArrayList and make it a board of pieces that are blank
   /*public void addBlanks(){
     for (int i = 0; i < rows; i++){
@@ -49,11 +49,11 @@ public class Board extends Pieces{
   // toString method that will display board as a 2D ArrayList of pieces
   public String toString(){
     String str = "---------------";
-    for (int i = 0; i < board.size(); i++){
+    for (int i = 0; i < board.length; i++){
       str+="| ";
-      for(int a = 0; a < rows.get(i).size(); a++){
-        str += (board.get(i).get(a)).toString();
-        System.out.println( (board.get(i).get(a)).toString());
+      for(int a = 0; a < board[i].length; a++){
+        str += board[i][a].toString();
+        System.out.println(board[i][a].toString());
       }
 
       str += " |\n";
