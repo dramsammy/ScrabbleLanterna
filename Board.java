@@ -12,18 +12,15 @@ public class Board extends Pieces{
     board = a;
   }
   public static void main(String args[]){
-    ArrayList<Pieces> p = new ArrayList<Pieces>(15);
-    Pieces f = new Pieces();
-    p.add(f);
-    ArrayList<ArrayList<Pieces>> a = new ArrayList<ArrayList<Pieces>>(15);
-    Board test = new Board(8, 8, p, a);
+    Pieces[][] a=new Pieces[15][15];
+    Board test = new Board(8, 8, a);
     System.out.println(test);
   }
   // Added clear method for a future restart method to be added in the game
   public void clear(){
-    for(int i=0;i<board.size();i++){
-      for(int l=0;l<board.get(i).size();l++){
-        board.get(i).get(l).clear();
+    for(int i=0;i<board.length;i++){
+      for(int l=0;l<board[i].length;l++){
+        board[i][l]=null;
     }
   }
 }
