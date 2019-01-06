@@ -22,17 +22,17 @@ public class Pieces{
     Played=false;
   }
   public String toString(){
-    String toString = "";
-    toString += "---";
-    toString += "\n";
-    toString += "|" + " " + "|";
-    toString += "\n";
-    toString += "|" + Character.toString(Letter) + "|";
-    toString += "\n";
-    toString += "|" + Integer.toString(Score) + "|";
-    toString += "\n";
-    toString += "---";
-    return toString;
+    String str = "";
+    str += "---";
+    str += "\n";
+    str += "|" + " " + "|";
+    str += "\n";
+    str += "|" + Letter + "|";
+    str += "\n";
+    str += "|" + Score + "|";
+    str += "\n";
+    str += "---";
+    return str;
   }
   public String getColor(){
     return Color;
