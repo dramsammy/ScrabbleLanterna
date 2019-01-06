@@ -2,17 +2,19 @@ import java.util.ArrayList;
 public class Board extends Pieces{
   int rows;
   int columns;
-  ArrayList<Pieces> pieces = new ArrayList<Pieces>();
-  ArrayList<ArrayList<Pieces>> board = new ArrayList<ArrayList<Pieces>>();
+  Pieces[][] board= new Pieces[15][15];
+  /*ArrayList<Pieces> pieces = new ArrayList<Pieces>();
+  ArrayList<ArrayList<Pieces>> board = new ArrayList<ArrayList<Pieces>>();*/
   // Constructor for Board takes in an integer and 2D ArrayList of pieces
-  public Board(int r, int c, ArrayList<Pieces> p, ArrayList<ArrayList<Pieces>> a){
+  public Board(int r, int c, Pieces[][] a){
     rows = r;
     columns = c;
-    pieces = p;
     board = a;
   }
   public static void main(String args[]){
     ArrayList<Pieces> p = new ArrayList<Pieces>(15);
+    Pieces f = new Pieces();
+    p.add(f);
     ArrayList<ArrayList<Pieces>> a = new ArrayList<ArrayList<Pieces>>(15);
     Board test = new Board(8, 8, p, a);
     System.out.println(test);
@@ -52,7 +54,7 @@ public class Board extends Pieces{
     String str = "---------------";
     for (int i = 0; i < board.size(); i++){
       str+="| ";
-      for(int a = 0; a < board.get(i).size(); a++){
+      for(int a = 0; a < rows.get(i).size(); a++){
         str += (board.get(i).get(a)).toString();
         System.out.println( (board.get(i).get(a)).toString());
       }
