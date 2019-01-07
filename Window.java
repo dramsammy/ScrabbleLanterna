@@ -18,7 +18,7 @@ public class Window extends JFrame{
 
 
   public void Start(){
-    Scrabble.setSize(500,500);
+    Scrabble.setSize(1000,1000);
     Scrabble.setLocationRelativeTo(null);
     Scrabble.setVisible(true);
     Scrabble.setDefaultCloseOperation(Scrabble.EXIT_ON_CLOSE);
@@ -36,10 +36,11 @@ public class Window extends JFrame{
       public void actionPerformed(ActionEvent event){
         StartGame.setVisible(false);
         GameMenu.setBackground(Color.WHITE);
-        Pieces r = new Pieces(' ',0);//whatever letter you put in the '' will fill the whole board
+        //whatever letter you put in the '' will fill the whole board
         for (int i = 0; i < board.length; i++){
           for(int l = 0; l < board[i].length; l++){
-            board[i][l]=r;
+            //board[i][l]=r;
+            board[i][l] = new Pieces(' ', 0);
           }
         }
         game.setText(test.toString());
