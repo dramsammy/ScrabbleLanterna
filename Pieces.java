@@ -21,7 +21,7 @@ public class Pieces{
     Color="WHITE";//CHANGE TO WHATEVER STANDARD COLOR IS
     Played=false;
   }
-  public String toString(){
+  public String tostring(){
     String str = "";
     str += "---";
     str += "\n";
