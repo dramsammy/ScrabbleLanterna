@@ -13,7 +13,7 @@ public class Board extends Pieces{
   }
   public static void main(String args[]){
     Pieces[][] a =new Pieces[15][15];
-    Pieces r = new Pieces('R',0);
+    Pieces r = new Pieces(' ',0);//whatever letter you put in the '' will fill the whole board
     for (int i = 0; i < a.length; i++){
       for(int l = 0; l < a[i].length; l++){
         a[i][l]=r;
