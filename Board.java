@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 public class Board extends Pieces{
   public int rows;
   public int columns;
@@ -8,7 +7,23 @@ public class Board extends Pieces{
     rows = r;
     columns = c;
     board = a;
+    start();
   }
+  public Board(){
+    rows=15;
+    columns=15;
+    setupboard();
+  }
+
+  public void setupboard(){
+      for (int i = 0; i < 15; i++){
+        for(int l = 0; l < 15; l++){
+          board[i][l]= new Pieces(' ',0;)
+        }
+      }
+      board[i][l].
+  }
+  public void
   public static void main(String args[]){
     Pieces[][] a =new Pieces[15][15];
     Pieces r = new Pieces(' ',0);//whatever letter you put in the '' will fill the whole board

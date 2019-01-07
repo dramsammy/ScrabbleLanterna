@@ -24,21 +24,9 @@ public class Pieces{
     Color="WHITE";//CHANGE TO WHATEVER STANDARD COLOR IS
     Played=false;
     wordmultiplier=1;
-    lettermultiplier=1
+    lettermultiplier=1;
   }
-  /*public String toString(){
-    String str = "";
-    str += "---";
-    str += "\n";
-    str += "|" + " " + "|";
-    str += "\n";
-    str += "|" + Letter + "|";
-    str += "\n";
-    str += "|" + Score + "|";
-    str += "\n";
-    str += "---";
-    return str;
-  }*/
+  
   public String toString(){
     String str = "";
     //str += "\n";
