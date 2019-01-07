@@ -54,7 +54,8 @@ public class Board extends Pieces{
   }*/
   // toString method that will display board as a 2D ArrayList of pieces
   public String toString(){
-    String str = "---------------------------------------------\n";
+    String str = "\n \n                       SCRABBLE BOARD\n";
+    str+= "-----------------------------------------------------------\n";
     for (int i = 0; i < board.length; i++){
       //str+="";
       for(int a = 0; a < board[i].length; a++){
@@ -62,10 +63,10 @@ public class Board extends Pieces{
         str+= " ";
       }
       if(i<board.length-1){
-        str += "\n---------------------------------------------\n";
+        str += "\n-----------------------------------------------------------\n";
       }
     }
-    str += "---------------------------------------------";
+    str += "\n-----------------------------------------------------------";
     return str;
   }
 }
