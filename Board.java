@@ -18,7 +18,7 @@ public class Board extends Pieces{
   public void setupboard(){
       for (int i = 0; i < 15; i++){
         for(int l = 0; l < 15; l++){
-          board[i][l]= new Pieces(' ',0;)
+          board[i][l]= new Pieces(' ',0);
         }
       }
       board[0][0].setWordMultiplier(3);
@@ -26,11 +26,16 @@ public class Board extends Pieces{
       board[0][7].setWordMultiplier(3);
       board[0][11].setLetterMultiplier(2);
       board[0][14].setWordMultiplier(3);
-      board[0][1].setWordMultiplier(3);
+      board[1][1].setWordMultiplier(2);
+      board[1][5].setLetterMultiplier(3);
+      board[1][9].setLetterMultiplier(3);
+      board[1][13].setWordMultiplier(2);
+      /*board[1][11].setLetterMultiplier(2);
+      board[0][14].setWordMultiplier(3);
+      board[1][1].setWordMultiplier(3);*/
 
 
   }
-  public void
   public static void main(String args[]){
     Pieces[][] a =new Pieces[15][15];
     Pieces r = new Pieces(' ',0);//whatever letter you put in the '' will fill the whole board
@@ -52,7 +57,7 @@ public class Board extends Pieces{
 }
 
   // Accessor method for rows
-  public int getRows(){
+/*  public int getRows(){
     return rows;
   }
   // Accessor method for columns
@@ -71,7 +76,7 @@ public class Board extends Pieces{
         board.get(i).add(Pieces(' ', 0, "white"));
       }
     }
-  }*/
+  }
   // toString method that will display board as a 2D ArrayList of pieces
   public String toString(){
     String str = "\n \n                       SCRABBLE BOARD\n";
@@ -88,5 +93,5 @@ public class Board extends Pieces{
     }
     str += "\n-----------------------------------------------------------";
     return str;
-  }
+  }*/
 }
