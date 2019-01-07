@@ -50,9 +50,21 @@ public class Pieces{
   }
   public void setWordMultiplier(int i){
     wordMultiplier=i;
+    if(i==2){
+      Color="PURPLE";
+    }
+    else{
+      Color="ORANGE";
+    }
   }
   public void setLetterMultiplier(int i){
     letterMultiplier=i;
+    if(i==2){
+      Color="INDIGO";
+    }
+    else{
+      Color="BLUE";
+    }
   }
   public boolean wasplayed(){
     return Played;

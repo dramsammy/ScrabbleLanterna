@@ -30,9 +30,38 @@ public class Board extends Pieces{
       board[1][5].setLetterMultiplier(3);
       board[1][9].setLetterMultiplier(3);
       board[1][13].setWordMultiplier(2);
-      /*board[1][11].setLetterMultiplier(2);
-      board[0][14].setWordMultiplier(3);
-      board[1][1].setWordMultiplier(3);*/
+      board[2][2].setWordMultiplier(2);
+      board[2][6].setLetterMultiplier(2);
+      board[2][8].setLetterMultiplier(3);
+      board[2][12].setWordMultiplier(2);
+      board[3][0].setLetterMultiplier(2);
+      board[3][3].setWordMultiplier(2);
+      board[3][7].setLetterMultiplier(2);
+      board[3][11].setWordMultiplier(2);
+      board[3][14].setLetterMultiplier(2);
+      board[4][4].setWordMultiplier(2);
+      board[4][10].setWordMultiplier(2);
+      board[5][1].setLetterMultiplier(3);
+      board[5][5].setLetterMultiplier(3);
+      board[5][9].setLetterMultiplier(3);
+      board[5][13].setLetterMultiplier(3);
+      board[6][1].setLetterMultiplier(2);
+      board[6][5].setLetterMultiplier(2);
+      board[6][9].setLetterMultiplier(2);
+      board[6][13].setLetterMultiplier(2);
+      board[7][0].setWordMultiplier(3);
+      board[7][3].setLetterMultiplier(2);
+      board[7][7].setLetterMultiplier(2);
+      board[7][11].setLetterMultiplier(2);
+      board[7][14].setWordMultiplier(3);
+      board[8][1].setLetterMultiplier(2);
+      board[8][5].setLetterMultiplier(2);
+      board[8][9].setLetterMultiplier(2);
+      board[8][13].setLetterMultiplier(2);
+
+
+
+
 
 
   }
