@@ -10,10 +10,15 @@ public class Board extends Pieces{
     rows = r;
     columns = c;
     board = a;
-    toString();
   }
   public static void main(String args[]){
     Pieces[][] a =new Pieces[15][15];
+    Pieces r = new Pieces();
+    for (int i = 0; i < a.length; i++){
+      for(int l = 0; l < a[i].length; l++){
+        a[i][l]=r;
+      }
+    }
     Board test = new Board(8, 8, a);
     System.out.println(test);
   }
