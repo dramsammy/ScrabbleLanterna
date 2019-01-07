@@ -53,7 +53,7 @@ public class Board extends Pieces{
     for (int i = 0; i < board.length; i++){
       str+="| ";
       for(int a = 0; a < board[i].length; a++){
-        str += (board[i][a]).tostring();
+        str += ((board[i][a]).toString());
         //System.out.println((board[i][a]).tostring());
       }
 
