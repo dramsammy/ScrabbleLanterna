@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 public class Board extends Pieces{
-  int rows;
-  int columns;
-  Pieces[][] board= new Pieces[15][15];
+  public int rows;
+  public int columns;
+  public Pieces[][] board= new Pieces[15][15];
   // Constructor for Board takes in an integer and 2D ArrayList of pieces
   public Board(int r, int c, Pieces[][] a){
     rows = r;
