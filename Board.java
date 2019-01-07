@@ -13,7 +13,7 @@ public class Board extends Pieces{
   }
   public static void main(String args[]){
     Pieces[][] a =new Pieces[15][15];
-    Pieces r = new Pieces();
+    Pieces r = new Pieces('R',0);
     for (int i = 0; i < a.length; i++){
       for(int l = 0; l < a[i].length; l++){
         a[i][l]=r;
@@ -59,10 +59,8 @@ public class Board extends Pieces{
       str+="| ";
       for(int a = 0; a < board[i].length; a++){
         str += ((board[i][a]).toString());
-        //System.out.println((board[i][a]).tostring());
       }
-
-      str += " |\n";
+      str += " |\n---------------\n";
     }
     str += "---------------";
     return str;
