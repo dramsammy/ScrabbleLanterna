@@ -10,9 +10,10 @@ public class Board extends Pieces{
     rows = r;
     columns = c;
     board = a;
+    toString();
   }
   public static void main(String args[]){
-    Pieces[][] a=new Pieces[15][15];
+    Pieces[][] a =new Pieces[15][15];
     Board test = new Board(8, 8, a);
     System.out.println(test);
   }
