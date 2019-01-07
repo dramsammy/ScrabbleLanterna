@@ -3,6 +3,9 @@ public class Pieces{
   char Letter;
   String Color;
   boolean Played;
+  int wordmultiplier;
+  int lettermultiplier;
+
   public Pieces(char Lettervalue,int Scorevalue, String Colorimput){
     Letter=Lettervalue;
     Score=Scorevalue;
@@ -17,9 +20,11 @@ public class Pieces{
   }
   public Pieces(){
     Letter=' ';
-    Score=0;
+    Score=0;//ultimetely, reference dictionary
     Color="WHITE";//CHANGE TO WHATEVER STANDARD COLOR IS
     Played=false;
+    wordmultiplier=1;
+    lettermultiplier=1
   }
   /*public String toString(){
     String str = "";
