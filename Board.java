@@ -54,15 +54,18 @@ public class Board extends Pieces{
   }*/
   // toString method that will display board as a 2D ArrayList of pieces
   public String toString(){
-    String str = "---------------";
+    String str = "---------------------------------------------\n";
     for (int i = 0; i < board.length; i++){
       //str+="";
       for(int a = 0; a < board[i].length; a++){
         str += ((board[i][a]).toString());
+        str+= " ";
       }
-      str += "\n---------------\n";
+      if(i<board.length-1){
+        str += "\n---------------------------------------------\n";
+      }
     }
-    str += "---------------";
+    str += "---------------------------------------------";
     return str;
   }
 }
