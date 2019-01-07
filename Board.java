@@ -56,11 +56,11 @@ public class Board extends Pieces{
   public String toString(){
     String str = "---------------";
     for (int i = 0; i < board.length; i++){
-      str+="| ";
+      //str+="";
       for(int a = 0; a < board[i].length; a++){
         str += ((board[i][a]).toString());
       }
-      str += " |\n---------------\n";
+      str += "\n---------------\n";
     }
     str += "---------------";
     return str;

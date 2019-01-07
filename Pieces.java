@@ -36,7 +36,7 @@ public class Pieces{
   }*/
   public String toString(){
     String str = "";
-    str += "\n";
+    //str += "\n";
     str += "|" + Letter + "|";
     return str;
   }
