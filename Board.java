@@ -21,7 +21,14 @@ public class Board extends Pieces{
           board[i][l]= new Pieces(' ',0;)
         }
       }
-      board[i][l].
+      board[0][0].setWordMultiplier(3);
+      board[0][3].setLetterMultiplier(2);
+      board[0][7].setWordMultiplier(3);
+      board[0][11].setLetterMultiplier(2);
+      board[0][14].setWordMultiplier(3);
+      board[0][1].setWordMultiplier(3);
+
+
   }
   public void
   public static void main(String args[]){

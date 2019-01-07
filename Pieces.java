@@ -1,10 +1,10 @@
 public class Pieces{
-  int Score;
-  char Letter;
-  String Color;
-  boolean Played;
-  int wordmultiplier;
-  int lettermultiplier;
+  private int Score;
+  private char Letter;
+  private String Color;
+  private boolean Played;
+  private int wordMultiplier;
+  private int lettermMultiplier;
 
   public Pieces(char Lettervalue,int Scorevalue, String Colorimput){
     Letter=Lettervalue;
@@ -26,7 +26,7 @@ public class Pieces{
     wordmultiplier=1;
     lettermultiplier=1;
   }
-  
+
   public String toString(){
     String str = "";
     //str += "\n";
@@ -40,6 +40,19 @@ public class Pieces{
     Letter=' ';
     Color="WHITE";
     Score= 0;
+  }
+  public void setLetter(char L){
+    Letter=L;
+    /*Score=LETTER TO SCORE VALUE*/
+  }
+  public void setColor(String c){
+    Color=c;
+  }
+  public void setWordMultiplier(int i){
+    wordMultiplier=i;
+  }
+  public void setLetterMultiplier(int i){
+    letterMultiplier=i;
   }
   public boolean wasplayed(){
     return Played;
