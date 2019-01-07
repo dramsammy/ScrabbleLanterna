@@ -43,7 +43,15 @@ public class Pieces{
   }
   public void setLetter(char L){
     Letter=L;
-    /*Score=LETTER TO SCORE VALUE*/
+    if (L=='A' || L=='E' || L=='I' || L=='O' || L=='U' || L=='L' || L=='N' || L=='S' ||L=='T' ||L=='R'){
+      Score=1;
+    }
+    else if(L=='D' || L=='G' ){
+      Score=2;
+    }
+    else if(L=='B' ||L=='C' ||L=='M' ||L=='P'){
+      Score=3;
+    }
   }
   public void setColor(String c){
     Color=c;

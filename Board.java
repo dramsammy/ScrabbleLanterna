@@ -3,12 +3,12 @@ public class Board extends Pieces{
   public int columns;
   public Pieces[][] board= new Pieces[15][15];
   // Constructor for Board takes in an integer and 2D ArrayList of pieces
-  public Board(int r, int c, Pieces[][] a){
+  /*public Board(int r, int c, Pieces[][] a){
     rows = r;
     columns = c;
     board = a;
     start();
-  }
+  }*/
   public Board(){
     rows=15;
     columns=15;
@@ -83,7 +83,7 @@ public class Board extends Pieces{
       board[14][11].setLetterMultiplier(2);
       board[14][14].setWordMultiplier(3);
     }
-    
+
 
   public static void main(String args[]){
     Pieces[][] a =new Pieces[15][15];
