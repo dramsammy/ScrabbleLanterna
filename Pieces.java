@@ -37,7 +37,7 @@ public class Pieces{
   public String toString(){
     String str = "";
     str += "\n";
-    str += "|" + Letter + "| \n";
+    str += "|" + Letter + "|";
     return str;
   }
   public String getColor(){
