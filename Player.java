@@ -1,6 +1,6 @@
 public class Player{
-  private Score double;
-  private Size int;
+  private double Score;
+  private int Size;
   private Pieces theHand[] = new Pieces[7];
   private Board Game;
 }
