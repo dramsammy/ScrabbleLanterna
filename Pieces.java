@@ -21,7 +21,7 @@ public class Pieces{
     Color="WHITE";//CHANGE TO WHATEVER STANDARD COLOR IS
     Played=false;
   }
-  public String toString(){
+  /*public String toString(){
     String str = "";
     str += "---";
     str += "\n";
@@ -32,6 +32,12 @@ public class Pieces{
     str += "|" + Score + "|";
     str += "\n";
     str += "---";
+    return str;
+  }*/
+  public String toString(){
+    String str = "";
+    str += "\n";
+    str += "|" + Letter + "| \n";
     return str;
   }
   public String getColor(){
@@ -52,7 +58,7 @@ public class Pieces{
     return 0;//PUT IN 2D array of letters followed by their values. Eventually the constructors wont need score value?
   }
   public static void main(String args[]){
-    Pieces a = new Pieces(' ', 0);
+    Pieces a = new Pieces('R', 0);
     System.out.println(a);
   }
 }
