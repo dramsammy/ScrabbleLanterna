@@ -52,6 +52,19 @@ public class Pieces{
     else if(L=='B' ||L=='C' ||L=='M' ||L=='P'){
       Score=3;
     }
+    else if(L=='F' ||L=='H' || L=='V' || L=='W' ||L=='Y'){
+      Score=4;
+    }
+    else if(L=='K'){
+      Score=5;
+    }
+    else if(L=='J' L=='X'){
+      Score = 8;
+    }
+    else if(L=='Q' || L=='Z'){
+      Score=10;
+    }
+
   }
   public void setColor(String c){
     Color=c;
