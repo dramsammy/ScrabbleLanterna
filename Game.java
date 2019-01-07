@@ -5,4 +5,10 @@ public class Game{
     Players = p;
     game = g;
   }
+  public void Start(){
+
+  }
+  public displyNames(){
+    
+  }
 }
