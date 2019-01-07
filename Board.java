@@ -3,8 +3,6 @@ public class Board extends Pieces{
   int rows;
   int columns;
   Pieces[][] board= new Pieces[15][15];
-  /*ArrayList<Pieces> pieces = new ArrayList<Pieces>();
-  ArrayList<ArrayList<Pieces>> board = new ArrayList<ArrayList<Pieces>>();*/
   // Constructor for Board takes in an integer and 2D ArrayList of pieces
   public Board(int r, int c, Pieces[][] a){
     rows = r;
