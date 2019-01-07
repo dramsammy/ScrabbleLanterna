@@ -58,13 +58,33 @@ public class Board extends Pieces{
       board[8][5].setLetterMultiplier(2);
       board[8][9].setLetterMultiplier(2);
       board[8][13].setLetterMultiplier(2);
+      board[9][1].setLetterMultiplier(3);
+      board[9][5].setLetterMultiplier(3);
+      board[9][9].setLetterMultiplier(3);
+      board[9][13].setLetterMultiplier(3);
+      board[10][4].setWordMultiplier(2);
+      board[10][10].setWordMultiplier(2);
+      board[11][0].setLetterMultiplier(2);
+      board[11][3].setWordMultiplier(2);
+      board[11][7].setLetterMultiplier(2);
+      board[11][11].setWordMultiplier(2);
+      board[11][14].setLetterMultiplier(2);
+      board[12][2].setWordMultiplier(2);
+      board[12][6].setLetterMultiplier(2);
+      board[12][8].setLetterMultiplier(3);
+      board[12][12].setWordMultiplier(2);
+      board[13][1].setWordMultiplier(2);
+      board[13][5].setLetterMultiplier(3);
+      board[13][9].setLetterMultiplier(3);
+      board[13][13].setWordMultiplier(2);
+      board[14][0].setWordMultiplier(3);
+      board[14][3].setLetterMultiplier(2);
+      board[14][7].setWordMultiplier(3);
+      board[14][11].setLetterMultiplier(2);
+      board[14][14].setWordMultiplier(3);
+    }
+    
 
-
-
-
-
-
-  }
   public static void main(String args[]){
     Pieces[][] a =new Pieces[15][15];
     Pieces r = new Pieces(' ',0);//whatever letter you put in the '' will fill the whole board
