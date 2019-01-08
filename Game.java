@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-public class Game{
+public class Game {
   private int Players;
   private ArrayList<char> pile= new ArrayList<int>();
   private ArrayList<char> hand1=new ArrayList<int>();

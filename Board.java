@@ -1,4 +1,4 @@
-public class Board extends Pieces{
+public class Board{
   public int rows;
   public int columns;
   public Pieces[][] board= new Pieces[15][15];

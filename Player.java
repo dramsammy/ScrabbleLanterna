@@ -15,9 +15,17 @@ public class Player{
   public Pieces[] drawHand(){
     int n = hand.nextInt(25);
     for (int i = 0; i < 7; i++){
-      theHand[i] = new Pieces(randomLetters[n], setScoreforLetter(randomLetters[n]);
+      theHand[i] = new Pieces(randomLetters[n], setScoreforLetter(randomLetters[n]));
     }
     return theHand;
+  }
+  public boolean inHand(char a){
+    for(int i=0;i<theHand.length;i++){
+      if(theHand[i]==a){
+        return true;
+      }
+    }
+    return false;
   }
   //Function which takes in an input of the values selected of each piece and sets an array to be played
   public Piece[] startTurn(){
@@ -43,7 +51,7 @@ public class Player{
     else if(L=='K'){
       Score=5;
     }
-    else if(L=='J' L=='X'){
+    else if(L=='J' || L=='X'){
       Score = 8;
     }
     else if(L=='Q' || L=='Z'){
