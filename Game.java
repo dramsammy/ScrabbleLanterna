@@ -63,9 +63,12 @@ public class Game {
     //RANDOMLY GENERATE PEICES FOR EACH HAND DEPENDING ON P
   }
   public void Start(){
+    Board gameBoard= new Board();
+    if(Players>4){
 
+    }
   }
-  public displyNames(){
+  public void displyNames(){
 
   }
 }
