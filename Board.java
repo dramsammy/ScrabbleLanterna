@@ -1,7 +1,7 @@
 public class Board{
-  public int rows;
-  public int columns;
-  public Pieces[][] board= new Pieces[15][15];
+  private int rows;
+  private int columns;
+  private Pieces[][] board= new Pieces[15][15];
   // Constructor for Board takes in an integer and 2D ArrayList of pieces
   /*public Board(int r, int c, Pieces[][] a){
     rows = r;
@@ -23,7 +23,9 @@ public class Board{
       return true;
     }
   }
-
+  pulic Pieces getPieces(int xcor, int ycor){
+    return Board[xcor][ycor];
+  }
   public void setupboard(){
       for (int i = 0; i < 15; i++){
         for(int l = 0; l < 15; l++){

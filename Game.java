@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 public class Game {
   private int Players;
-  private ArrayList<Char> pile= new ArrayList<int>();
+  private ArrayList<char> pile= new ArrayList<int>();
   private ArrayList<char> hand1=new ArrayList<int>();
   private ArrayList<char> hand2=new ArrayList<int>();
   private ArrayList<char> hand3=new ArrayList<int>();
