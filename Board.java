@@ -14,6 +14,15 @@ public class Board extends Pieces{
     columns=15;
     setupboard();
   }
+  public boolean modifyBoard(int xcor, int ycor,char newval){//will start from zero
+    if(board[xcor][ycor].getPieceChar()!=' '){
+      return false;
+    }
+    else{
+      board[xcor][ycor].setLetter(newval);
+      return true;
+    }
+  }
 
   public void setupboard(){
       for (int i = 0; i < 15; i++){
