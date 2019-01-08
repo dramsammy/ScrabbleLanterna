@@ -60,7 +60,7 @@ public class Pieces{
     else if(L=='K'){
       Score=5;
     }
-    else if(L=='J' L=='X'){
+    else if(L=='J'|| L=='X'){
       Score = 8;
     }
     else if(L=='Q' || L=='Z'){
