@@ -1,4 +1,4 @@
-import java.util.Random;
+import java.util.*;
 public class Player{
   private double Score;
   private int Size;
@@ -52,6 +52,17 @@ public class Player{
     return Score;
   }
   public boolean isValidWord(Piece[] p){
-    p
+    p = toBePlayed;
+    String word = "";
+    for (int i = 0; i < p.length; i++){
+      word += Character.toString(p[i].getPieceChar());
+    }
+    Scanner wordCheck = new Scanner("words.txt");
+    while (wordCheck.hasNextLine != null){
+      if (word.equals(wordCheck.next)){
+        return true;
+      }
+    }
+    return false;
   }
 }
