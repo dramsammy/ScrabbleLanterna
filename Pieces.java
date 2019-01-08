@@ -26,7 +26,9 @@ public class Pieces{
     wordmultiplier=1;
     lettermultiplier=1;
   }
-
+  public char getPieceChar(){
+    return Letter;
+  }
   public String toString(){
     String str = "";
     //str += "\n";
