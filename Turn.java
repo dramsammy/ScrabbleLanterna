@@ -10,15 +10,3 @@ public class Turn extends Board{
     //  print fail message;
   }*/
   }
-
-
-
-
-
-
-
-
-
-
-
-}
