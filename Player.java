@@ -12,6 +12,7 @@ public class Player{
   private int[] x;
   private int[] y;
   private Random hand = new Random();
+  private String name;
   public Player(){
   }
   public Pieces[] drawNewHand(){
@@ -102,4 +103,8 @@ public class Player{
         }
       }
     }
+  public void setName(){
+    System.out.println("Enter your player's name:    ")
+    name = input.nextLine();
+  }
   }
