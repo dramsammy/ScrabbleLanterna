@@ -17,7 +17,10 @@ public class Player{
   }
   public String toString(){
     String str = "";
-    
+    str+=name;
+    str+="\n";
+    str+= Score;
+    //if highest score clause
   }
   public Pieces[] drawNewHand(){
     int n = hand.nextInt(25);
@@ -44,10 +47,10 @@ public class Player{
     }
   }
   //Function which takes in an input of the values selected of each piece and sets an array to be played
-  public Piece[] startTurn(){
+  public Pieces[] startTurn(){
     for (int i = 0; i < played.length; i ++){
       toBePlayed = new Pieces[played.length];
-      toBePlayed[i] = randomLetters[selection[i]];
+      toBePlayed[i].setLetter(randomLetters[selection[i]]);
     }
   }
   public int setScoreforLetter(char L){
