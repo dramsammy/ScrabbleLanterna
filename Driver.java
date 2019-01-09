@@ -4,7 +4,9 @@ public class Driver{
     Board test = new Board();
     Pieces old=test.getPieces(5,5);
     System.out.println(old.getPieceChar());
+    System.out.println("Should Print  ");
     System.out.println(old.getValue());
+      System.out.println("Should Print 3 ");
     System.out.println(old.getLetterMultiplier());
     System.out.println(old.getWordMultiplier());
     test.modifyBoard(5,5,'Q');

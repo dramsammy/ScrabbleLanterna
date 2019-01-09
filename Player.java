@@ -15,6 +15,10 @@ public class Player{
   private String name;
   public Player(){
   }
+  public String toString(){
+    String str = "";
+    
+  }
   public Pieces[] drawNewHand(){
     int n = hand.nextInt(25);
     for (int i = 0; i < 7; i++){
@@ -22,12 +26,13 @@ public class Player{
     }
     return theHand;
   }
-  public Piece drawNewPiece(){
+  public Pieces drawNewPiece(){
+    int n = hand.nextInt(25);
     return new Pieces(randomLetters[n], setScoreforLetter(randomLetters[n]));
   }
   public boolean inHand(char a){
     for(int i=0;i<theHand.length;i++){
-      if(theHand[i]==a){
+      if(theHand[i].getPieceChar()==a){
         return true;
       }
     }
@@ -104,7 +109,7 @@ public class Player{
       }
     }
   public void setName(){
-    System.out.println("Enter your player's name:    ")
+    System.out.println("Enter your player's name:    ");
     name = input.nextLine();
   }
   }
