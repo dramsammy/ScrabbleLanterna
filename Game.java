@@ -73,6 +73,6 @@ public class Game {
     Players.drawNewHand(); // need to fix for multiple players
 }
   public void displyNames(){
-
+    System.out.println(Player1.toString());
   }
 }
