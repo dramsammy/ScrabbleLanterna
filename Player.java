@@ -78,15 +78,15 @@ public class Player{
     }
     return Score;
   }
-  public boolean isValidWord(Piece[] p){
+  public boolean isValidWord(Pieces[] p){
     p = toBePlayed;
     String word = "";
     for (int i = 0; i < p.length; i++){
       word += Character.toString(p[i].getPieceChar());
     }
     Scanner wordCheck = new Scanner("words.txt");
-    while (wordCheck.hasNextLine != null){
-      if (word.equals(wordCheck.next)){
+    while (wordCheck.hasNextLine()){
+      if (word.equals(wordCheck.next())){
         return true;
       }
     }
@@ -95,24 +95,24 @@ public class Player{
   public double updateScore(){
     int temp = 1;
     for (int i = 0; i < toBePlayed.length; i++){
-      score += toBePlayed[i].getValue() * game.getPieces(x[i],y[i]).getLetterMultiplier();
-      if (game.getPieces(x[i],y[i]).getWordMultiplier() > temp){
-        temp = game.getPieces(x[i],y[i]).getWordMultiplier();
+      Score += toBePlayed[i].getValue() * Game.getPieces(x[i],y[i]).getLetterMultiplier();
+      if (Game.getPieces(x[i],y[i]).getWordMultiplier() > temp){
+        temp = Game.getPieces(x[i],y[i]).getWordMultiplier();
       }
     }
-    score = score * temp;
+    Score = Score * temp;
   }
   public void playWord(){
     if (isValidWord(toBePlayed)){
       updateScore();
       replaceHand();
       for (int i = 0; i < x.length; i++){
-          Game.modifyBoard(x[i], y[i], toBePlayed[i]);
+          Game.modifyBoard(x[i], y[i], toBePlayed[i].getPieceChar());
         }
       }
     }
   public void setName(){
     System.out.println("Enter your player's name:    ");
-    name = input.nextLine();
+    //name = input.nextLine;
   }
   }
