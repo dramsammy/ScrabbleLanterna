@@ -65,6 +65,7 @@ public class Game {
     for(int i=0;i<12;i++){
       p.add('E');
     }
+    //BLANK TILES
     pile=p;
     for (int i = 0; i < Players; i++){
       /*Player i = new Player();//ISSUE WITH NAMING IT
