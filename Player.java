@@ -112,6 +112,8 @@ public class Player{
     }
     return false;
   }
+
+  //uses the multiplier values and piece values to create a score gained on a run and adds it to your old score
   public double updateScore(){
     int temp = 1;
     for (int i = 0; i < toBePlayed.length; i++){
@@ -122,15 +124,20 @@ public class Player{
     }
     Score = Score * temp;
   }
+
+  //If a word is valid, it gets played on the board
+  //needs to check that there are overlapping letters, in scrabble it cant be floating
   public void playWord(){
     if (isValidWord(toBePlayed)){
       updateScore();
       replaceHand();
-      for (int i = 0; i < x.length; i++){
+      for (int i = 0; i < x.length; i++){//needs to account for different directions
           Game.modifyBoard(x[i], y[i], toBePlayed[i].getPieceChar());
         }
       }
     }
+
+  //prompts user to enter their name and it sets that as the name
   public void setName(){
     System.out.println("Enter your player's name:    ");
     //name = input.nextLine;
