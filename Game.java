@@ -63,6 +63,12 @@ public class Game {
   //   }
   //   //RANDOMLY GENERATE PEICES FOR EACH HAND DEPENDING ON P
   // }
+  public Game(){
+    for (int i = 0; i < Players; i++){
+      Integer.toString(i) = new Player();
+    }
+    Board finalGame = new Board();
+  }
   public void Start(){
     Board gameBoard= new Board();
     if(Players>4){
