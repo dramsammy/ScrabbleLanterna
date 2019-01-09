@@ -13,8 +13,13 @@ public class Player{
   private int[] y;
   private Random hand = new Random();
   private String name;
+
+
+  //Constructor for Player(needs to be created)
   public Player(){
   }
+
+  //Prints out the players name then their score on a new line
   public String toString(){
     String str = "";
     str+=name;
@@ -22,6 +27,9 @@ public class Player{
     str+= Score;
     //if highest score clause
   }
+
+  //creates a new random hand
+  //NEEDS TO BE CHANGE TO ACCOUNT FOR PILE
   public Pieces[] drawNewHand(){
     int n = hand.nextInt(25);
     for (int i = 0; i < 7; i++){
@@ -29,10 +37,15 @@ public class Player{
     }
     return theHand;
   }
+
+  //creates a new random piece and adds it to your hand
+  //NEEDS TO BE CHANGE TO ACCOUNT FOR PILE
   public Pieces drawNewPiece(){
     int n = hand.nextInt(25);
     return new Pieces(randomLetters[n], setScoreforLetter(randomLetters[n]));
   }
+
+  //checks if a given piece(character) is in your hand
   public boolean inHand(char a){
     for(int i=0;i<theHand.length;i++){
       if(theHand[i].getPieceChar()==a){
@@ -41,11 +54,13 @@ public class Player{
     }
     return false;
   }
+
+
+  //same as drawnewhand but is used as a choice for a turn
   public void replaceHand(){
-    for (int i = 0; i < positionPlayed.length; i++){
-      theHand[positionPlayed[i]] = drawNewPiece();
+    drawNewHand();
     }
-  }
+
   //Function which takes in an input of the values selected of each piece and sets an array to be played
   public Pieces[] startTurn(){
     for (int i = 0; i < played.length; i ++){
@@ -53,6 +68,8 @@ public class Player{
       toBePlayed[i].setLetter(randomLetters[selection[i]]);
     }
   }
+
+  //Returns a value for a given character based on the real scrabble values
   public int setScoreforLetter(char L){
     int Score;
     if (L=='A' || L=='E' || L=='I' || L=='O' || L=='U' || L=='L' || L=='N' || L=='S' ||L=='T' ||L=='R'){
@@ -78,6 +95,9 @@ public class Player{
     }
     return Score;
   }
+
+  //checks if a word played(string concatenation of characters) is in the words file
+  //DOESNT ACCOUNT FOR DOWNWARD WORDS/ how the words will be played?
   public boolean isValidWord(Pieces[] p){
     p = toBePlayed;
     String word = "";
