@@ -75,8 +75,14 @@ public class Player{
     }
     return false;
   }
+  public double updateScore(){
+    for (int i = 0; i < toBePlayed.length; i++){
+      score += toBePlayed[i].getValue();
+    }
+  }
   public void playWord(){
     if (isValidWord(toBePlayed)){
+      updateScore();
       for (int i = 0; i < x.length; i++){
           Game.modifyBoard(x[i], y[i], toBePlayed[i]);
         }
