@@ -7,6 +7,7 @@ public class Player{
   private Board Game;
   private char[] randomLetters = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
   private int[] selection = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25};
+  private int[] positionPlayed;
   private int[] played;
   private int[] x;
   private int[] y;
@@ -14,12 +15,15 @@ public class Player{
   public Player(Board b){
     b = Game;
   }
-  public Pieces[] drawHand(){
+  public Pieces[] drawNewHand(){
     int n = hand.nextInt(25);
     for (int i = 0; i < 7; i++){
       theHand[i] = new Pieces(randomLetters[n], setScoreforLetter(randomLetters[n]));
     }
     return theHand;
+  }
+  public Piece drawNewPiece(){
+    return new Pieces(randomLetters[n], setScoreforLetter(randomLetters[n]));
   }
   public boolean inHand(char a){
     for(int i=0;i<theHand.length;i++){
@@ -28,6 +32,11 @@ public class Player{
       }
     }
     return false;
+  }
+  public void replaceHand(){
+    for (int i = 0; i < positionPlayed.length; i++){
+
+    }
   }
   //Function which takes in an input of the values selected of each piece and sets an array to be played
   public Piece[] startTurn(){
