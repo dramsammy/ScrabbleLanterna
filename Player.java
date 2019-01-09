@@ -35,7 +35,7 @@ public class Player{
     for (int i = 0; i < 7; i++){
       theHand[i] = new Pieces(randomLetters[n], setScoreforLetter(randomLetters[n]));//fix
     }
-    //eturn theHand;
+    //return theHand;
   }
 
   //creates a new random piece and adds it to your hand

@@ -3,7 +3,7 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class Window extends JFrame{
-  private JFrame Scrabble = new JFrame("Scrabble");
+/*I  private JFrame Scrabble = new JFrame("Scrabble");
   private JPanel GameMenu = new JPanel();
   private JButton StartGame = new JButton("Start Game");
   private JTextField textField = new JTextField();
