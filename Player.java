@@ -33,7 +33,7 @@ public class Player{
   public void drawNewHand(){
     int n = hand.nextInt(25);
     for (int i = 0; i < 7; i++){
-      theHand[i] = new Pieces(randomLetters[n], setScoreforLetter(randomLetters[n]));
+      theHand[i] = new Pieces(randomLetters[n], setScoreforLetter(randomLetters[n]));//fix
     }
     //eturn theHand;
   }

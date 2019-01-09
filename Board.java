@@ -26,7 +26,7 @@ public class Board{
   public void setupboard(){
       for (int i = 0; i < 15; i++){
         for(int l = 0; l < 15; l++){
-          board[i][l]= new Pieces(' ',0);
+          board[i][l]= new Pieces();
         }
       }
       board[0][0].setWordMultiplier(3);

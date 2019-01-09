@@ -21,7 +21,7 @@ public class Driver{
     System.out.println(old.getValue());
     System.out.println(old.getLetterMultiplier());
     System.out.println(old.getWordMultiplier());
-
+    System.out.println(test.toString());
 
 
 
