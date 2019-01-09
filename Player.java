@@ -30,12 +30,12 @@ public class Player{
 
   //creates a new random hand
   //NEEDS TO BE CHANGE TO ACCOUNT FOR PILE
-  public Pieces[] drawNewHand(){
+  public void drawNewHand(){
     int n = hand.nextInt(25);
     for (int i = 0; i < 7; i++){
       theHand[i] = new Pieces(randomLetters[n], setScoreforLetter(randomLetters[n]));
     }
-    return theHand;
+    //eturn theHand;
   }
 
   //creates a new random piece and adds it to your hand
