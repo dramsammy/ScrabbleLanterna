@@ -12,8 +12,7 @@ public class Player{
   private int[] x;
   private int[] y;
   private Random hand = new Random();
-  public Player(Board b){
-    b = Game;
+  public Player(){
   }
   public Pieces[] drawNewHand(){
     int n = hand.nextInt(25);
@@ -97,6 +96,7 @@ public class Player{
   public void playWord(){
     if (isValidWord(toBePlayed)){
       updateScore();
+      replaceHand();
       for (int i = 0; i < x.length; i++){
           Game.modifyBoard(x[i], y[i], toBePlayed[i]);
         }
