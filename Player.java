@@ -76,9 +76,14 @@ public class Player{
     return false;
   }
   public double updateScore(){
+    int temp = 1;
     for (int i = 0; i < toBePlayed.length; i++){
-      score += toBePlayed[i].getValue();
+      score += toBePlayed[i].getValue() * game.getPieces(x[i],y[i]).getLetterMultiplier();
+      if (game.getPieces(x[i],y[i]).getWordMultiplier() > temp){
+        temp = game.getPieces(x[i],y[i]).getWordMultiplier();
+      }
     }
+    score = score * temp;
   }
   public void playWord(){
     if (isValidWord(toBePlayed)){
