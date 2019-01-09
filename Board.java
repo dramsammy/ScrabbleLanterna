@@ -23,8 +23,8 @@ public class Board{
       return true;
     }
   }
-  pulic Pieces getPieces(int xcor, int ycor){
-    return Board[xcor][ycor];
+  public Pieces getPieces(int xcor, int ycor){
+    return board[xcor][ycor];
   }
   public void setupboard(){
       for (int i = 0; i < 15; i++){

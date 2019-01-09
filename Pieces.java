@@ -4,7 +4,7 @@ public class Pieces{
   private String Color;
   private boolean Played;
   private int wordMultiplier;
-  private int lettermMultiplier;
+  private int letterMultiplier;
 
   public Pieces(char Lettervalue,int Scorevalue, String Colorimput){
     Letter=Lettervalue;
@@ -23,11 +23,20 @@ public class Pieces{
     Score=0;//ultimetely, reference dictionary
     Color="WHITE";//CHANGE TO WHATEVER STANDARD COLOR IS
     Played=false;
-    wordmultiplier=1;
-    lettermultiplier=1;
+    wordMultiplier=1;
+    letterMultiplier=1;
   }
   public char getPieceChar(){
     return Letter;
+  }
+  public int getWordMultiplier(){
+    return wordMultiplier;
+  }
+  public int getLetterMultiplier(){
+    return letterMultiplier;
+  }
+  public int getValue(){
+    return Score;
   }
   public String toString(){
     String str = "";
