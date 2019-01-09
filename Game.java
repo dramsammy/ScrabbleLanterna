@@ -70,11 +70,8 @@ public class Game {
     Board finalGame = new Board();
   }
   public void Start(){
-    Board gameBoard= new Board();
-    if(Players>4){
-
-    }
-  }
+    Players.drawNewHand(); // need to fix for multiple players
+}
   public void displyNames(){
 
   }
