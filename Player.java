@@ -35,7 +35,7 @@ public class Player{
   }
   public void replaceHand(){
     for (int i = 0; i < positionPlayed.length; i++){
-
+      theHand[positionPlayed[i]] = drawNewPiece();
     }
   }
   //Function which takes in an input of the values selected of each piece and sets an array to be played
