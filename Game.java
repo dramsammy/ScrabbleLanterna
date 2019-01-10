@@ -129,14 +129,15 @@ public class Game {
 
   public static void main(String[] args) {
     Game newGame = new Game();
-    Terminal screen = TerminalFacade.createTextTerminal();
-    screen.enterPrivateMode();
+    Terminal terminal = TerminalFacade.createTextTerminal();
+    Screen screen = new Terminal(terminal);
     boolean display = true;
+    screen.startScreen();
     Key key = screen.readInput();
     if (key!= null){
-      putString(1,1,screen, key.toString());
+      screen.putString(1,1, key.toString(),Terminal.Color.WHITE, Terminal.Color.BLACK);
       if (key.getKind() == Key.Kind.Escape) {
-          screen.exitPrivateMode();
+          screen.stopScreen();
           display = false;
 
        }
