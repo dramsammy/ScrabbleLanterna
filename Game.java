@@ -119,14 +119,27 @@ public class Game {
     }
     return str;
   }
+  public static void putString(int r, int c,Terminal t, String s){
+    t.moveCursor(r,c);
+    for(int i = 0; i < s.length();i++){
+      t.putCharacter(s.charAt(i));
+    }
+  }
+
 
   public static void main(String[] args) {
     Game newGame = new Game();
-    Screen screen = TerminalFacade.createScreen();
+    Terminal screen = TerminalFacade.createTextTerminal();
+    screen.enterPrivateMode();
     boolean display = true;
-    screen.startScreen();
-    screen.putString(0, 40, "Testing", Terminal.Color.WHITE, Terminal.Color.BLACK);
-    screen.refresh();
+    Key key = screen.readInput();
+    if (key!= null){
+      putString(1,1,screen, key.toString());
+      if (key.getKind() == Key.Kind.Escape) {
+          screen.exitPrivateMode();
+          display = false;
 
-  }
+       }
+}
+}
 }
