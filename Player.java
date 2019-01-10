@@ -14,6 +14,17 @@ public class Player{
   private Random hand = new Random();
   private String name;
 
+/* PUT INTO Game
+public int getpilelength(){
+  return pile.size();
+}
+public char getpile(int index){
+  return pile.get(index);
+}
+public void removeFromPile(int index){
+  pile.remove(index);
+}
+*/
 
   //Constructor for Player(needs to be created)
   public Player(){
