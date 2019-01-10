@@ -31,18 +31,22 @@ public class Player{
   //creates a new random hand
   //NEEDS TO BE CHANGE TO ACCOUNT FOR PILE
   public void drawNewHand(){
-    int n = hand.nextInt(25);
     for (int i = 0; i < 7; i++){
-      theHand[i] = new Pieces(randomLetters[n], setScoreforLetter(randomLetters[n]));//fix
+      int len=Game.getpilelength();//add in this command
+      int n = hand.nextInt(len-1);
+      theHand[i] = Game.getpile(n);
+      Game.removeFromPile(n);
     }
     //return theHand;
   }
 
   //creates a new random piece and adds it to your hand
   //NEEDS TO BE CHANGE TO ACCOUNT FOR PILE
-  public Pieces drawNewPiece(){
-    int n = hand.nextInt(25);
-    return new Pieces(randomLetters[n], setScoreforLetter(randomLetters[n]));
+  public void drawNewPiece(int position){
+    int len=Game.getpilelength();//add in this command
+    int n = hand.nextInt(len-1);
+    theHand[position] = Game.getpile(n);
+    Game.removeFromPile(n);
   }
 
   //checks if a given piece(character) is in your hand
