@@ -88,6 +88,10 @@ public class Game {
     }
     Board currentGame = new Board();
 }
+  //Temporary to get lanterna up and running
+  public Game(){
+    Board currentGame = new Board();
+  }
 
   //makes a name for each player
   public String returnString(int i){
@@ -117,6 +121,11 @@ public class Game {
   }
 
   public static void main(String[] args) {
-
+    Game();
+    Screen screen = TerminalFacade.createScreen();
+    boolean display = true;
+    screen.startScreen();
+    screen.putString(0, 0, "Testing", Terminal.Color.WHITE, Terminal.Color.BLACK);
+    screen.refresh();
   }
 }
