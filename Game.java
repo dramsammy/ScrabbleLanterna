@@ -133,9 +133,11 @@ public class Game {
     screen.enterPrivateMode();
     boolean display = true;
     Key key = screen.readInput();
+    TerminalSize size = screen.getTerminalSize();
+    screen.setCursorVisible(false);
     while(display){
+      putString(1,1,screen, );
       if (key!= null){
-        putString(1,1,screen, key.toString());
         if (key.getKind() == Key.Kind.Escape) {
             screen.exitPrivateMode();
             display = false;
