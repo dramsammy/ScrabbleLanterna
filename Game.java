@@ -135,8 +135,8 @@ public class Game {
     TerminalSize size = screen.getTerminalSize();
     screen.setCursorVisible(false);
     Key key = screen.readInput();
+    putString(0,0,screen, newGame.gameBoard.toString() );
     while(display){
-      putString(0,0,screen, newGame.gameBoard.toString() );
       if (key != null){
           screen.exitPrivateMode();
           display = false;
