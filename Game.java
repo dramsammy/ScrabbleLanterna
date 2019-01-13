@@ -122,10 +122,20 @@ public class Game {
   }
   public static void putString(int r, int c, Terminal t, String s){
     t.moveCursor(r,c);
-    for(int i = 0; i < s.length();i++){
+    int curr=c;
+    for(int i = 0; i < s.length()-1;i++){
+      if(s.substring(i,i+2)=="\n"){
+        curr+=1;
+        t.moveCursor(r,curr);
+        i+=1;
+      }
+      else{
       t.putCharacter(s.charAt(i));
     }
+    t.putCharacter(s.charAt(s.length()-1));
   }
+}
+
 
 
   public static void main(String[] args) {
@@ -138,7 +148,7 @@ public class Game {
     while(display){
       Key key = screen.readInput();
       screen.applyBackgroundColor(Terminal.Color.BLACK);
-      putString(0,0,screen,newGame.gameBoard.toString() );
+      putString(15, 0, screen, newGame.gameBoard.toString());
 			screen.applyForegroundColor(Terminal.Color.WHITE);
       screen.moveCursor(0,0);
       if (key != null){

@@ -112,10 +112,10 @@ public class Board{
     return str;
   }*/
   public String toString(){
-    String str = "          SCRABBLE BOARD\n";
-     str+= "--------------------\n";
+    String str = "          SCRABBLE 2.0™        \n";
+     str+= "               _______________________________\n";
      for (int i = 0; i < board.length; i++){
-       str+="|";
+       str+="               |";
        for (int a = 0; a < board[0].length; a++){
          str+=board[i][a].toString();
        }
@@ -123,6 +123,7 @@ public class Board{
        }
        str+="\n";
      }
+     str+= "               -------------------------------";
      return str;
   }
 }
