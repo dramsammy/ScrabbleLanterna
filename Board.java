@@ -90,34 +90,45 @@ public class Board{
       board[14][7].setWordMultiplier(3);
       board[14][11].setLetterMultiplier(2);
       board[14][14].setWordMultiplier(3);
-    }
 
-
+  }
   // toString method that will display board as a 2D ArrayList of pieces
   //The format is char,value,letter*,word*,color
+//   public String toString(){
+//     String str = "\n \n                       SCRABBLE BOARD(format is char,value,letter*,word*,color)\n";
+//     str+= "-----------------------------------------------------------\n";
+//     for (int i = 0; i < board.length; i++){
+//       //str+="";
+//       for(int a = 0; a < board[i].length; a++){
+//         str+= "|";
+//         str += ((board[i][a]).getPieceChar());
+//         str += ",";
+//         str += ((board[i][a]).getValue());
+//         str += ",";
+//         str += ((board[i][a]).getLetterMultiplier());
+//         str += ",";
+//         str += ((board[i][a]).getWordMultiplier());
+//         str += ",";
+//         str += ((board[i][a]).getColor());
+//         str += "|";
+//       }
+//       if(i<board.length-1){
+//         str += "\n-----------------------------------------------------------\n";
+//       }
+//     }
+//     str += "\n-----------------------------------------------------------";
+//     return str;
+//   }
+// }
   public String toString(){
-    String str = "\n \n                       SCRABBLE BOARD(format is char,value,letter*,word*,color)\n";
-    str+= "-----------------------------------------------------------\n";
-    for (int i = 0; i < board.length; i++){
-      //str+="";
-      for(int a = 0; a < board[i].length; a++){
-        str+= "|";
-        str += ((board[i][a]).getPieceChar());
-        str += ",";
-        str += ((board[i][a]).getValue());
-        str += ",";
-        str += ((board[i][a]).getLetterMultiplier());
-        str += ",";
-        str += ((board[i][a]).getWordMultiplier());
-        str += ",";
-        str += ((board[i][a]).getColor());
-        str += "|";
-      }
-      if(i<board.length-1){
-        str += "\n-----------------------------------------------------------\n";
-      }
-    }
-    str += "\n-----------------------------------------------------------";
-    return str;
+    String str = "\n \n +                      SCRABBLE BOARD\n";
+     str+= "-----------------------------------------------------------\n";
+     for (int i = 0; i < board.length; i++){
+       for (int a = 0; a < board[0].length; a++){
+         str+=board[i][a].toString();
+       }
+       str+="\n";
+     }
+     return str;
   }
 }

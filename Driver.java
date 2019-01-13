@@ -23,13 +23,15 @@ public class Driver{
     // System.out.println(old.getWordMultiplier());
     // System.out.println(test.toString());
     Pieces test = new Pieces();
-    test.setLetter('C');
-    for (int i = 0; i < 10; i++){
-      for (int a = 0; a < 10; a++){
+    test.setLetter(' ');
+    for (int i = 0; i < 15; i++){
+      for (int a = 0; a < 15; a++){
         System.out.print(test.toString());
       }
       System.out.print("\n");
     }
+    Board test1 = new Board();
+    System.out.print(test1.toString());
 
 
 
