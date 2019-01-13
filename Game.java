@@ -14,6 +14,7 @@ import com.googlecode.lanterna.input.InputProvider;
 import com.googlecode.lanterna.input.Key;
 import com.googlecode.lanterna.input.KeyMappingProfile;
 import com.googlecode.lanterna.screen.Screen;
+
 public class Game {
   private int Players;
   private Board gameBoard;
@@ -136,7 +137,9 @@ public class Game {
     screen.setCursorVisible(false);
     while(display){
       Key key = screen.readInput();
+      screen.applyBackgroundColor(Terminal.Color.BLACK);
       putString(0,0,screen, newGame.gameBoard.toString() );
+			screen.applyForegroundColor(Terminal.Color.WHITE);
       screen.moveCursor(0,0);
       if (key != null){
           screen.exitPrivateMode();

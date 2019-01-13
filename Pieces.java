@@ -100,8 +100,9 @@ public class Pieces{
     Played=true;
   }
   public String toString(){
-    String currscore="";
+    String currscore=" ";
     String c=" ";
+    Terminal.setForegroundColor(TextColor.ANSI.RED);
     if(Score!=0){
       int s=Score;
       currscore = s +"";
