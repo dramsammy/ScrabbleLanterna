@@ -101,12 +101,15 @@ public class Pieces{
   }
   public String toString(){
     String currscore="";
+    String c=" ";
     if(Score!=0){
       int s=Score;
       currscore = s +"";
-
     }
-    String str = Character.toString(Letter)+ "(" + currscore + ")" + "|";
+    if(Letter!=' '){
+      c+=Letter;
+    }
+    String str = c + "(" + currscore + ")" + "|";
     return str;
   }
 
