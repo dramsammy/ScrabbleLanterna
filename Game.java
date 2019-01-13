@@ -150,7 +150,7 @@ public static void putLine(int r, int c, Terminal t, String s, Board g){
     curr= eachpiece.get(i).charAt(0);
     len=eachpiece.get(i).length();
     if(curr=='|'){
-      putchar(r+i,c,t,'|',g ,"BLACK");
+      putchar(r+i,c,t,'|',g ,"WHITE");
   }
     else{
       putchar(r+i,c,t,curr,g,eachpiece.get(i).substring(1,len));
@@ -172,11 +172,18 @@ public static void putchar(int r, int c, Terminal t, char s, Board g, String Col
   if(Color=="BLUE"){
     t.applyBackgroundColor(0,0,205);
   }
-  if(Color=="BLACK"){
-    t.applyBackgroundColor(Terminal.Color.BLACK);
+  if(Color=="WHITE"){
+    //t.applyBackgroundColor(Terminal.Color.BLACK);
   }
   t.putCharacter(s);
 }
+
+public static void putString(int r, int c, Terminal t, String s){
+    t.moveCursor(r,c);
+    for(int i = 0; i < s.length();i++){
+      t.putCharacter(s.charAt(i));
+    }
+  }
 
 
 
@@ -189,8 +196,10 @@ public static void putchar(int r, int c, Terminal t, char s, Board g, String Col
     screen.setCursorVisible(false);
     while(display){
       Key key = screen.readInput();
-      putString(25, 0, screen, newGame.gameBoard.toString(), newGame.gameBoard);
-			screen.applyForegroundColor(Terminal.Color.WHITE);
+      //Textbox t= new TextBox(12, "SCRABBLE 2.0™", SINGLE_LINE);
+      putString(33, 0, screen, "SCRABBLE 2.0™" );
+      putString(25, 2, screen, newGame.gameBoard.toString(), newGame.gameBoard);
+			screen.applyForegroundColor(Terminal.Color.BLACK);
       screen.moveCursor(0,0);
       if (key != null){
           screen.exitPrivateMode();
