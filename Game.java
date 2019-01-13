@@ -136,7 +136,7 @@ public class Game {
     screen.setCursorVisible(false);
     Key key = screen.readInput();
     while(display){
-      putString(0,0,screen, newGame.gameBoard.toString() );
+      putString(40,40,screen, newGame.gameBoard.toString() );
       if (key != null){
         if (key.getKind() == Key.Kind.Escape) {
             screen.exitPrivateMode();

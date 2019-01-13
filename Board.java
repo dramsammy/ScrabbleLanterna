@@ -122,7 +122,7 @@ public class Board{
 // }
   public String toString(){
     String str = "\n \n +                      SCRABBLE BOARD\n";
-     str+= "-----------------------------------------------------------\n";
+     str+= "-----------------------------------------------\n";
      for (int i = 0; i < board.length; i++){
        for (int a = 0; a < board[0].length; a++){
          str+=board[i][a].toString();
