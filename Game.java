@@ -134,13 +134,14 @@ public class Game {
     boolean display = true;
     TerminalSize size = screen.getTerminalSize();
     screen.setCursorVisible(false);
-    Key key = screen.readInput();
-    putString(0,0,screen, newGame.gameBoard.toString() );
     while(display){
+      Key key = screen.readInput();
+      putString(0,0,screen, newGame.gameBoard.toString() );
+      screen.moveCursor(0,0);
       if (key != null){
           screen.exitPrivateMode();
           display = false;
-          System.exit(0);
+          System.exit(1);
        }
 }
 }
