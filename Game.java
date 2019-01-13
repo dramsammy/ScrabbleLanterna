@@ -120,11 +120,11 @@ public class Game {
     }
     return str;
   }
-  public static void putString(int r, int c, Terminal t, String s){
+  public static void putString(int r, int c, Terminal t, String s, Board g){
     List<String> eachline = Arrays.asList(s.split("\n"));
     int curr=c;
     for(int i=0;i<eachline.size();i++){
-      putLine(r, curr, t, eachline.get(i));
+      putLine(r, curr, t, eachline.get(i), g);
       curr++;
     }
     /*for(int i = 0; i < s.length()-1;i++){
@@ -142,26 +142,37 @@ public class Game {
 
 
 }
-public static void putLine(int r, int c, Terminal t,String s){
+public static void putLine(int r, int c, Terminal t,String s, Board g){
   t.moveCursor(r,c);
   for(int i = 0; i < s.length();i++){
-    if((gameBoard.getPieces(r-25,c-2)).getColor()=="PURPLE"){
-      t.applyBackgroundColor(128,0,128);
-    }
-    if((gameBoard.getPieces(r-25,c-2)).getColor()=="ORANGE"){
-      t.applyBackgroundColor(255,215,0);
-    }
-    if((gameBoard.getPieces(r-25,c-2)).getColor()=="INDIGO"){
-      t.applyBackgroundColor(0,191,255);
-    }
-    if((gameBoard.getPieces(r-25,c-2)).getColor()=="BLUE"){
-      t.applyBackgroundColor(0,0,205);
-    }
-    if((gameBoard.getPieces(r-25,c-2)).getColor()=="WHITE"){
-      t.applyBackgroundColor(Terminal.Color.BLACK);
-    }
-    t.putCharacter(s.charAt(i));
+    putchar(r+i,c,t,s.charAt(i),g);
   }
+}
+//put in mods so it includes |
+public static void putchar(int r, int c, Terminal t, char s, Board g){
+  t.moveCursor(r,c);
+  //t.applyForegroundColor(Terminal.Color.WHITE);
+  if(c>=3 && c<=17 && r>=25 && r<=39){
+  if((g.getPieces(r-25,c-3)).getColor()=="PURPLE"){
+    t.applyBackgroundColor(128,0,128);
+  }
+  if((g.getPieces(r-25,c-3)).getColor()=="ORANGE"){
+    t.applyBackgroundColor(255,215,0);
+  }
+  if((g.getPieces(r-25,c-3)).getColor()=="INDIGO"){
+    t.applyBackgroundColor(0,191,255);
+  }
+  if((g.getPieces(r-25,c-3)).getColor()=="BLUE"){
+    t.applyBackgroundColor(0,0,205);
+  }
+  if((g.getPieces(r-25,c-3)).getColor()=="WHITE"){
+    t.applyBackgroundColor(Terminal.Color.BLACK);
+  }
+}
+else{
+  t.applyBackgroundColor(Terminal.Color.BLACK);
+}
+t.putCharacter(s);
 }
 
 
@@ -175,7 +186,7 @@ public static void putLine(int r, int c, Terminal t,String s){
     screen.setCursorVisible(false);
     while(display){
       Key key = screen.readInput();
-      putString(25, 0, screen, newGame.gameBoard.toString());
+      putString(25, 0, screen, newGame.gameBoard.toString(), newGame.gameBoard);
 			screen.applyForegroundColor(Terminal.Color.WHITE);
       screen.moveCursor(0,0);
       if (key != null){
