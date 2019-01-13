@@ -90,7 +90,7 @@ public class Game {
 // }
   //Temporary to get lanterna up and running
   public Game(){
-    Board currentGame = new Board();
+    gameBoard = new Board();
   }
 
   //makes a name for each player
@@ -132,16 +132,16 @@ public class Game {
     Terminal screen = TerminalFacade.createTextTerminal();
     screen.enterPrivateMode();
     boolean display = true;
-    Key key = screen.readInput();
     TerminalSize size = screen.getTerminalSize();
     screen.setCursorVisible(false);
+    Key key = screen.readInput();
     while(display){
-      putString(1,1,screen, );
-      if (key!= null){
+      putString(0,0,screen, newGame.gameBoard.toString() );
+      if (key != null){
         if (key.getKind() == Key.Kind.Escape) {
             screen.exitPrivateMode();
             display = false;
-
+            System.exit(0);
        }
 }
 }
