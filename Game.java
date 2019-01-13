@@ -17,7 +17,7 @@ import com.googlecode.lanterna.screen.Screen;
 public class Game {
   private int Players;
   private Board gameBoard;
-  // private ArrayList<char> pile= new ArrayList<int>();
+  // private ArrayList<char> pile= new ArrayList<char>();
   // private ArrayList<char> hand1=new ArrayList<int>();
   // private ArrayList<char> hand2=new ArrayList<int>();
   // private ArrayList<char> hand3=new ArrayList<int>();
@@ -119,7 +119,7 @@ public class Game {
     }
     return str;
   }
-  public static void putString(int r, int c,Terminal t, String s){
+  public static void putString(int r, int c, Terminal t, String s){
     t.moveCursor(r,c);
     for(int i = 0; i < s.length();i++){
       t.putCharacter(s.charAt(i));

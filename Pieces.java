@@ -100,7 +100,7 @@ public class Pieces{
     Played=true;
   }
   public String toString(){
-    String str = "|"+ Character.toString(Letter)+"|";
+    String str = Character.toString(Letter)+"|";
     return str;
   }
 
