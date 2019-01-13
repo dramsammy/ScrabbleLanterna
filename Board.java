@@ -96,39 +96,30 @@ public class Board{
   }
   // toString method that will display board as a 2D ArrayList of pieces
   //The format is char,value,letter*,word*,color
-//   public String toString(){
-//     String str = "\n \n                       SCRABBLE BOARD(format is char,value,letter*,word*,color)\n";
-//     str+= "-----------------------------------------------------------\n";
-//     for (int i = 0; i < board.length; i++){
-//       //str+="";
-//       for(int a = 0; a < board[i].length; a++){
-//         str+= "|";
-//         str += ((board[i][a]).getPieceChar());
-//         str += ",";
-//         str += ((board[i][a]).getValue());
-//         str += ",";
-//         str += ((board[i][a]).getLetterMultiplier());
-//         str += ",";
-//         str += ((board[i][a]).getWordMultiplier());
-//         str += ",";
-//         str += ((board[i][a]).getColor());
-//         str += "|";
-//       }
-//       if(i<board.length-1){
-//         str += "\n-----------------------------------------------------------\n";
-//       }
-//     }
-//     str += "\n-----------------------------------------------------------";
-//     return str;
-//   }
-// }
+  /*public String toString(){
+    String str = "                      SCRABBLE\n";
+    str+= "--------------------------\n";
+    for (int i = 0; i < board.length; i++){
+      //str+="";
+      for(int a = 0; a < board[i].length; a++){
+        str+=board[i][a].toString();
+      }
+      if(i<board.length-1){
+        str += "\n--------------------------\n";
+      }
+    }
+    str += "\n--------------------------";
+    return str;
+  }*/
   public String toString(){
-    String str = "\n \n +                SCRABBLE BOARD\n";
-     str+= "-----------------------------------------------\n";
+    String str = "          SCRABBLE BOARD\n";
+     str+= "--------------------\n";
      for (int i = 0; i < board.length; i++){
        str+="|";
        for (int a = 0; a < board[0].length; a++){
          str+=board[i][a].toString();
+       }
+       if(i<board.length-1){
        }
        str+="\n";
      }
