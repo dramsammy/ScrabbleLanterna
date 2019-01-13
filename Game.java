@@ -142,22 +142,23 @@ public class Game {
 
 
 }
-public static void putLine(int r, int c, Terminal t,String s, Board g){
-  List<String> eachpiece = Arrays.asList(s.split(")"));
-  String curr = "";
+public static void putLine(int r, int c, Terminal t, String s, Board g){
+  List<String> eachpiece = Arrays.asList(s.split("\\)"));
+  char curr;
   int len;
   for(int i = 0; i < eachpiece.size();i++){
-    curr += eachpiece.get(i).subString(0,1);
+    curr= eachpiece.get(i).charAt(0);
     len=eachpiece.get(i).length();
-    if(curr.equals("|")){
-      putchar(r+i,c,t,'|',g ,"BLACK";
+    if(curr=='|'){
+      putchar(r+i,c,t,'|',g ,"BLACK");
   }
     else{
-      putchar(r+i,c,t,curr,eachpiece.get(i).subString(1,len));
+      putchar(r+i,c,t,curr,g,eachpiece.get(i).substring(1,len));
     }
 }
+}
 //put in mods so it includes |
-public static void putchar(int r, int c, Terminal t, char s, Board g,String Color){
+public static void putchar(int r, int c, Terminal t, char s, Board g, String Color){
   t.moveCursor(r,c);
   if(Color=="PURPLE"){
     t.applyBackgroundColor(128,0,128);
@@ -174,8 +175,7 @@ public static void putchar(int r, int c, Terminal t, char s, Board g,String Colo
   if(Color=="BLACK"){
     t.applyBackgroundColor(Terminal.Color.BLACK);
   }
-}
-t.putCharacter(s);
+  t.putCharacter(s);
 }
 
 
