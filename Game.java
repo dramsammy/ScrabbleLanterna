@@ -138,7 +138,7 @@ public class Game {
     while(display){
       Key key = screen.readInput();
       screen.applyBackgroundColor(Terminal.Color.BLACK);
-      putString(0,0,screen, newGame.gameBoard.toString() );
+      putString(0,0,screen,newGame.gameBoard.toString() );
 			screen.applyForegroundColor(Terminal.Color.WHITE);
       screen.moveCursor(0,0);
       if (key != null){

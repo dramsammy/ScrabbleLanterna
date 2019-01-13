@@ -100,7 +100,7 @@ public class Pieces{
     Played=true;
   }
   public String toString(){
-    String currscore="";
+    //String currscore="";
     String c="";
     //Terminal.setForegroundColor(TextColor.ANSI.RED);
     /*if(Score==0){
@@ -111,7 +111,7 @@ public class Pieces{
       currscore+=s;
     }*/
     if(Letter==' '){
-      c+="  ";
+      c+=" ";
     }
     if(Letter!=' '){
       c+=Letter + "";
