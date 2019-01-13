@@ -116,7 +116,7 @@ public class Pieces{
     if(Letter!=' '){
       c+=Letter + "";
     }
-    String str = c + "|";
+    String str = c + Color + ")|";
     return str;
   }
 
