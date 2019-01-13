@@ -102,7 +102,7 @@ public class Pieces{
   public String toString(){
     //String currscore="";
     String c="";
-    //Terminal.setForegroundColor(TextColor.ANSI.RED);
+    //screen.applyBackgroundColor(Terminal.Color.RED);
     /*if(Score==0){
       currscore+=" ";
     }

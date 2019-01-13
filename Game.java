@@ -140,13 +140,30 @@ public class Game {
     t.putCharacter(s.charAt(s.length()-1));
   }*/
 
+
 }
 public static void putLine(int r, int c, Terminal t,String s){
   t.moveCursor(r,c);
   for(int i = 0; i < s.length();i++){
+    if((gameBoard.getPieces(r-25,c-2)).getColor()=="PURPLE"){
+      t.applyBackgroundColor(128,0,128);
+    }
+    if((gameBoard.getPieces(r-25,c-2)).getColor()=="ORANGE"){
+      t.applyBackgroundColor(255,215,0);
+    }
+    if((gameBoard.getPieces(r-25,c-2)).getColor()=="INDIGO"){
+      t.applyBackgroundColor(0,191,255);
+    }
+    if((gameBoard.getPieces(r-25,c-2)).getColor()=="BLUE"){
+      t.applyBackgroundColor(0,0,205);
+    }
+    if((gameBoard.getPieces(r-25,c-2)).getColor()=="WHITE"){
+      t.applyBackgroundColor(Terminal.Color.BLACK);
+    }
     t.putCharacter(s.charAt(i));
   }
 }
+
 
 
   public static void main(String[] args) {
@@ -158,7 +175,6 @@ public static void putLine(int r, int c, Terminal t,String s){
     screen.setCursorVisible(false);
     while(display){
       Key key = screen.readInput();
-      screen.applyBackgroundColor(Terminal.Color.BLACK);
       putString(25, 0, screen, newGame.gameBoard.toString());
 			screen.applyForegroundColor(Terminal.Color.WHITE);
       screen.moveCursor(0,0);

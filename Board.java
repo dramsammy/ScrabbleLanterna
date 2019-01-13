@@ -30,8 +30,6 @@ public class Board{
         }
       }
       board[0][0].setWordMultiplier(3);
-      //TESTING PURPOSES
-      board[0][0].setLetter('R');
       board[0][3].setLetterMultiplier(2);
       board[0][7].setWordMultiplier(3);
       board[0][11].setLetterMultiplier(2);
