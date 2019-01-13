@@ -29,6 +29,7 @@ public class Board{
           board[i][l]= new Pieces();
         }
       }
+
       board[0][0].setWordMultiplier(3);
       board[0][3].setLetterMultiplier(2);
       board[0][7].setWordMultiplier(3);
@@ -114,7 +115,7 @@ public class Board{
     //str+= "          SCRABBLE 2.0™        \n";
     //str+= "_______________________________\n";*/
      for (int i = 0; i < board.length; i++){
-       str+="|";
+       str+="|)";
        for (int a = 0; a < board[0].length; a++){
          str+=board[i][a].toString();
        }

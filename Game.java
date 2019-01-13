@@ -127,19 +127,6 @@ public class Game {
       putLine(r, curr, t, eachline.get(i), g);
       curr++;
     }
-    /*for(int i = 0; i < s.length()-1;i++){
-      if((s.substring(i,i+2)).equals("\n")){
-        curr+=1;
-        t.moveCursor(r,curr);
-        i+=2;
-        t.putCharacter(s.charAt(i));
-      }
-      else{
-      t.putCharacter(s.charAt(i));
-    }
-    t.putCharacter(s.charAt(s.length()-1));
-  }*/
-
 
 }
 public static void putLine(int r, int c, Terminal t, String s, Board g){
@@ -156,24 +143,27 @@ public static void putLine(int r, int c, Terminal t, String s, Board g){
       putchar(r+i,c,t,curr,g,eachpiece.get(i).substring(1,len));
     }
 }
+
+
 }
 //put in mods so it includes |
-public static void putchar(int r, int c, Terminal t, char s, Board g, String Color){
+public static void putchar(int r, int c, Terminal t, char s, Board g, String C){
   t.moveCursor(r,c);
-  if(Color=="PURPLE"){
-    t.applyBackgroundColor(128,0,128);
+  if(C.equals("PURPLE")){
+    t.applyBackgroundColor(Terminal.Color.MAGENTA);
   }
-  if(Color=="ORANGE"){
-    t.applyBackgroundColor(255,215,0);
+  if(C.equals("ORANGE")){
+    t.applyBackgroundColor(Terminal.Color.YELLOW);
   }
-  if(Color=="INDIGO"){
-    t.applyBackgroundColor(0,191,255);
+  if(C.equals("INDIGO")){
+    t.applyBackgroundColor(Terminal.Color.CYAN);
   }
-  if(Color=="BLUE"){
-    t.applyBackgroundColor(0,0,205);
+  if(C.equals("BLUE")){
+    //t.applyBackgroundColor(0,0,205);
+    t.applyBackgroundColor(Terminal.Color.BLUE);
   }
-  if(Color=="WHITE"){
-    //t.applyBackgroundColor(Terminal.Color.BLACK);
+  if(C.equals("WHITE")){
+    t.applyBackgroundColor(Terminal.Color.DEFAULT);
   }
   t.putCharacter(s);
 }

@@ -1,7 +1,7 @@
 public class Driver{
 
   public static void main(String[] args){
-    //Board test = new Board();
+    Board test = new Board();
     // Pieces old=test.getPieces(5,5);
     // System.out.println(old.getPieceChar());
     // System.out.println("Should Print  ");
@@ -32,9 +32,9 @@ public class Driver{
     }
     Board test1 = new Board();
     System.out.print(test1.toString());*/
-    //System.out.println(test.getPieces(0,1).toString());
-    Game n = new Game();
-    n.gameBoard.toString();
+    System.out.println(test.getPieces(0,0).toString());
+    /*Game n = new Game();
+    n.gameBoard.toString();*/
 
 
 
