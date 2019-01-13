@@ -100,7 +100,13 @@ public class Pieces{
     Played=true;
   }
   public String toString(){
-    String str = Character.toString(Letter)+"|";
+    String currscore="";
+    if(Score!=0){
+      int s=Score;
+      currscore = s +"";
+
+    }
+    String str = Character.toString(Letter)+ "(" + currscore + ")" + "|";
     return str;
   }
 
