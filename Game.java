@@ -121,21 +121,32 @@ public class Game {
     return str;
   }
   public static void putString(int r, int c, Terminal t, String s){
-    t.moveCursor(r,c);
+    List<String> eachline = Arrays.asList(s.split("\n"));
     int curr=c;
-    for(int i = 0; i < s.length()-1;i++){
-      if(s.substring(i,i+2)=="\n"){
+    for(int i=0;i<eachline.size();i++){
+      putLine(r, curr, t, eachline.get(i));
+      curr++;
+    }
+    /*for(int i = 0; i < s.length()-1;i++){
+      if((s.substring(i,i+2)).equals("\n")){
         curr+=1;
         t.moveCursor(r,curr);
-        i+=1;
+        i+=2;
+        t.putCharacter(s.charAt(i));
       }
       else{
       t.putCharacter(s.charAt(i));
     }
     t.putCharacter(s.charAt(s.length()-1));
+  }*/
+
+}
+public static void putLine(int r, int c, Terminal t,String s){
+  t.moveCursor(r,c);
+  for(int i = 0; i < s.length();i++){
+    t.putCharacter(s.charAt(i));
   }
 }
-
 
 
   public static void main(String[] args) {
@@ -148,7 +159,7 @@ public class Game {
     while(display){
       Key key = screen.readInput();
       screen.applyBackgroundColor(Terminal.Color.BLACK);
-      putString(15, 0, screen, newGame.gameBoard.toString());
+      putString(25, 0, screen, newGame.gameBoard.toString());
 			screen.applyForegroundColor(Terminal.Color.WHITE);
       screen.moveCursor(0,0);
       if (key != null){
