@@ -95,15 +95,12 @@ public class Pieces{
   public boolean wasplayed(){
     return Played;
   }
- _
-|a|
   //changing it to played
   public void gotplayed(){
     Played=true;
   }
   public String toString(){
-    String str = "_";
-    str += "|"+ Character.toString(Letter)+"|";
+    String str = "|"+ Character.toString(Letter)+"|";
     return str;
   }
 
