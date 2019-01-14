@@ -28,8 +28,16 @@ public void removeFromPile(int index){
 
   //Constructor for Player(needs to be created)
   public Player(){
+    drawNewHand();
   }
 
+  public String handToString(){
+    String str = "";
+    for (int i = 0; i < theHand.length; i++){
+      str+= theHand[i].toString();
+    }
+    return str;
+  }
   //Prints out the players name then their score on a new line
   public String toString(){
     String str = "";

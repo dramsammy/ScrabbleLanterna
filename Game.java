@@ -136,7 +136,7 @@ public static void putString(int r, int c, Terminal t, String s){
 
   public static void main(String[] args) {
     Game newGame = new Game(2);//replace with args
-    //Player human = new Player();
+    Player human = new Player();
     Terminal screen = TerminalFacade.createTextTerminal();
     screen.enterPrivateMode();
     boolean display = true;
@@ -148,7 +148,7 @@ public static void putString(int r, int c, Terminal t, String s){
       screen.applyBackgroundColor(Terminal.Color.WHITE);
       putString(54, 0, screen, "SCRABBLE 2.0" );
       putString(45, 2, screen, newGame.gameBoard.toString(), newGame.gameBoard);
-      putString(45, 20, screen,"Player Hand:");
+      putString(45, 20, screen,"Player Hand:" + human.handToString());
       putString(0, 0, screen, newGame.displayNames());
       putString(0, 5, screen, "___________________________");
       putString(0, 7, screen, newGame.key());
