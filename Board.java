@@ -1,10 +1,50 @@
+import java.util.*;
 public class Board{
   private Pieces[][] board= new Pieces[15][15];
-  private ArrayList<char> pile = new ArrayList<char>();
+  private ArrayList<Character> pile = new ArrayList<Character>();
 
   //Constructor of Board. Prompts set up board method
   public Board(){
     setupboard();
+    pile.add('A');
+    pile.add('A');
+    pile.add('A');
+    pile.add('A');
+    pile.add('A');
+    pile.add('A');
+    pile.add('A');
+    pile.add('A');
+    pile.add('A');
+    pile.add('A');
+    pile.add('A');
+    pile.add('A');
+    pile.add('A');
+    pile.add('A');
+    pile.add('A');
+    pile.add('A');
+    pile.add('A');
+    pile.add('A');
+    pile.add('A');
+    pile.add('A');
+    pile.add('A');
+    pile.add('A');
+    pile.add('A');
+    pile.add('A');
+    pile.add('A');
+    pile.add('A');
+    pile.add('A');
+    pile.add('A');
+    pile.add('A');
+    pile.add('A');
+    pile.add('A');
+    pile.add('A');
+    pile.add('A');
+    pile.add('A');
+    pile.add('A');
+    pile.add('A');
+    pile.add('A');
+    pile.add('A');
+    pile.add('A');
   }
   public int getpilelength(){
   return pile.size();
