@@ -17,3 +17,5 @@ Logs!!
 1/9/18 - Today was a much less busy day. Oliver finished toString of the board and tested it. Overall we are fairly set for the basic parts of the game and now need to work with lanterna to create a physical image. Worked on adding imports for lanterna and testing basic terminal guis. Realized it would be best if we use screen. Fixed coords with some of the methods.
 
 1/10/18 - In class, Oliver worked on the player functions of drawing pieces and Devin worked on figuring out how to use Laterna. Oliver took the night off to study for the APCS test tmr.
+
+1/11-13/18-These two days, we both spent a lot of time preparing for the presentation of the prototype. ADD WHAT DEVIN DID. Oliver figured out how to create a color printed board from a coordinate with lots of trial and error. He had to use \n to split the toString output into moveCursor input. After that,in order to get color,  he had to create another thing to split on and figure out each color. We then worked on creating an interface to show to the class.
