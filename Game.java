@@ -212,8 +212,11 @@ public static void putString(int r, int c, Terminal t, String s){
           System.exit(1);
         }
       if (key != null && key.getCharacter() == 's'){
-        screen.clearScreen();
-        screen.moveCursor(0,0);
+        for (int i = 0; i < 100; i++){
+          screen.clearScreen();
+          putString(i,i,screen, " ");
+          screen.applyBackgroundColor(Terminal.Color.WHITE);
+        }
       }
 }
 }
