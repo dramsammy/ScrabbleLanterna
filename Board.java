@@ -112,7 +112,7 @@ public class Board{
   }*/
   public String toString(){
     String str ="";
-    //str+= "          SCRABBLE 2.0™        \n";
+    //str+= "          SCRABBLE 2.0       \n";
     //str+= "_______________________________\n";*/
      for (int i = 0; i < board.length; i++){
        str+="|)";

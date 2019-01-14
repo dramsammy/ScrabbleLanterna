@@ -186,8 +186,7 @@ public static void putString(int r, int c, Terminal t, String s){
     screen.setCursorVisible(false);
     while(display){
       Key key = screen.readInput();
-      //Textbox t= new TextBox(12, "SCRABBLE 2.0™", SINGLE_LINE);
-      putString(53, 0, screen, "SCRABBLE 2.0™" );
+      putString(53, 0, screen, "SCRABBLE 2.0" );
       putString(45, 2, screen, newGame.gameBoard.toString(), newGame.gameBoard);
       putString(0, 0, screen, newGame.displayNames());
 			screen.applyForegroundColor(Terminal.Color.BLACK);
