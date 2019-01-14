@@ -1,11 +1,20 @@
 public class Board{
   private Pieces[][] board= new Pieces[15][15];
+  private ArrayList<char> pile = new ArrayList<char>();
 
   //Constructor of Board. Prompts set up board method
   public Board(){
     setupboard();
   }
-
+  public int getpilelength(){
+  return pile.size();
+}
+  public char getpile(int index){
+  return pile.get(index);
+}
+  public void removeFromPile(int index){
+  pile.remove(index);
+}
   //imputs coordinates and a char and changes the board to display that char
   public boolean modifyBoard(int xcor, int ycor,char newval){//will start from zero
     if(board[xcor][ycor].getPieceChar()!=' '){

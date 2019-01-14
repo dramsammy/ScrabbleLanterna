@@ -13,21 +13,13 @@ public class Player{
   private int[] y;
   private Random hand = new Random();
   private String name;
-  private ArrayList<char> pile = new ArrayList<char>();
+
 
   //Constructor for Player(needs to be created)
   public Player(){
     drawNewHand();
+
   }
-  public int getpilelength(){
-  return pile.size();
-}
-  public char getpile(int index){
-  return pile.get(index);
-}
-  public void removeFromPile(int index){
-  pile.remove(index);
-}
   public String handToString(){
     String str = "";
     for (int i = 0; i < theHand.length; i++){
