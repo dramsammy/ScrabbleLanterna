@@ -202,13 +202,19 @@ public static void putString(int r, int c, Terminal t, String s){
       putString(45, 2, screen, newGame.gameBoard.toString(), newGame.gameBoard);
       putString(0, 0, screen, newGame.displayNames());
       putString(0, 10, screen, newGame.key());
-			screen.applyForegroundColor(Terminal.Color.BLACK);
+      putString(0, 20, screen, "To make a move PRESS the key: s");
+      putString(0, 21, screen, "To exit PRESS the key: e");
+      screen.applyForegroundColor(Terminal.Color.BLACK);
       screen.moveCursor(0,0);
-      if (key != null){
+      if (key != null && (key.getCharacter() == 'e')){
           screen.exitPrivateMode();
           display = false;
           System.exit(1);
-       }
+        }
+      if (key != null && key.getCharacter() == 's'){
+        screen.clearScreen();
+        screen.moveCursor(0,0);
+      }
 }
 }
 }
