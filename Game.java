@@ -163,7 +163,7 @@ public static void putchar(int r, int c, Terminal t, char s, Board g, String C){
     t.applyBackgroundColor(Terminal.Color.BLUE);
   }
   if(C.equals("WHITE")){
-    t.applyBackgroundColor(Terminal.Color.DEFAULT);
+    t.applyBackgroundColor(Terminal.Color.WHITE);
   }
   t.putCharacter(s);
 }
@@ -186,6 +186,7 @@ public static void putString(int r, int c, Terminal t, String s){
     screen.setCursorVisible(false);
     while(display){
       Key key = screen.readInput();
+      screen.applyBackgroundColor(Terminal.Color.WHITE);
       putString(53, 0, screen, "SCRABBLE 2.0" );
       putString(45, 2, screen, newGame.gameBoard.toString(), newGame.gameBoard);
       putString(0, 0, screen, newGame.displayNames());
