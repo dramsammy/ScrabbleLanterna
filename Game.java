@@ -19,7 +19,6 @@ public class Game {
   private int Players;
   private Board gameBoard;
   private TextBox theMove = new TextBox("Move", 5);
-  private ArrayList<Character> pile= new ArrayList<Character>();
   // private ArrayList<char> hand1=new ArrayList<int>();
   // private ArrayList<char> hand2=new ArrayList<int>();
   // private ArrayList<char> hand3=new ArrayList<int>();
@@ -31,64 +30,6 @@ public class Game {
   public Game(int play){
     gameBoard = new Board();
     Players = play;
-    ArrayList<Character> p =new ArrayList<Character>();
-    p.add('X');
-    p.add('Z');
-    p.add('Q');
-    p.add('K');
-    p.add('J');
-    for(int i=0;i<2;i++){
-      p.add('Y');
-      p.add('W');
-      p.add('V');
-      p.add('P');
-      p.add('M');
-      p.add('H');
-      p.add('F');
-      p.add('C');
-      p.add('B');
-    }
-    for(int i=0;i<3;i++){
-      p.add('G');
-    }
-    for(int i=0;i<4;i++){
-      p.add('U');
-      p.add('S');
-      p.add('L');
-      p.add('D');
-    }
-    for(int i=0;i<2;i++){
-      p.add('Y');
-      p.add('W');
-      p.add('V');
-      p.add('P');
-      p.add('M');
-      p.add('H');
-      p.add('F');
-      p.add('C');
-      p.add('B');
-    }
-    for(int i=0;i<6;i++){
-      p.add('T');
-      p.add('R');
-      p.add('N');
-    }
-    for(int i=0;i<8;i++){
-      p.add('O');
-    }
-    for(int i=0;i<9;i++){
-      p.add('I');
-      p.add('A');
-    }
-    for(int i=0;i<12;i++){
-      p.add('E');
-    }
-    //BLANK TILES
-    pile=p;
-    for (int i = 0; i < Players; i++){
-      /*Player i = new Player();//ISSUE WITH NAMING IT
-      i.drawNewHand();*/
-    }
   }
 
   //makes a name for each player
@@ -100,9 +41,8 @@ public class Game {
   public void newgame(){
     //reinitialize game?
   }
-
   public String key(){
-    String key ="        KEY         \n";
+    String key ="PIECE TO POINTS KEY\n";
     key += "A = 1, B = 3, C = 3 \n";
     key += "D = 2, E = 1, F = 4 \n";
     key += "G = 2, H = 4, I = 1 \n";
@@ -115,14 +55,13 @@ public class Game {
     return key;
   }
 
-
   /*public void Start(){
     Players.drawNewHand(); // need to fix for multiple players
 }*/
 
   //creates a full scoreboard(temporarily just displays random stuff)
    public String displayNames(){
-    String str = "TEMPORARY PLACEHOLDER FOR REAL PLAYERS \n \nPoints!!! \n";
+    String str = "TEMPORARY PLACEHOLDER FOR REAL PLAYERS \n\nPoints!!!\n";
     for(int i=0; i< Players;i++){//may run into same name issue as constructor
       str+= "Player" + (i+1) + ": ";//TEMPORARY
       str+= (i+ 46);
@@ -185,25 +124,37 @@ public static void putString(int r, int c, Terminal t, String s){
       t.putCharacter(s.charAt(i));
     }
   }
+  public String colorkey(){
+    String colorkey = "COLOR TO MULTIPLIER KEY\n";
+    colorkey+="Magenta: Double Word \nYellow: Triple Word\n";
+    colorkey+="Cyan: Double Letter \nDeep Blue: Triple Letter";
+    return colorkey;
+  }
+
 
 
 
   public static void main(String[] args) {
     Game newGame = new Game(2);//replace with args
+    //Player human = new Player();
     Terminal screen = TerminalFacade.createTextTerminal();
     screen.enterPrivateMode();
     boolean display = true;
     TerminalSize size = screen.getTerminalSize();
     screen.setCursorVisible(false);
+    boolean move = true;
     while(display){
       Key key = screen.readInput();
       screen.applyBackgroundColor(Terminal.Color.WHITE);
-      putString(53, 0, screen, "SCRABBLE 2.0" );
+      putString(54, 0, screen, "SCRABBLE 2.0" );
       putString(45, 2, screen, newGame.gameBoard.toString(), newGame.gameBoard);
+      putString(45, 20, screen,"Player Hand:");
       putString(0, 0, screen, newGame.displayNames());
-      putString(0, 10, screen, newGame.key());
-      putString(0, 20, screen, "To make a move PRESS the key: s");
-      putString(0, 21, screen, "To exit PRESS the key: e");
+      putString(0, 5, screen, "___________________________");
+      putString(0, 7, screen, newGame.key());
+      putString(0, 18, screen, newGame.colorkey());
+      putString(0, 24, screen, "To make a move PRESS the key: s");
+      putString(0, 25, screen, "To exit PRESS the key: e");
       screen.applyForegroundColor(Terminal.Color.BLACK);
       screen.moveCursor(0,0);
       if (key != null && (key.getCharacter() == 'e')){
@@ -212,12 +163,22 @@ public static void putString(int r, int c, Terminal t, String s){
           System.exit(1);
         }
       if (key != null && key.getCharacter() == 's'){
-        for (int i = 0; i < 100; i++){
-          screen.clearScreen();
-          putString(i,i,screen, " ");
+        move = true;
+        screen.applyBackgroundColor(Terminal.Color.DEFAULT);
+        screen.clearScreen();
+        while(move){
+          Key key1 = screen.readInput();
+          if (key1 != null && (key1.getKind() == Key.Kind.Enter)){
+              move = false;
+            }
           screen.applyBackgroundColor(Terminal.Color.WHITE);
+          screen.applyForegroundColor(Terminal.Color.BLACK);
+          putString(0, 0, screen, "To make a move, type in the numbers you will use in your hand in order");
+          putString(0,1,screen, "To move on, press enter");
+          screen.applyBackgroundColor(Terminal.Color.DEFAULT);
+        }
+        screen.clearScreen();
         }
       }
-}
 }
 }
