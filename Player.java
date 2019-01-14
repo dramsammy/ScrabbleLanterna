@@ -28,6 +28,7 @@ public void removeFromPile(int index){
 
   //Constructor for Player(needs to be created)
   public Player(){
+    drawNewHand();
   }
 
   //Prints out the players name then their score on a new line
@@ -156,5 +157,12 @@ public void removeFromPile(int index){
   public void setName(){
     System.out.println("Enter your player's name:    ");
     //name = input.nextLine;
+  }
+  public String printHand(){
+    String hand = "";
+    for (int i = 0; i < 7; i++){
+      hand += theHand[i];
+    }
+    return hand;
   }
   }

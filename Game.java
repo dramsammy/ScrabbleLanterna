@@ -20,6 +20,7 @@ public class Game {
   private Board gameBoard;
   private TextBox theMove = new TextBox("Move", 5);
   private ArrayList<Character> pile= new ArrayList<Character>();
+  private Player human;
   // private ArrayList<char> hand1=new ArrayList<int>();
   // private ArrayList<char> hand2=new ArrayList<int>();
   // private ArrayList<char> hand3=new ArrayList<int>();
@@ -100,7 +101,6 @@ public class Game {
   public void newgame(){
     //reinitialize game?
   }
-
   public String key(){
     String key ="        KEY         \n";
     key += "A = 1, B = 3, C = 3 \n";
@@ -195,11 +195,13 @@ public static void putString(int r, int c, Terminal t, String s){
     boolean display = true;
     TerminalSize size = screen.getTerminalSize();
     screen.setCursorVisible(false);
+    boolean move = true;
     while(display){
       Key key = screen.readInput();
-      screen.applyBackgroundColor(Terminal.Color.WHITE);
+      screen.applyBackgroundColor(Terminal.Color.BLACK);
       putString(53, 0, screen, "SCRABBLE 2.0" );
       putString(45, 2, screen, newGame.gameBoard.toString(), newGame.gameBoard);
+      putString(45, 20, screen,"Player Hand:" + human.printHand());
       putString(0, 0, screen, newGame.displayNames());
       putString(0, 10, screen, newGame.key());
       putString(0, 20, screen, "To make a move PRESS the key: s");
@@ -211,16 +213,18 @@ public static void putString(int r, int c, Terminal t, String s){
           display = false;
           System.exit(1);
         }
-      boolean move = true;
       if (key != null && key.getCharacter() == 's'){
+        move = true;
         screen.clearScreen();
         while(move){
-          if (key != null && (key.getCharacter() == 'e')){
+          Key key1 = screen.readInput();
+          if (key1 != null && (key1.getKind() == Key.Kind.Enter)){
               move = false;
             }
-          putString(0, 20, screen, "To make a move, type in the numbers you will use in your hand in order");
-          screen.applyForegroundColor(Terminal.Color.BLACK);
+          putString(0, 0, screen, "To make a move, type in the numbers you will use in your hand in order");
+          putString(0,1,screen, "To move on, press enter");
         }
+        screen.clearScreen();
         }
       }
 }
