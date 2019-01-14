@@ -165,8 +165,8 @@ public static void putString(int r, int c, Terminal t, String s){
     while(display){
       Key key = screen.readInput();
       screen.applyBackgroundColor(Terminal.Color.WHITE);
-      putString(45, 0, screen, "SCRABBLE 2.0" );
-      putString(36, 2, screen, newGame.gameBoard.toString(), newGame.gameBoard);
+      putString(52, 0, screen, "SCRABBLE 2.0" );
+      putString(43, 2, screen, newGame.gameBoard.toString(), newGame.gameBoard);
       putString(36, 20, screen,"Player Hand:" + newGame.player1.handToString());
       putString(36, 21, screen,"Hand Position:1 ,  2 ,  3 ,  4 ,  5 ,  6 ,  7 ");
       putString(0, 0, screen, newGame.displayNames());
