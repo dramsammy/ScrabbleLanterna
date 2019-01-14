@@ -34,6 +34,7 @@ public class Player{
     str+="\n";
     str+= Score;
     //if highest score clause
+    return str;
   }
 
   //creates a new random hand
@@ -83,11 +84,12 @@ public class Player{
       toBePlayed = new Pieces[played.length];
       toBePlayed[i].setLetter(randomLetters[selection[i]]);
     }
+    return toBePlayed;
   }
 
   //Returns a value for a given character based on the real scrabble values
   public int setScoreforLetter(char L){
-    int Score;
+    int Score = 0;
     if (L=='A' || L=='E' || L=='I' || L=='O' || L=='U' || L=='L' || L=='N' || L=='S' ||L=='T' ||L=='R'){
       Score=1;
     }
@@ -139,6 +141,7 @@ public class Player{
       }
     }
     Score = Score * temp;
+    return Score;
   }
 
   //If a word is valid, it gets played on the board
