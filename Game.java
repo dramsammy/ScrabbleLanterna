@@ -14,10 +14,11 @@ import com.googlecode.lanterna.input.InputProvider;
 import com.googlecode.lanterna.input.Key;
 import com.googlecode.lanterna.input.KeyMappingProfile;
 import com.googlecode.lanterna.screen.Screen;
-
+import com.googlecode.lanterna.gui.component.TextBox;
 public class Game {
   private int Players;
   private Board gameBoard;
+  private TextBox theMove = new TextBox("Move", 5);
   private ArrayList<Character> pile= new ArrayList<Character>();
   // private ArrayList<char> hand1=new ArrayList<int>();
   // private ArrayList<char> hand2=new ArrayList<int>();
