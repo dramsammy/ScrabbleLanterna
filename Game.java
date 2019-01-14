@@ -136,7 +136,7 @@ public static void putString(int r, int c, Terminal t, String s){
 
   public static void main(String[] args) {
     Game newGame = new Game(2);//replace with args
-    Player human = new Player();
+    Player human = new Player(newGame.gameBoard);
     Terminal screen = TerminalFacade.createTextTerminal();
     screen.enterPrivateMode();
     boolean display = true;

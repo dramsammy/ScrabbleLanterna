@@ -16,8 +16,9 @@ public class Player{
 
 
   //Constructor for Player(needs to be created)
-  public Player(){
-    drawNewHand();
+  public Player(Board b){
+    drawNewHand(b);
+    Game = b;
 
   }
   public String handToString(){
@@ -39,8 +40,9 @@ public class Player{
 
   //creates a new random hand
   //NEEDS TO BE CHANGE TO ACCOUNT FOR PILE
-  public void drawNewHand(){
+  public void drawNewHand(Board b){
     Pieces temp = new Pieces();
+    Game = b;
     for (int i = 0; i < 7; i++){
       int len=Game.getpilelength();//add in this command
       int n = hand.nextInt(len-1);
@@ -75,7 +77,7 @@ public class Player{
 
   //same as drawnewhand but is used as a choice for a turn
   public void replaceHand(){
-    drawNewHand();
+    drawNewHand(Game);
     }
 
   //Function which takes in an input of the values selected of each piece and sets an array to be played
