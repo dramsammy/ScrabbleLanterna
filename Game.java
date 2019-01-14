@@ -101,7 +101,34 @@ public class Game {
   }
 
   public String key(){
-    return "";
+    String key = "A = 1\n";
+    key += "A = 1\n";
+    key += "B = 3\n";
+    key += "C = 3\n";
+    key += "D = 2\n";
+    key += "E = 1\n";
+    key += "F = 4\n";
+    key += "G = 2\n";
+    key += "H = 4\n";
+    key += "I = 1\n";
+    key += "J = 8\n";
+    key += "K = 5\n";
+    key += "L = 1\n";
+    key += "M = 3\n";
+    key += "N = 1\n";
+    key += "O = 1\n";
+    key += "P = 3\n";
+    key += "Q = 10\n";
+    key += "R = 1\n";
+    key += "S = 1\n";
+    key += "T = 1\n";
+    key += "U = 1\n";
+    key += "V = 4\n";
+    key += "W = 4\n";
+    key += "X = 8\n";
+    key += "Y = 4\n";
+    key += "Z = 10";
+    return key;
   }
 
 
