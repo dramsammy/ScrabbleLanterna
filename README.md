@@ -17,3 +17,5 @@ Logs!!
 1/9/18 - Today was a much less busy day. Oliver finished toString of the board and tested it. Overall we are fairly set for the basic parts of the game and now need to work with lanterna to create a physical image. Worked on adding imports for lanterna and testing basic terminal guis. Realized it would be best if we use screen. Fixed coords with some of the methods.
 
 1/10/18 - In class, Oliver worked on the player functions of drawing pieces and Devin worked on figuring out how to use Laterna. Oliver took the night off to study for the APCS test tmr.
+
+1/11-13/18 - Over the weekend, we did a lot of work to prepare for the demo on monday. On saturday,devin created the main for game with lanterna while Oliver polished off back end functions on friday. On sunday, Oliver worked on getting the board to print out properly with colors in one coordinate. He ran in to challenges with the color and new line. Ultimetely he had to split on \n and an inserted "exit key" to get it to the read the color correctly. After the board was up, both oliver and devin tried to add keys and fake score boards as well as the beggining of the turn mechanics to show for the demo.
