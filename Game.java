@@ -19,6 +19,10 @@ public class Game {
   private int Players;
   private Board gameBoard;
   private TextBox theMove = new TextBox("Move", 5);
+  private Player player1;
+  private Player player2;
+  private Player player3;
+  private Player player4;
   // private ArrayList<char> hand1=new ArrayList<int>();
   // private ArrayList<char> hand2=new ArrayList<int>();
   // private ArrayList<char> hand3=new ArrayList<int>();
@@ -30,7 +34,22 @@ public class Game {
   public Game(int play){
     gameBoard = new Board();
     Players = play;
+    if (Players<=4 && Players >=1){
+      if(Players>=1){
+        player1 = new Player(gameBoard, "player1");
+    }
+      if(Players>=2){
+        Player player2=new Player(gameBoard, "player2");
+    }
+      if(Players>=3){
+        Player player3=new Player(gameBoard, "player3");
+    }
+      if(Players>=4){
+        Player player4=new Player(gameBoard, "player4");
+    }
   }
+}
+
 
   //makes a name for each player
   public String returnString(int i){
@@ -136,7 +155,7 @@ public static void putString(int r, int c, Terminal t, String s){
 
   public static void main(String[] args) {
     Game newGame = new Game(2);//replace with args
-    Player human = new Player(newGame.gameBoard);
+  //Player human = new Player(newGame.gameBoard);
     Terminal screen = TerminalFacade.createTextTerminal();
     screen.enterPrivateMode();
     boolean display = true;
@@ -146,9 +165,9 @@ public static void putString(int r, int c, Terminal t, String s){
     while(display){
       Key key = screen.readInput();
       screen.applyBackgroundColor(Terminal.Color.WHITE);
-      putString(54, 0, screen, "SCRABBLE 2.0" );
-      putString(45, 2, screen, newGame.gameBoard.toString(), newGame.gameBoard);
-      putString(45, 20, screen,"Player Hand:" + human.handToString());
+      putString(45, 0, screen, "SCRABBLE 2.0" );
+      putString(36, 2, screen, newGame.gameBoard.toString(), newGame.gameBoard);
+      putString(36, 20, screen,"Player Hand:" + newGame.player1.handToString());
       putString(0, 0, screen, newGame.displayNames());
       putString(0, 5, screen, "___________________________");
       putString(0, 7, screen, newGame.key());

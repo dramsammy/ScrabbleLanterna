@@ -1,6 +1,6 @@
 import java.util.*;
 public class Player{
-  private double Score;
+  private int Score;
   private int Size;
   private Pieces[] theHand = new Pieces[7];
   private Pieces[] toBePlayed;
@@ -16,15 +16,21 @@ public class Player{
 
 
   //Constructor for Player(needs to be created)
-  public Player(Board b){
+  public Player(Board b, String n){
     drawNewHand(b);
     Game = b;
+    Score=0;
+    name=n;
+
 
   }
   public String handToString(){
     String str = "";
     for (int i = 0; i < theHand.length; i++){
-      str+= theHand[i].toString();
+      str+= theHand[i].handpiecetoString();
+      if(i<theHand.length-1){
+        str+=",";
+      }
     }
     return str;
   }

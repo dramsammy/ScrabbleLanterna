@@ -99,6 +99,11 @@ public class Pieces{
   public void gotplayed(){
     Played=true;
   }
+  public String handpiecetoString(){
+    String c="";
+    c+=Letter + "(" + Score + ")";
+    return c;
+  }
   public String toString(){
     //String currscore="";
     String c="";
