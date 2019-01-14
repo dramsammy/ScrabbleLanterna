@@ -211,13 +211,17 @@ public static void putString(int r, int c, Terminal t, String s){
           display = false;
           System.exit(1);
         }
+      boolean move = true;
       if (key != null && key.getCharacter() == 's'){
-        for (int i = 0; i < 100; i++){
-          screen.clearScreen();
-          putString(i,i,screen, " ");
-          screen.applyBackgroundColor(Terminal.Color.WHITE);
+        screen.clearScreen();
+        while(move){
+          if (key != null && (key.getCharacter() == 'e')){
+              move = false;
+            }
+          putString(0, 20, screen, "To make a move, type in the numbers you will use in your hand in order");
+          screen.applyForegroundColor(Terminal.Color.BLACK);
+        }
         }
       }
-}
 }
 }
