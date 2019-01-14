@@ -42,7 +42,7 @@ public class Game {
     //reinitialize game?
   }
   public String key(){
-    String key ="        KEY         \n";
+    String key ="PIECE TO POINTS KEY\n";
     key += "A = 1, B = 3, C = 3 \n";
     key += "D = 2, E = 1, F = 4 \n";
     key += "G = 2, H = 4, I = 1 \n";
@@ -55,14 +55,13 @@ public class Game {
     return key;
   }
 
-
   /*public void Start(){
     Players.drawNewHand(); // need to fix for multiple players
 }*/
 
   //creates a full scoreboard(temporarily just displays random stuff)
    public String displayNames(){
-    String str = "TEMPORARY PLACEHOLDER FOR REAL PLAYERS \n \nPoints!!! \n";
+    String str = "TEMPORARY PLACEHOLDER FOR REAL PLAYERS \n\nPoints!!!\n";
     for(int i=0; i< Players;i++){//may run into same name issue as constructor
       str+= "Player" + (i+1) + ": ";//TEMPORARY
       str+= (i+ 46);
@@ -125,6 +124,13 @@ public static void putString(int r, int c, Terminal t, String s){
       t.putCharacter(s.charAt(i));
     }
   }
+  public String colorkey(){
+    String colorkey = "COLOR TO MULTIPLIER KEY\n";
+    colorkey+="Magenta: Double Word \nYellow: Triple Word\n";
+    colorkey+="Cyan: Double Letter \nDeep Blue: Tripple Letter";
+    return colorkey;
+  }
+
 
 
 
@@ -139,14 +145,16 @@ public static void putString(int r, int c, Terminal t, String s){
     boolean move = true;
     while(display){
       Key key = screen.readInput();
-      screen.applyBackgroundColor(Terminal.Color.BLACK);
-      putString(53, 0, screen, "SCRABBLE 2.0" );
+      screen.applyBackgroundColor(Terminal.Color.WHITE);
+      putString(54, 0, screen, "SCRABBLE 2.0" );
       putString(45, 2, screen, newGame.gameBoard.toString(), newGame.gameBoard);
       putString(45, 20, screen,"Player Hand:");
       putString(0, 0, screen, newGame.displayNames());
-      putString(0, 10, screen, newGame.key());
-      putString(0, 20, screen, "To make a move PRESS the key: s");
-      putString(0, 21, screen, "To exit PRESS the key: e");
+      putString(0, 5, screen, "___________________________");
+      putString(0, 7, screen, newGame.key());
+      putString(0, 19, screen, newGame.colorkey());
+      putString(0, 28, screen, "To make a move PRESS the key: s");
+      putString(0, 29, screen, "To exit PRESS the key: e");
       screen.applyForegroundColor(Terminal.Color.BLACK);
       screen.moveCursor(0,0);
       if (key != null && (key.getCharacter() == 'e')){
