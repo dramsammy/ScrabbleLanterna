@@ -101,16 +101,16 @@ public class Game {
   }
 
   public String key(){
-    String key ="        KEY        \n";
-    key += "A = 1, B = 3, C = 3\n";
-    key += "D = 2, E = 1, F = 4\n";
-    key += "G = 2, H = 4, I = 1\n";
-    key += "J = 8, K = 5, L = 1\n";
-    key += "M = 3, N = 1, O = 1\n";
+    String key ="        KEY         \n";
+    key += "A = 1, B = 3, C = 3 \n";
+    key += "D = 2, E = 1, F = 4 \n";
+    key += "G = 2, H = 4, I = 1 \n";
+    key += "J = 8, K = 5, L = 1 \n";
+    key += "M = 3, N = 1, O = 1 \n";
     key += "P = 3, Q = 10, R = 1\n";
-    key += "S = 1, T = 1, U = 1\n";
-    key += "V = 4, W = 4, X = 8\n";
-    key += "Y = 4, Z = 10";
+    key += "S = 1, T = 1, U = 1 \n";
+    key += "V = 4, W = 4, X = 8 \n";
+    key += "   Y = 4, Z = 10    ";
     return key;
   }
 
@@ -199,8 +199,8 @@ public static void putString(int r, int c, Terminal t, String s){
       screen.applyBackgroundColor(Terminal.Color.WHITE);
       putString(53, 0, screen, "SCRABBLE 2.0" );
       putString(45, 2, screen, newGame.gameBoard.toString(), newGame.gameBoard);
-      //putString(0, 0, screen, newGame.displayNames());
-      putString(0, 0, screen, newGame.key());
+      putString(0, 0, screen, newGame.displayNames());
+      putString(0, 10, screen, newGame.key());
 			screen.applyForegroundColor(Terminal.Color.BLACK);
       screen.moveCursor(0,0);
       if (key != null){
