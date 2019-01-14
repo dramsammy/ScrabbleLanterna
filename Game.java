@@ -100,6 +100,9 @@ public class Game {
     //reinitialize game?
   }
 
+  public String key(){
+    return "";
+  }
 
 
   /*public void Start(){
