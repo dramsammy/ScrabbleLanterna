@@ -168,6 +168,7 @@ public static void putString(int r, int c, Terminal t, String s){
       putString(45, 0, screen, "SCRABBLE 2.0" );
       putString(36, 2, screen, newGame.gameBoard.toString(), newGame.gameBoard);
       putString(36, 20, screen,"Player Hand:" + newGame.player1.handToString());
+      putString(33, 22, screen,"Hand Position: 1 , 2 , 3 , 4 , 5");
       putString(0, 0, screen, newGame.displayNames());
       putString(0, 5, screen, "___________________________");
       putString(0, 7, screen, newGame.key());
