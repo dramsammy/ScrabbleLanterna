@@ -1,9 +1,75 @@
+import java.util.ArrayList;
 public class Board{
   private Pieces[][] board= new Pieces[15][15];
-
+  private ArrayList<Character> pile= new ArrayList<Character>();
   //Constructor of Board. Prompts set up board method
   public Board(){
     setupboard();
+    ArrayList<Character> p =new ArrayList<Character>();
+    p.add('X');
+    p.add('Z');
+    p.add('Q');
+    p.add('K');
+    p.add('J');
+    for(int i=0;i<2;i++){
+      p.add('Y');
+      p.add('W');
+      p.add('V');
+      p.add('P');
+      p.add('M');
+      p.add('H');
+      p.add('F');
+      p.add('C');
+      p.add('B');
+    }
+    for(int i=0;i<3;i++){
+      p.add('G');
+    }
+    for(int i=0;i<4;i++){
+      p.add('U');
+      p.add('S');
+      p.add('L');
+      p.add('D');
+    }
+    for(int i=0;i<2;i++){
+      p.add('Y');
+      p.add('W');
+      p.add('V');
+      p.add('P');
+      p.add('M');
+      p.add('H');
+      p.add('F');
+      p.add('C');
+      p.add('B');
+    }
+    for(int i=0;i<6;i++){
+      p.add('T');
+      p.add('R');
+      p.add('N');
+    }
+    for(int i=0;i<8;i++){
+      p.add('O');
+    }
+    for(int i=0;i<9;i++){
+      p.add('I');
+      p.add('A');
+    }
+    for(int i=0;i<12;i++){
+      p.add('E');
+    }
+    //BLANK TILES
+    pile=p;
+
+  
+  }
+  public int getpilelength(){
+    return pile.size();
+  }
+  public char getpile(int index){
+    return pile.get(index);
+  }
+  public void removeFromPile(int index){
+    pile.remove(index);
   }
 
   //imputs coordinates and a char and changes the board to display that char

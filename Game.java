@@ -19,8 +19,6 @@ public class Game {
   private int Players;
   private Board gameBoard;
   private TextBox theMove = new TextBox("Move", 5);
-  private ArrayList<Character> pile= new ArrayList<Character>();
-  private Player human;
   // private ArrayList<char> hand1=new ArrayList<int>();
   // private ArrayList<char> hand2=new ArrayList<int>();
   // private ArrayList<char> hand3=new ArrayList<int>();
@@ -32,64 +30,6 @@ public class Game {
   public Game(int play){
     gameBoard = new Board();
     Players = play;
-    ArrayList<Character> p =new ArrayList<Character>();
-    p.add('X');
-    p.add('Z');
-    p.add('Q');
-    p.add('K');
-    p.add('J');
-    for(int i=0;i<2;i++){
-      p.add('Y');
-      p.add('W');
-      p.add('V');
-      p.add('P');
-      p.add('M');
-      p.add('H');
-      p.add('F');
-      p.add('C');
-      p.add('B');
-    }
-    for(int i=0;i<3;i++){
-      p.add('G');
-    }
-    for(int i=0;i<4;i++){
-      p.add('U');
-      p.add('S');
-      p.add('L');
-      p.add('D');
-    }
-    for(int i=0;i<2;i++){
-      p.add('Y');
-      p.add('W');
-      p.add('V');
-      p.add('P');
-      p.add('M');
-      p.add('H');
-      p.add('F');
-      p.add('C');
-      p.add('B');
-    }
-    for(int i=0;i<6;i++){
-      p.add('T');
-      p.add('R');
-      p.add('N');
-    }
-    for(int i=0;i<8;i++){
-      p.add('O');
-    }
-    for(int i=0;i<9;i++){
-      p.add('I');
-      p.add('A');
-    }
-    for(int i=0;i<12;i++){
-      p.add('E');
-    }
-    //BLANK TILES
-    pile=p;
-    for (int i = 0; i < Players; i++){
-      /*Player i = new Player();//ISSUE WITH NAMING IT
-      i.drawNewHand();*/
-    }
   }
 
   //makes a name for each player
@@ -190,6 +130,7 @@ public static void putString(int r, int c, Terminal t, String s){
 
   public static void main(String[] args) {
     Game newGame = new Game(2);//replace with args
+    Player human = new Player();
     Terminal screen = TerminalFacade.createTextTerminal();
     screen.enterPrivateMode();
     boolean display = true;

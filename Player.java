@@ -14,17 +14,6 @@ public class Player{
   private Random hand = new Random();
   private String name;
 
-/* PUT INTO Game
-public int getpilelength(){
-  return pile.size();
-}
-public char getpile(int index){
-  return pile.get(index);
-}
-public void removeFromPile(int index){
-  pile.remove(index);
-}
-*/
 
   //Constructor for Player(needs to be created)
   public Player(){
@@ -37,16 +26,19 @@ public void removeFromPile(int index){
     str+=name;
     str+="\n";
     str+= Score;
+    return str;
     //if highest score clause
   }
 
   //creates a new random hand
   //NEEDS TO BE CHANGE TO ACCOUNT FOR PILE
   public void drawNewHand(){
+    Pieces temp = new Pieces();
     for (int i = 0; i < 7; i++){
       int len=Game.getpilelength();//add in this command
       int n = hand.nextInt(len-1);
-      theHand[i] = Game.getpile(n);
+      temp.setLetter(Game.getpile(n));
+      theHand[i] = temp;
       Game.removeFromPile(n);
     }
     //return theHand;
@@ -55,9 +47,11 @@ public void removeFromPile(int index){
   //creates a new random piece and adds it to your hand
   //NEEDS TO BE CHANGE TO ACCOUNT FOR PILE
   public void drawNewPiece(int position){
+    Pieces temp = new Pieces();
     int len=Game.getpilelength();//add in this command
     int n = hand.nextInt(len-1);
-    theHand[position] = Game.getpile(n);
+    temp.setLetter(Game.getpile(n));
+    theHand[position] = temp;
     Game.removeFromPile(n);
   }
 
@@ -78,16 +72,16 @@ public void removeFromPile(int index){
     }
 
   //Function which takes in an input of the values selected of each piece and sets an array to be played
-  public Pieces[] startTurn(){
-    for (int i = 0; i < played.length; i ++){
-      toBePlayed = new Pieces[played.length];
-      toBePlayed[i].setLetter(randomLetters[selection[i]]);
-    }
-  }
+  // public void Pieces[] startTurn(){
+  //   for (int i = 0; i < played.length; i ++){
+  //     toBePlayed = new Pieces[played.length];
+  //     toBePlayed[i].setLetter(randomLetters[selection[i]]);
+  //   }
+  // }
 
   //Returns a value for a given character based on the real scrabble values
   public int setScoreforLetter(char L){
-    int Score;
+    int Score = 0;
     if (L=='A' || L=='E' || L=='I' || L=='O' || L=='U' || L=='L' || L=='N' || L=='S' ||L=='T' ||L=='R'){
       Score=1;
     }
@@ -130,22 +124,23 @@ public void removeFromPile(int index){
   }
 
   //uses the multiplier values and piece values to create a score gained on a run and adds it to your old score
-  public double updateScore(){
-    int temp = 1;
-    for (int i = 0; i < toBePlayed.length; i++){
-      Score += toBePlayed[i].getValue() * Game.getPieces(x[i],y[i]).getLetterMultiplier();
-      if (Game.getPieces(x[i],y[i]).getWordMultiplier() > temp){
-        temp = Game.getPieces(x[i],y[i]).getWordMultiplier();
-      }
-    }
-    Score = Score * temp;
-  }
+  // public double updateScore(){
+  //   int temp = 1;
+  //   for (int i = 0; i < toBePlayed.length; i++){
+  //     Score += toBePlayed[i].getValue() * Game.getPieces(x[i],y[i]).getLetterMultiplier();
+  //     if (Game.getPieces(x[i],y[i]).getWordMultiplier() > temp){
+  //       temp = Game.getPieces(x[i],y[i]).getWordMultiplier();
+  //     }
+  //   }
+  //   Score = Score * temp;
+  //   return score;
+  // }
 
   //If a word is valid, it gets played on the board
   //needs to check that there are overlapping letters, in scrabble it cant be floating
   public void playWord(){
     if (isValidWord(toBePlayed)){
-      updateScore();
+      //updateScore();
       replaceHand();
       for (int i = 0; i < x.length; i++){//needs to account for different directions
           Game.modifyBoard(x[i], y[i], toBePlayed[i].getPieceChar());
