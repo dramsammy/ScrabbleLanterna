@@ -39,10 +39,12 @@ public class Player{
   //creates a new random hand
   //NEEDS TO BE CHANGE TO ACCOUNT FOR PILE
   public void drawNewHand(){
+    Pieces temp = new Pieces();
     for (int i = 0; i < 7; i++){
       int len=Game.getpilelength();//add in this command
       int n = hand.nextInt(len-1);
-      theHand[i] = Game.getpile(n);
+      temp.setLetter(Game.getpile(n));
+      theHand[i] = temp;
       Game.removeFromPile(n);
     }
     //return theHand;
@@ -51,9 +53,11 @@ public class Player{
   //creates a new random piece and adds it to your hand
   //NEEDS TO BE CHANGE TO ACCOUNT FOR PILE
   public void drawNewPiece(int position){
+    Pieces temp = new Pieces();
     int len=Game.getpilelength();//add in this command
     int n = hand.nextInt(len-1);
-    theHand[position] = Game.getpile(n);
+    temp.setLetter(Game.getpile(n));
+    theHand[position] = temp;
     Game.removeFromPile(n);
   }
 
