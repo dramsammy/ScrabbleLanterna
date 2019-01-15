@@ -138,6 +138,9 @@ public class Player{
     }
     return false;
   }
+  public String getScore(){
+    return "" + Score;
+  }
 
   //uses the multiplier values and piece values to create a score gained on a run and adds it to your old score
   public double updateScore(){

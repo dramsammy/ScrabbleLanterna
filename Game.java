@@ -34,18 +34,18 @@ public class Game {
   public Game(int play){
     gameBoard = new Board();
     Players = play;
-    if (Players<=4 && Players >=1){
-      if(Players>=1){
+    if (play<=4 && play >=1){
+      if(play>=1){
         player1 = new Player(gameBoard, "player1");
     }
-      if(Players>=2){
-        Player player2=new Player(gameBoard, "player2");
+      if(play>=2){
+        player2=new Player(gameBoard, "player2");
     }
-      if(Players>=3){
-        Player player3=new Player(gameBoard, "player3");
+      if(play>=3){
+        player3=new Player(gameBoard, "player3");
     }
-      if(Players>=4){
-        Player player4=new Player(gameBoard, "player4");
+      if(play>=4){
+        player4=new Player(gameBoard, "player4");
     }
   }
 }
@@ -81,12 +81,12 @@ public class Game {
   //creates a full scoreboard(temporarily just displays random stuff)
    public String displayNames(){
     String str = "TEMPORARY PLACEHOLDER FOR REAL PLAYERS \n\nPoints!!!\n";
-    for(int i=0; i< Players;i++){//may run into same name issue as constructor
-      str+= "Player" + (i+1) + ": ";//TEMPORARY
-      str+= (i+ 46);
+    //if(Players==2){
+      str+=player1.getScore();
       str+="\n";
-      //str+= (returnString(i)).    FIGURE OUT HOW TO REFERENCE PLAYER TO STRING
-    }
+      str+=player2.getScore();
+
+    //}
     return str;
   }
   public static void putString(int r, int c, Terminal t, String s, Board g){
