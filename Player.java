@@ -39,7 +39,8 @@ public class Player{
     String str = "";
     str+=name;
     str+="\n";
-    str+= Score;
+    str+= "Score: " + Integer.toString(Score);
+    str+="\n";
     //if highest score clause
     return str;
   }
