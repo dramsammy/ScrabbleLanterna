@@ -23,6 +23,7 @@ public class Game {
   private Player player2;
   private Player player3;
   private Player player4;
+  private String playerData = "";
   // private ArrayList<char> hand1=new ArrayList<int>();
   // private ArrayList<char> hand2=new ArrayList<int>();
   // private ArrayList<char> hand3=new ArrayList<int>();
@@ -37,15 +38,19 @@ public class Game {
     if (play<=4 && play >=1){
       if(play>=1){
         player1 = new Player(gameBoard, "player1");
+        playerData += player1.toString();
     }
       if(play>=2){
         player2=new Player(gameBoard, "player2");
+        playerData += player2.toString();
     }
       if(play>=3){
         player3=new Player(gameBoard, "player3");
+        playerData += player3.toString();
     }
       if(play>=4){
         player4=new Player(gameBoard, "player4");
+        playerData += player4.toString();
     }
   }
 }
@@ -79,16 +84,12 @@ public class Game {
 }*/
 
   //creates a full scoreboard(temporarily just displays random stuff)
-   public String displayNames(){
-    String str = "TEMPORARY PLACEHOLDER FOR REAL PLAYERS \n\nPoints!!!\n";
-    //if(Players==2){
-      str+=player1.getScore();
-      str+="\n";
-      str+=player2.getScore();
-
-    //}
-    return str;
-  }
+  //  public String displayNames(){
+  //    String str =
+  //
+  //   //}
+  //   return str;
+  // }
   public static void putString(int r, int c, Terminal t, String s, Board g){
     List<String> eachline = Arrays.asList(s.split("\n"));
     int curr=c;
@@ -169,7 +170,7 @@ public static void putString(int r, int c, Terminal t, String s){
       putString(43, 2, screen, newGame.gameBoard.toString(), newGame.gameBoard);
       putString(36, 20, screen,"Player Hand:" + newGame.player1.handToString());
       putString(36, 21, screen,"Hand Position:1 ,  2 ,  3 ,  4 ,  5 ,  6 ,  7 ");
-      putString(0, 0, screen, newGame.displayNames());
+      putString(0, 0, screen, newGame.playerData);
       putString(0, 5, screen, "___________________________");
       putString(0, 7, screen, newGame.key());
       putString(0, 18, screen, newGame.colorkey());
