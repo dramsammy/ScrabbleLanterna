@@ -146,10 +146,10 @@ public static void putCoordinatedBoard(Terminal t, Game g){
     else{
       p = i + "";
     }
-    putString(41, (1+i), t, p);
+    putString(41, (3+i), t, p);
   }
-  putString(43, 2, t, g.gameBoard.toString(), g.gameBoard);
-  putString(43, 1, t, "ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+  putString(43, 4, t, g.gameBoard.toString(), g.gameBoard);
+  putString(41, 3, t, "   A B C D E F G H I J K L M N O ");
 
 }
 
