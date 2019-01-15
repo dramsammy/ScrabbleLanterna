@@ -197,12 +197,14 @@ public static void putString(int r, int c, Terminal t, String s){
           screen.applyBackgroundColor(Terminal.Color.WHITE);
           screen.applyForegroundColor(Terminal.Color.BLACK);
           putString(0, 0, screen, "To make a move, type in the numbers you will use in your hand in order");
-          if (key1 != null && (Character.toString(key1.getCharacter()).equals("0") || Character.toString(key1.getCharacter()).equals("1") || Character.toString(key1.getCharacter()).equals("2") || Character.toString(key1.getCharacter()).equals("3") || Character.toString(key1.getCharacter()).equals("4") || Character.toString(key1.getCharacter()).equals("5") || Character.toString(key1.getCharacter()).equals("6") || Character.toString(key1.getCharacter()).equals("7"))) {
+          if (key1 != null && (Character.toString(key1.getCharacter()).equals("1") || Character.toString(key1.getCharacter()).equals("2") || Character.toString(key1.getCharacter()).equals("3") || Character.toString(key1.getCharacter()).equals("4") || Character.toString(key1.getCharacter()).equals("5") || Character.toString(key1.getCharacter()).equals("6") || Character.toString(key1.getCharacter()).equals("7"))) {
             putString(0, 1, screen, Character.toString(key1.getCharacter()));
             piece += Character.toString(key1.getCharacter());
           }
           putString(0, 2, screen, piece);
-          putString(0,3,screen, "To go back or start over, press enter");
+          putString(0, 3,screen, "To go back or start over, press enter");
+          putString(0, 4, screen,"Player Hand:" + newGame.player1.handToString());
+          putString(0, 5, screen,"Hand Position:1 ,  2 ,  3 ,  4 ,  5 ,  6 ,  7 ");
           screen.applyBackgroundColor(Terminal.Color.DEFAULT);
         }
         screen.clearScreen();
