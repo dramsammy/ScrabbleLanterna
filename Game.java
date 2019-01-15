@@ -163,6 +163,7 @@ public static void putString(int r, int c, Terminal t, String s){
     TerminalSize size = screen.getTerminalSize();
     screen.setCursorVisible(false);
     boolean move = true;
+    String piece = "";
     while(display){
       Key key = screen.readInput();
       screen.applyBackgroundColor(Terminal.Color.WHITE);
@@ -191,11 +192,17 @@ public static void putString(int r, int c, Terminal t, String s){
           Key key1 = screen.readInput();
           if (key1 != null && (key1.getKind() == Key.Kind.Enter)){
               move = false;
+              piece = "";
             }
           screen.applyBackgroundColor(Terminal.Color.WHITE);
           screen.applyForegroundColor(Terminal.Color.BLACK);
           putString(0, 0, screen, "To make a move, type in the numbers you will use in your hand in order");
-          putString(0,1,screen, "To move on, press enter");
+          if (key1 != null && (Character.toString(key1.getCharacter()).equals("0") || Character.toString(key1.getCharacter()).equals("1") || Character.toString(key1.getCharacter()).equals("2") || Character.toString(key1.getCharacter()).equals("3") || Character.toString(key1.getCharacter()).equals("4") || Character.toString(key1.getCharacter()).equals("5") || Character.toString(key1.getCharacter()).equals("6") || Character.toString(key1.getCharacter()).equals("7"))) {
+            putString(0, 1, screen, Character.toString(key1.getCharacter()));
+            piece += Character.toString(key1.getCharacter());
+          }
+          putString(0, 2, screen, piece);
+          putString(0,3,screen, "To go back or start over, press enter");
           screen.applyBackgroundColor(Terminal.Color.DEFAULT);
         }
         screen.clearScreen();
