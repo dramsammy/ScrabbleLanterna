@@ -163,6 +163,7 @@ public static void putString(int r, int c, Terminal t, String s){
     TerminalSize size = screen.getTerminalSize();
     screen.setCursorVisible(false);
     boolean move = true;
+    boolean begin = true;
     String piece = "";
     while(display){
       Key key = screen.readInput();
@@ -205,10 +206,27 @@ public static void putString(int r, int c, Terminal t, String s){
           putString(0, 3,screen, "To go back or start over, press enter");
           putString(0, 4, screen,"Player Hand:" + newGame.player1.handToString());
           putString(0, 5, screen,"Hand Position:1 ,  2 ,  3 ,  4 ,  5 ,  6 ,  7 ");
+          if (key1 != null && key1.getCharacter() == 's'){
+            begin = true;
+            screen.applyBackgroundColor(Terminal.Color.DEFAULT);
+            screen.clearScreen();
+            while(begin){
+              Key key2 = screen.readInput();
+              if (key2 != null && (key2.getKind() == Key.Kind.Enter)){
+                  begin = false;
+                }
+              screen.applyBackgroundColor(Terminal.Color.WHITE);
+              screen.applyForegroundColor(Terminal.Color.BLACK);
+              putString(0, 0, screen, "To finish your move, type in the coordinates of each piece you will use on the board");
+              putString(0, 3,screen, "To go back, press enter");
+              screen.applyBackgroundColor(Terminal.Color.DEFAULT);
+            }
           screen.applyBackgroundColor(Terminal.Color.DEFAULT);
+          screen.clearScreen();
         }
         screen.clearScreen();
         }
       }
+}
 }
 }
