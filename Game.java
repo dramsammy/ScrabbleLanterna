@@ -137,6 +137,21 @@ public static void putchar(int r, int c, Terminal t, char s, Board g, String C){
   }
   t.putCharacter(s);
 }
+public static void putCoordinatedBoard(Terminal t, Game g){
+  String p ="";
+  for(int i=1; i<16;i++){
+    if(i<10){
+      p = ""+ 0 + i;
+    }
+    else{
+      p = i + "";
+    }
+    putString(41, (1+i), t, p);
+  }
+  putString(43, 2, t, g.gameBoard.toString(), g.gameBoard);
+  putString(43, 1, t, "ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+
+}
 
 public static void putString(int r, int c, Terminal t, String s){
     t.moveCursor(r,c);
@@ -220,6 +235,7 @@ public static void putString(int r, int c, Terminal t, String s){
               screen.applyForegroundColor(Terminal.Color.BLACK);
               putString(0, 0, screen, "To finish your move, type in the coordinates of each piece you will use on the board and press the enter key /");
               putString(0, 3,screen, "To go back, press enter");
+              putCoordinatedBoard(screen, newGame);
               screen.applyBackgroundColor(Terminal.Color.DEFAULT);
             }
           screen.applyBackgroundColor(Terminal.Color.DEFAULT);
