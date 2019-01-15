@@ -1,8 +1,16 @@
 public class Driver{
 
   public static void main(String[] args){
-    Board test = new Board();
-    Player test1 = new Player(test, "hello");
+    Player player1;
+    Player player2;
+    Player player3;
+    Player player4;
+    Game test = new Game(3);
+    Player[] list = {player1, player2, player3, player4};
+    String str ="";
+    for (int i = 0; i < 3; i++){
+      str+= test.gameBoard.toString();
+    }
     // Pieces old=test.getPieces(5,5);
     // System.out.println(old.getPieceChar());
     // System.out.println("Should Print  ");
@@ -33,7 +41,7 @@ public class Driver{
     }
     Board test1 = new Board();
     System.out.print(test1.toString());*/
-    System.out.println(test1.toString());
+    System.out.println(str);
     /*Game n = new Game();
     n.gameBoard.toString();*/
 
