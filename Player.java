@@ -60,8 +60,7 @@ public class Player{
   public void drawNewPiece(int position){
     Pieces temp = new Pieces();
     Random r = new Random();
-    int pileMax=Game.getpilelength()-1;//add in this command
-    Random r = new Random();
+    int pileMax= Game.getpilelength()-1;//add in this command
     int pick= r.nextInt(pileMax);
     temp.setLetter(Game.getpile(pick));
     theHand[position] = temp;
