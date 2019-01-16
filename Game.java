@@ -78,18 +78,6 @@ public class Game {
     key += "   Y = 4, Z = 10    ";
     return key;
   }
-
-  /*public void Start(){
-    Players.drawNewHand(); // need to fix for multiple players
-}*/
-
-  //creates a full scoreboard(temporarily just displays random stuff)
-  //  public String displayNames(){
-  //    String str =
-  //
-  //   //}
-  //   return str;
-  // }
   public static void putString(int r, int c, Terminal t, String s, Board g){
     List<String> eachline = Arrays.asList(s.split("\n"));
     int curr=c;
