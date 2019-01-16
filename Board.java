@@ -159,6 +159,10 @@ public class Board{
     str += "\n--------------------------";
     return str;
   }*/
+
+  public boolean checkAllWords(){
+    
+  }
   public String toString(){
     String str ="";
     //str+= "          SCRABBLE 2.0       \n";
