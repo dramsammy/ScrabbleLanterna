@@ -142,26 +142,8 @@ public class Board{
       board[14][14].setWordMultiplier(3);
 
   }
-  // toString method that will display board as a 2D ArrayList of pieces
-  //The format is char,value,letter*,word*,color
-  /*public String toString(){
-    String str = "                      SCRABBLE\n";
-    str+= "--------------------------\n";
-    for (int i = 0; i < board.length; i++){
-      //str+="";
-      for(int a = 0; a < board[i].length; a++){
-        str+=board[i][a].toString();
-      }
-      if(i<board.length-1){
-        str += "\n--------------------------\n";
-      }
-    }
-    str += "\n--------------------------";
-    return str;
-  }*/
-
   public boolean checkAllWords(){
-    
+
   }
   public String toString(){
     String str ="";
