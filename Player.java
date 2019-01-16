@@ -45,9 +45,10 @@ public class Player{
     return str;
   }
 
-  //creates a new random hand
-  //NEEDS TO BE CHANGE TO ACCOUNT FOR PILE
+
   public void drawNewHand(Board b){
+    //NEEDS TO BECOME RANDOM
+
     Pieces temp = new Pieces();
     Game = b;
     for (int i = 0; i < 7; i++){
