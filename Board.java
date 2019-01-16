@@ -142,8 +142,25 @@ public class Board{
       board[14][14].setWordMultiplier(3);
 
   }
+  public boolean isValidWord(Pieces[] p){
+    p = toBePlayed;
+    String word = "";
+    for (int i = 0; i < p.length; i++){
+      word += Character.toString(p[i].getPieceChar());
+    }
+    Scanner wordCheck = new Scanner("words.txt");
+    while (wordCheck.hasNextLine()){
+      if (word.equals(wordCheck.next())){
+        return true;
+      }
+    }
+    return false;
+  }
+  public String getScore(){
+    return "" + Score;
+  }
   public boolean checkAllWords(){
-
+    //checks all words on board using isValidWord
   }
   public String toString(){
     String str ="";

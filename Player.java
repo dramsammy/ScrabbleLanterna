@@ -125,23 +125,7 @@ public class Player{
 
   //checks if a word played(string concatenation of characters) is in the words file
   //DOESNT ACCOUNT FOR DOWNWARD WORDS/ how the words will be played?
-  public boolean isValidWord(Pieces[] p){
-    p = toBePlayed;
-    String word = "";
-    for (int i = 0; i < p.length; i++){
-      word += Character.toString(p[i].getPieceChar());
-    }
-    Scanner wordCheck = new Scanner("words.txt");
-    while (wordCheck.hasNextLine()){
-      if (word.equals(wordCheck.next())){
-        return true;
-      }
-    }
-    return false;
-  }
-  public String getScore(){
-    return "" + Score;
-  }
+
 
   //uses the multiplier values and piece values to create a score gained on a run and adds it to your old score
   public double updateScore(){
@@ -159,7 +143,7 @@ public class Player{
   //If a word is valid, it gets played on the board
   //needs to check that there are overlapping letters, in scrabble it cant be floating
   public void playWord(){
-    if (isValidWord(toBePlayed)){
+    if (Game.isValidWord(toBePlayed)){
       updateScore();
       replaceHand();
       for (int i = 0; i < x.length; i++){//needs to account for different directions
