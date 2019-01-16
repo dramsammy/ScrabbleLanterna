@@ -2,7 +2,7 @@ import java.util.*;
 public class Player{
   private int Score;
   private int Size;
-  private Pieces[] theHand = new Pieces[7];
+  public Pieces[] theHand = new Pieces[7];
   private Pieces[] toBePlayed;
   private Board Game;
   private char[] randomLetters = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
@@ -50,29 +50,22 @@ public class Player{
 
 
   public void drawNewHand(Board b){
-    //NEEDS TO BECOME RANDOM
-
-    Pieces temp = new Pieces();
-    Game = b;
-    for (int i = 0; i < 7; i++){
-      int len=Game.getpilelength();//add in this command
-      int n = hand.nextInt(len-1);
-      temp.setLetter(Game.getpile(n));
-      theHand[i] = temp;
-      Game.removeFromPile(n);
+    for(int i=0;i<7;i++){
+      drawNewPiece(i);
     }
-    //return theHand;
   }
 
   //creates a new random piece and adds it to your hand
   //NEEDS TO BE CHANGE TO ACCOUNT FOR PILE
   public void drawNewPiece(int position){
     Pieces temp = new Pieces();
-    int len=Game.getpilelength();//add in this command
-    int n = hand.nextInt(len-1);
-    temp.setLetter(Game.getpile(n));
+    Random r = new Random();
+    int pileMax=Game.getpilelength()-1;//add in this command
+    Random r = new Random();
+    int pick= r.nextInt(pileMax);
+    temp.setLetter(Game.getpile(pick));
     theHand[position] = temp;
-    Game.removeFromPile(n);
+    Game.removeFromPile(pick);
   }
 
   //checks if a given piece(character) is in your hand
