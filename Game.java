@@ -24,10 +24,6 @@ public class Game {
   private Player player3;
   private Player player4;
   private String playerData = "";
-  // private ArrayList<char> hand1=new ArrayList<int>();
-  // private ArrayList<char> hand2=new ArrayList<int>();
-  // private ArrayList<char> hand3=new ArrayList<int>();
-  // private ArrayList<char> hand4=new ArrayList<int>();
 
   //Game constructor
   //Starts by creating the pile of pieces

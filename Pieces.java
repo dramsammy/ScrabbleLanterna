@@ -107,14 +107,7 @@ public class Pieces{
   public String toString(){
     //String currscore="";
     String c="";
-    //screen.applyBackgroundColor(Terminal.Color.RED);
-    /*if(Score==0){
-      currscore+=" ";
-    }
-    if(Score!=0){
-      int s=Score;
-      currscore+=s;
-    }*/
+  
     if(Letter==' '){
       c+=" ";
     }
