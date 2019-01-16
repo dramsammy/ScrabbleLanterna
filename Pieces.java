@@ -90,7 +90,9 @@ public class Pieces{
       Color="BLUE";
     }
   }
-
+  public String getScore(){
+    return "" + Score;
+  }
   //returns if a piece was played
   public boolean wasplayed(){
     return Played;
@@ -107,7 +109,7 @@ public class Pieces{
   public String toString(){
     //String currscore="";
     String c="";
-  
+
     if(Letter==' '){
       c+=" ";
     }

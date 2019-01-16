@@ -34,6 +34,9 @@ public class Player{
     }
     return str;
   }
+  public String getScore(){
+    return "" + Score;
+  }
   //Prints out the players name then their score on a new line
   public String toString(){
     String str = "";
@@ -141,10 +144,24 @@ public class Player{
     return Score;
   }
 
+  public boolean isValidWord(Pieces[] p){
+    p = toBePlayed;
+    String word = "";
+    for (int i = 0; i < p.length; i++){
+      word += Character.toString(p[i].getPieceChar());
+    }
+    Scanner wordCheck = new Scanner("words.txt");
+    while (wordCheck.hasNextLine()){
+      if (word.equals(wordCheck.next())){
+        return true;
+      }
+    }
+    return false;
+  }
   //If a word is valid, it gets played on the board
   //needs to check that there are overlapping letters, in scrabble it cant be floating
   public void playWord(){
-    if (Game.isValidWord(toBePlayed)){
+    if (isValidWord(toBePlayed)){
       updateScore();
       replaceHand();
       for (int i = 0; i < x.length; i++){//needs to account for different directions
