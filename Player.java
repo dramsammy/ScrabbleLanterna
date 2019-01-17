@@ -51,20 +51,20 @@ public class Player{
 
   public void drawNewHand(Board b){
     for(int i=0;i<7;i++){
-      drawNewPiece(i);
+      drawNewPiece(i,b);
     }
   }
 
   //creates a new random piece and adds it to your hand
   //NEEDS TO BE CHANGE TO ACCOUNT FOR PILE
-  public void drawNewPiece(int position){
+  public void drawNewPiece(int position, Board b){
     Pieces temp = new Pieces();
     Random r = new Random();
-    int pileMax= Game.getpilelength()-1;//add in this command
+    int pileMax= b.getpilelength()-1;//add in this command
     int pick= r.nextInt(pileMax);
-    temp.setLetter(Game.getpile(pick));
+    temp.setLetter(b.getpile(pick));
     theHand[position] = temp;
-    Game.removeFromPile(pick);
+    b.removeFromPile(pick);
   }
 
   //checks if a given piece(character) is in your hand
