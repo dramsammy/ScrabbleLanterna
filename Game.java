@@ -174,6 +174,12 @@ public static void putString(int r, int c, Terminal t, String s){
       putString(0, 1, screen, "New Game [1]");
       putString(0, 2, screen, "Last Game Results [2]");
       putString(0, 3, screen, "Instructions to Play [3]");
+      putString(0, 5, screen, "To exit PRESS the key: e");
+      if (menuChoice != null && (menuChoice.getCharacter() == 'e')){
+          screen.exitPrivateMode();
+          menu = false;
+          System.exit(1);
+        }
       if (menuChoice != null && (menuChoice.getCharacter() == '3')){
         putString(0, 5, screen, "To play Scrabble 2.0, please select New Game. You will be prompted for a player amount. Please enter the amount of players in the game. AFterwards, you will be presented with the scrabble GUI along with a key and a scoreboard. Follow the onscreen instructions to cycle through the screens in order to play the game. Have Fun!!!");
       }
@@ -187,7 +193,7 @@ public static void putString(int r, int c, Terminal t, String s){
             putString(43, 2, screen, newGame.gameBoard.toString(), newGame.gameBoard);
             putString(52, 0, screen, "SCRABBLE 2.0" );
             putString(36, 20, screen,"Player Hand:" + newGame.player1.handToString());
-            putString(36, 21, screen,"Hand Position:1 ,  2 ,  3 ,  4 ,  5 ,  6 ,  7 ");
+            putString(36, 21, screen,"Hand Position:0 ,  1 ,  2 ,  3 ,  4 ,  5 ,  6 ");
             putString(0, 0, screen, newGame.playerData);
             //putString(0, 5, screen, "___________________________");
             putString(0, 5, screen, newGame.key());
