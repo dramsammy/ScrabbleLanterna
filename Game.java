@@ -194,11 +194,12 @@ public static void putString(int r, int c, Terminal t, String s){
           if (key1 != null && (key1.getKind() == Key.Kind.Enter)){
               move = false;
               piece = "";
+              screen.clearScreen();
             }
           screen.applyBackgroundColor(Terminal.Color.WHITE);
           screen.applyForegroundColor(Terminal.Color.BLACK);
-          putString(0, 0, screen, "To make a move, type in the numbers you will use in your hand in order and press the key s when finished");
-          if (key1 != null && (Character.toString(key1.getCharacter()).equals("1") || Character.toString(key1.getCharacter()).equals("2") || Character.toString(key1.getCharacter()).equals("3") || Character.toString(key1.getCharacter()).equals("4") || Character.toString(key1.getCharacter()).equals("5") || Character.toString(key1.getCharacter()).equals("6") || Character.toString(key1.getCharacter()).equals("7"))) {
+          putString(0, 0, screen, "To make a move, type in the numbers from 0-6 you will use in your hand in order and press the key s when finished");
+          if (key1 != null && (Character.toString(key1.getCharacter()).equals("0") || Character.toString(key1.getCharacter()).equals("1") || Character.toString(key1.getCharacter()).equals("2") || Character.toString(key1.getCharacter()).equals("3") || Character.toString(key1.getCharacter()).equals("4") || Character.toString(key1.getCharacter()).equals("5") || Character.toString(key1.getCharacter()).equals("6"))) {
             putString(0, 1, screen, Character.toString(key1.getCharacter()));
             piece += newGame.player1.theHand[Character.getNumericValue(key1.getCharacter())].handpiecetoString() + "";
           }
@@ -212,16 +213,17 @@ public static void putString(int r, int c, Terminal t, String s){
             screen.clearScreen();
             while(begin){
               Key key2 = screen.readInput();
-              if (key2 != null && (key2.getKind() == Key.Kind.Enter)){
-                  begin = false;
-                  piece = "";
-                }
               screen.applyBackgroundColor(Terminal.Color.WHITE);
               screen.applyForegroundColor(Terminal.Color.BLACK);
               putString(0, 0, screen, "To finish your move, type in the coordinates of each piece you will use on the board and press the enter key /");
               putString(0, 3,screen, "To go back, press enter");
               putCoordinatedBoard(screen, newGame);
               screen.applyBackgroundColor(Terminal.Color.DEFAULT);
+              if (key2 != null && (key2.getKind() == Key.Kind.Enter)){
+                  begin = false;
+                  piece = "";
+                  screen.clearScreen();
+                }
             }
           screen.applyBackgroundColor(Terminal.Color.DEFAULT);
         }
