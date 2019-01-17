@@ -142,7 +142,23 @@ public class Player{
   }
 
 
-  public boolean isTouching(int xcor, int ycor)
+  public ArrayList<Integer> isTouching(int xcor, int ycor){
+    ArrayList<Integer> dir = new ArrayList<Integer>;
+    if (Game.getPieces(xcor+1,ycor).hasValue()){
+      dir.add(3);
+    }
+    if (Game.getPieces(xcor, ycor+1).hasValue()){
+      dir.add(4);
+    }
+    if (Game.getPieces(xcor-1, ycor).hasValue()){
+      dir.add(1);
+    }
+    if (Game.getPieces(xcor, ycor-1)){
+      dir.add(2);
+    }
+    return dir;
+
+  }
 
   /*public static boolean isValidWord(String word){
  	word = word.toUpperCase();
