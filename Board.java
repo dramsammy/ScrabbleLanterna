@@ -6,56 +6,56 @@ public class Board{
   //Constructor of Board. Prompts set up board method
   public Board(){
     setupboard();
-    p.add('X');
-   p.add('Z');
-   p.add('Q');
-   p.add('K');
-   p.add('J');
+    pile.add('X');
+   pile.add('Z');
+   pile.add('Q');
+   pile.add('K');
+   pile.add('J');
    for(int i=0;i<2;i++){
-     p.add('Y');
-     p.add('W');
-     p.add('V');
-     p.add('P');
-     p.add('M');
-     p.add('H');
-     p.add('F');
-     p.add('C');
-     p.add('B');
+     pile.add('Y');
+     pile.add('W');
+     pile.add('V');
+     pile.add('P');
+     pile.add('M');
+     pile.add('H');
+     pile.add('F');
+     pile.add('C');
+     pile.add('B');
    }
    for(int i=0;i<3;i++){
-     p.add('G');
+     pile.add('G');
    }
    for(int i=0;i<4;i++){
-     p.add('U');
-     p.add('S');
-     p.add('L');
-     p.add('D');
+     pile.add('U');
+     pile.add('S');
+     pile.add('L');
+     pile.add('D');
    }
    for(int i=0;i<2;i++){
-     p.add('Y');
-     p.add('W');
-     p.add('V');
-     p.add('P');
-     p.add('M');
-     p.add('H');
-     p.add('F');
-     p.add('C');
-     p.add('B');
+     pile.add('Y');
+     pile.add('W');
+     pile.add('V');
+     pile.add('P');
+     pile.add('M');
+     pile.add('H');
+     pile.add('F');
+     pile.add('C');
+     pile.add('B');
    }
    for(int i=0;i<6;i++){
-     p.add('T');
-     p.add('R');
-     p.add('N');
+     pile.add('T');
+     pile.add('R');
+     pile.add('N');
    }
    for(int i=0;i<8;i++){
-     p.add('O');
+     pile.add('O');
    }
    for(int i=0;i<9;i++){
-     p.add('I');
-     p.add('A');
+     pile.add('I');
+     pile.add('A');
    }
    for(int i=0;i<12;i++){
-     p.add('E');
+     pile.add('E');
    }
   }
   public int getpilelength(){
