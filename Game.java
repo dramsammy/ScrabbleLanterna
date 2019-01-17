@@ -173,11 +173,11 @@ public static void putString(int r, int c, Terminal t, String s){
       putString(36, 20, screen,"Player Hand:" + newGame.player1.handToString());
       putString(36, 21, screen,"Hand Position:1 ,  2 ,  3 ,  4 ,  5 ,  6 ,  7 ");
       putString(0, 0, screen, newGame.playerData);
-      putString(0, 9, screen, "___________________________");
-      putString(0, 11, screen, newGame.key());
-      putString(0, 22, screen, newGame.colorkey());
-      putString(0, 28, screen, "To make a move PRESS the key: s");
-      putString(0, 29, screen, "To exit PRESS the key: e");
+      //putString(0, 5, screen, "___________________________");
+      putString(0, 5, screen, newGame.key());
+      putString(0, 16, screen, newGame.colorkey());
+      putString(0, 22, screen, "To make a move PRESS the key: s");
+      putString(0, 23, screen, "To exit PRESS the key: e");
       screen.applyForegroundColor(Terminal.Color.BLACK);
       screen.moveCursor(0,0);
       if (key != null && (key.getCharacter() == 'e')){
