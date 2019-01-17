@@ -203,7 +203,7 @@ public boolean isValidWord(Pieces[] p){
   //If a word is valid, it gets played on the board
   //needs to check that there are overlapping letters, in scrabble it cant be floating
   public void playWord(){
-    if (isValidWord(toBePlayed)){
+    if (isValidWord(toBePlayed) && isTouching().size()>0){
       updateScore();
       replaceHand();
       for (int i = 0; i < x.length; i++){//needs to account for different directions
