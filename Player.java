@@ -186,6 +186,14 @@ public class Player{
  	return false;
 }*/
 
+public boolean isValidPlay(Pieces[] p, int xcor, int ycor, int direction){
+  if(isValidWord(p)){
+    for(int i=0;i<p.size();i++){
+
+    }
+  }
+  return false
+}
 public boolean isValidWord(Pieces[] p){
     p = toBePlayed;
     String word = "";
