@@ -137,8 +137,9 @@ public class Player{
   }
   public boolean hasValue(Pieces p){
     if(p.getPieceChar()!=' '){
-      return true;
+      return false;
     }
+    return true;
   }
 
 
