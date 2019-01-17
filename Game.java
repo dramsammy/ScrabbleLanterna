@@ -34,19 +34,19 @@ public class Game {
     Players = play;
     if (play<=4 && play >=1){
       if(play>=1){
-        player1 = new Player(gameBoard, "player1");
+        player1 = new Player(gameBoard, "Player1");
         playerData += player1.toString();
     }
       if(play>=2){
-        player2=new Player(gameBoard, "player2");
+        player2=new Player(gameBoard, "Player2");
         playerData += player2.toString();
     }
       if(play>=3){
-        player3=new Player(gameBoard, "player3");
+        player3=new Player(gameBoard, "Player3");
         playerData += player3.toString();
     }
       if(play>=4){
-        player4=new Player(gameBoard, "player4");
+        player4=new Player(gameBoard, "Player4");
         playerData += player4.toString();
     }
   }
