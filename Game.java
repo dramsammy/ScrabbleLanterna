@@ -164,7 +164,20 @@ public static void putString(int r, int c, Terminal t, String s){
     screen.setCursorVisible(false);
     boolean move = true;
     boolean begin = true;
+    boolean menu = true;
     String piece = "";
+    while (menu){
+      Key menuChoice = screen.readInput();
+      screen.applyBackgroundColor(Terminal.Color.WHITE);
+      screen.applyForegroundColor(Terminal.Color.BLACK);
+      putString(0, 0, screen, "MENU OPTIONS");
+      putString(0, 1, screen, "New Game [1]");
+      putString(0, 2, screen, "Last Game Results [2]");
+      putString(0, 3, screen, "Instructions to Play [3]");
+      if (key != null && (menuChoice.getCharacter() == '3')){
+        putString(0, 3, screen, "To play Scrabble 2.0, please select New Game. You will be prompted for a player amount. Please enter the amount of players in the game. AFterwards, you will be presented with the scrabble GUI along with a key and a scoreboard. Follow the onscreen instructions to cycle through the screens in order to play the game. Have Fun!!!");
+      }
+    }
     while(display){
       Key key = screen.readInput();
       screen.applyBackgroundColor(Terminal.Color.WHITE);
