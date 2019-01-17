@@ -136,24 +136,24 @@ public class Player{
     return Score;
   }
   public boolean hasValue(Pieces p){
-    if(p.getPieceChar!=' '){
+    if(p.getPieceChar()!=' '){
       return true;
     }
   }
 
 
   public ArrayList<Integer> isTouching(int xcor, int ycor){
-    ArrayList<Integer> dir = new ArrayList<Integer>;
-    if (Game.getPieces(xcor+1,ycor).hasValue()){
+    ArrayList<Integer> dir = new ArrayList<Integer>();
+    if (hasValue(Game.getPieces(xcor+1,ycor))){
       dir.add(3);
     }
-    if (Game.getPieces(xcor, ycor+1).hasValue()){
+    if (hasValue(Game.getPieces(xcor, ycor+1))){
       dir.add(4);
     }
-    if (Game.getPieces(xcor-1, ycor).hasValue()){
+    if (hasValue(Game.getPieces(xcor-1, ycor))){
       dir.add(1);
     }
-    if (Game.getPieces(xcor, ycor-1)){
+    if (hasValue(Game.getPieces(xcor, ycor-1))){
       dir.add(2);
     }
     return dir;
@@ -188,11 +188,11 @@ public class Player{
 
 public boolean isValidPlay(Pieces[] p, int xcor, int ycor, int direction){
   if(isValidWord(p)){
-    for(int i=0;i<p.size();i++){
+    for(int i=0;i < p.length;i++){
 
     }
   }
-  return false
+  return false;
 }
 public boolean isValidWord(Pieces[] p){
     p = toBePlayed;
@@ -210,11 +210,11 @@ public boolean isValidWord(Pieces[] p){
   }
   //If a word is valid, it gets played on the board
   //needs to check that there are overlapping letters, in scrabble it cant be floating
-  public void playWord(){
-    if (isValidWord(toBePlayed) && isTouching().size()>0){
+  public void playWord(int xcor, int ycor){
+    if (isValidWord(toBePlayed) && isTouching(xcor,ycor).size()>0){
       updateScore();
       replaceHand();
-      for (int i = 0; i < x.length; i++){//needs to account for different directions
+      for (int i = xcor; i < x.length; i++){//needs to account for different directions
           Game.modifyBoard(x[i], y[i], toBePlayed[i].getPieceChar());
         }
       }
