@@ -135,8 +135,42 @@ public class Player{
     Score = Score * temp;
     return Score;
   }
+  public boolean hasValue(Pieces p){
+    if(p.getPieceChar!=' '){
+      return true;
+    }
+  }
 
-  public boolean isValidWord(Pieces[] p){
+
+  public boolean isTouching(int xcor, int ycor)
+
+  /*public static boolean isValidWord(String word){
+ 	word = word.toUpperCase();
+ 	int middle;
+ 	int highest = dictionary.size();
+ 	int first = 0;
+ 	middle = highest/2;
+ 	while(first < highest){ //searches until min matches max
+ 	    //if word  in second half of dictionary
+ 	    if(dictionary.get(middle).compareTo(word)>0){
+ 		highest = middle;
+ 		middle = (first+highest)/2;
+ 	    }
+ 	    //if word in first half of dictionary
+ 	    else if (dictionary.get(middle).compareTo(word)<0){
+ 		first = middle + 1;
+ 		middle = (first+highest)/2;
+ 	    }
+ 	    //reaches only if dictionary.get(middle).compareTo(word) = 0, so the word must be in the dictionary
+ 	    else{
+ 		return true;
+ 	    }
+ 	}
+ 	//if dictionary has been completely scanned through
+ 	return false;
+}*/
+
+public boolean isValidWord(Pieces[] p){
     p = toBePlayed;
     String word = "";
     for (int i = 0; i < p.length; i++){
