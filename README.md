@@ -21,3 +21,6 @@ Logs!!
 1/11-13/18 - Over the weekend, we did a lot of work to prepare for the demo on monday. On saturday,devin created the main for game with lanterna while Oliver polished off back end functions on friday. On sunday, Oliver worked on getting the board to print out properly with colors in one coordinate. He ran in to challenges with the color and new line. Ultimetely he had to split on \n and an inserted "exit key" to get it to the read the color correctly. After the board was up, both oliver and devin tried to add keys and fake score boards as well as the beggining of the turn mechanics to show for the demo.
 
 1/14/18 - We both worked on the functionality of the game. Oliver edited the constructors and reconfigured the way players are initialized and constructed. He also fixed the hand and made it show up clearly with the position key under it. Devin worked on making the turn mechanic. He addded in being able to select postitions and having them show up. We also dealt with some minor formatting issues such as the color.
+
+1/15/18 - Oliver worked on trying to figure out the try all words function, which checks if all possibly made words with the addition of one word work. In order to start this, he restructured and edited the current check word function. Also, he went through and fixed errors as well as deleted code that was no longer neccesary.
+
