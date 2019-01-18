@@ -246,6 +246,10 @@ public static void putString(int r, int c, Terminal t, String s){
                       coordinates += key2.getCharacter() + "";
                       putString(0, 7, screen, coordinates);
                     }
+                    if (key2 != null && key2.getKind() == Key.Kind.Backspace){
+                      putString(0, 7, screen, "                ");
+                      coordinates = "";
+                    }
                     screen.applyBackgroundColor(Terminal.Color.DEFAULT);
                     if (key2 != null && (key2.getKind() == Key.Kind.Enter)){
                         begin = false;
