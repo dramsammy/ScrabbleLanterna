@@ -22,7 +22,8 @@ Logs!!
 
 1/14/18 - We both worked on the functionality of the game. Oliver edited the constructors and reconfigured the way players are initialized and constructed. He also fixed the hand and made it show up clearly with the position key under it. Devin worked on making the turn mechanic. He addded in being able to select postitions and having them show up. We also dealt with some minor formatting issues such as the color.
 
-1/15/18 - Oliver worked on trying to figure out the try all words function, which checks if all possibly made words with the addition of one word work. In order to start this, he restructured and edited the current check word function. Also, he went through and fixed errors as well as deleted code that was no longer neccesary. Devin
+1/15/18 - Oliver worked on trying to figure out the try all words function, which checks if all possibly made words with the addition of one word work. In order to start this, he restructured and edited the current check word function. Also, he went through and fixed errors as well as deleted code that was no longer neccesary. 
 
-1/16/18 - Oliver fixed the pick up piece and pick up hand methods. He incorperated random and fixed the pile system so it truley picks up a random set of letters. Also he readjusted the format of the display to look alittle neater. Devin
+1/16/18 - Oliver fixed the pick up piece and pick up hand methods. He incorperated random and fixed the pile system so it truley picks up a random set of letters. Also he readjusted the format of the display to look alittle neater. Devin add a new menu window and also more user functionality.
 
+1/17/18 - Oliver worked on fixing the indexing methods and has value methods. Devin continued making the game more functional and adding new windows.
