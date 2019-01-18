@@ -166,6 +166,7 @@ public static void putString(int r, int c, Terminal t, String s){
     boolean begin = true;
     boolean menu = true;
     String piece = "";
+    String coordinates= "";
     while (menu){
       Key menuChoice = screen.readInput();
       screen.applyBackgroundColor(Terminal.Color.WHITE);
@@ -237,12 +238,13 @@ public static void putString(int r, int c, Terminal t, String s){
                     Key key2 = screen.readInput();
                     screen.applyBackgroundColor(Terminal.Color.WHITE);
                     screen.applyForegroundColor(Terminal.Color.BLACK);
-                    putString(0, 0, screen, "To finish your move, type in the coordinates of each piece you will use on the board and press the enter key /");
+                    putString(0, 0, screen, "To finish your move, type in the coordinates of each piece you will use on the board in (letter,number) format (eg: (a , 1)) and press the enter key /");
                     putString(0, 3,screen, "To go back, press enter");
                     putCoordinatedBoard(screen, newGame);
-                    if (key2 != null && (Character.toString(key2.getCharacter()).equals("1") || Character.toString(key2.getCharacter()).equals("2") || Character.toString(key2.getCharacter()).equals("3") || Character.toString(key2.getCharacter()).equals("4") || Character.toString(key2.getCharacter()).equals("5") || Character.toString(key2.getCharacter()).equals("6") || Character.toString(key2.getCharacter()).equals("7") || Character.toString(key2.getCharacter()).equals("8") || Character.toString(key2.getCharacter()).equals("9") || Character.toString(key2.getCharacter()).equals("10") || Character.toString(key2.getCharacter()).equals("11")|| Character.toString(key2.getCharacter()).equals("12")|| Character.toString(key2.getCharacter()).equals("13")|| Character.toString(key2.getCharacter()).equals("14")|| Character.toString(key2.getCharacter()).equals("15"))) {
+                    if (key2 != null){
                       putString(0, 6, screen, Character.toString(key2.getCharacter()));
-                      piece += newGame.player1.theHand[Character.getNumericValue(key2.getCharacter())].handpiecetoString() + "";
+                      coordinates += key2.getCharacter() + "";
+                      putString(0, 7, screen, coordinates);
                     }
                     screen.applyBackgroundColor(Terminal.Color.DEFAULT);
                     if (key2 != null && (key2.getKind() == Key.Kind.Enter)){
