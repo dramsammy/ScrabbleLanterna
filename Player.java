@@ -13,7 +13,7 @@ public class Player{
   private int[] y;
   private Random hand = new Random();
   private String name;
-  private ArrayList<Pieces> theHandArrayList;
+  public ArrayList<Pieces> theHandArrayList;
 
 
   //Constructor for Player(needs to be created)
@@ -27,7 +27,7 @@ public class Player{
   }
   public void handtoArrayList(){
     theHandArrayList = new ArrayList<Pieces>();
-    for (int i = 0; i < theHand.length; i ++){
+    for (int i = 0; i < theHand.length; i++){
       theHandArrayList.add(theHand[i]);
     }
   }

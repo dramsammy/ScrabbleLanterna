@@ -224,7 +224,8 @@ public static void putString(int r, int c, Terminal t, String s){
                 putString(0, 0, screen, "To make a move, type in the numbers from 1-7 you will use in your hand in order and press the key s when finished");
                 if (key1 != null && (Character.toString(key1.getCharacter()).equals("0") || Character.toString(key1.getCharacter()).equals("1") || Character.toString(key1.getCharacter()).equals("2") || Character.toString(key1.getCharacter()).equals("3") || Character.toString(key1.getCharacter()).equals("4") || Character.toString(key1.getCharacter()).equals("5") || Character.toString(key1.getCharacter()).equals("6"))) {
                   putString(0, 1, screen, Character.toString(key1.getCharacter()));
-                  piece += newGame.player1.theHand[Character.getNumericValue(key1.getCharacter())].handpiecetoString() + "";
+                  piece += (newGame.player1.theHandArrayList).get(Character.getNumericValue(key1.getCharacter())).handpiecetoString() + "";
+                  newGame.player1.theHandArrayList.remove(Character.getNumericValue(key1.getCharacter()));
                 }
                 putString(0, 2, screen, piece);
                 putString(0, 3,screen, "To go back or start over, press enter");
@@ -240,7 +241,7 @@ public static void putString(int r, int c, Terminal t, String s){
                     screen.applyForegroundColor(Terminal.Color.BLACK);
                     putString(0, 0, screen, "To finish your move, type in the coordinates of each piece you will use on the board in (letter,number) format (eg: (a , 1)) and press the enter key /");
                     putString(0, 3,screen, "To go back, press enter");
-                    putString(0, 20, screen, "These are the Pieces you previously selected:" + piece);
+                    putString(0, 20, screen, "These are the Pieces you previously selected: " + piece);
                     putCoordinatedBoard(screen, newGame);
                     if (key2 != null){
                       putString(0, 6, screen, Character.toString(key2.getCharacter()));
