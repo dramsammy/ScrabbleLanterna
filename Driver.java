@@ -35,6 +35,9 @@ public class Driver{
     n.gameBoard.toString();*/
     System.out.println("\u001B31;1mhello world!");
     System.out.println("\033[31mMENU  \033[0m");
+    Board game = new Board();
+    Player hi = new Player(game, "hi");
+    System.out.println(hi.theHandArrayList.get(1));
 
 
 
