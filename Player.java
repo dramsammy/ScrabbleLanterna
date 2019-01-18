@@ -206,7 +206,7 @@ public boolean isValidWord(Pieces[] p){
     p = toBePlayed;
     String word = "";
     for (int i = 0; i < p.length; i++){
-      word += Character.toString(p[i].getPieceChar());
+      word += p[i].getPieceChar();
     }
     Scanner wordCheck = new Scanner("words.txt");
     while (wordCheck.hasNextLine()){
