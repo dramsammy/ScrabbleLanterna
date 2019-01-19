@@ -1,7 +1,6 @@
 public class Driver{
   public static void main(String[] args){
     Board b = new Board();
-    Player p = new Player(b, "Oliver");
     Pieces i = new Pieces();
     Pieces l = new Pieces();
     Pieces r = new Pieces();
@@ -12,6 +11,6 @@ public class Driver{
     g[0] = i;
     g[1] = l;
     g[2] = r;
-    System.out.println(p.isValidWord(g));
+    System.out.println(b.isValidWord(g));
 }
 }
