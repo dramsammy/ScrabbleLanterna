@@ -1,7 +1,7 @@
 import java.util.*;
 public class Board{
   private Pieces[][] board= new Pieces[15][15];
-  private ArrayList<Character> pile = new ArrayList<Character>();
+  public static ArrayList<Character> pile = new ArrayList<Character>();
 
   //Constructor of Board. Prompts set up board method
   public Board(){

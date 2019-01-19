@@ -14,6 +14,7 @@ public class Player{
   private Random hand = new Random();
   private String name;
   public ArrayList<Pieces> theHandArrayList;
+  public static ArrayList<String> word = new ArrayList<String>(267751);
 
 
   //Constructor for Player(needs to be created)
@@ -167,8 +168,16 @@ public class Player{
     return dir;
 
   }
-
-  /*public static boolean isValidWord(String word){
+  public char[] drawPile(int numdraws) {
+  	char[] r = new char[numdraws];
+  	for(int i = 0;i < numdraws;i++) {
+  	    int a =(int)( Math.random() * Board.pile.size());
+  	    r[i]=Board.pile.get(a);
+  	    Board.pile.remove(a);
+  	}
+  	return r;
+      }
+  public static boolean isValidWord2(String word){
  	word = word.toUpperCase();
  	int middle;
  	int highest = dictionary.size();
@@ -197,7 +206,7 @@ public class Player{
 public boolean isValidPlay(Pieces[] p, int xcor, int ycor, int direction){
   if(isValidWord(p)){
     for(int i=0;i < p.length;i++){
-      
+
     }
   }
   return false;
