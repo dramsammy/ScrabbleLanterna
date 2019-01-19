@@ -197,26 +197,70 @@ public class Board{
      //str+= "-------------------------------";
      return str;
   }
+  public boolean hasValue(Pieces p){
+    if(p.getPieceChar()!=' '){
+      return false;
+    }
+    return true;
+  }
 
-  /*public ArrayList<Integer> isTouching(int xcor, int ycor){
+  public ArrayList<Integer> touchingDirection(int xcor, int ycor){
     ArrayList<Integer> dir = new ArrayList<Integer>();
-    if (hasValue(Game.getPieces(xcor+1,ycor))){
+    if (hasValue(getPieces(xcor+1,ycor))){
       dir.add(3);
     }
-    if (hasValue(Game.getPieces(xcor, ycor+1))){
+    if (hasValue(getPieces(xcor, ycor+1))){
       dir.add(4);
     }
-    if (hasValue(Game.getPieces(xcor-1, ycor))){
+    if (hasValue(getPieces(xcor-1, ycor))){
       dir.add(1);
     }
-    if (hasValue(Game.getPieces(xcor, ycor-1))){
+    if (hasValue(getPieces(xcor, ycor-1))){
       dir.add(2);
     }
     return dir;
 
-  }*/
+  }
+  public boolean isTouching(int xcor, int ycor){
+    if (hasValue(getPieces(xcor+1,ycor))){
+      return true;
+    }
+    if (hasValue(getPieces(xcor, ycor+1))){
+      return true;
+    }
+    if (hasValue(getPieces(xcor-1, ycor))){
+      return true;
+    }
+    if (hasValue(getPieces(xcor, ycor-1))){
+      return true;
+    }
+  }
 
-  public static boolean isValidWord(Pieces[] p){
+  public boolean isWordTouching(int xcor, int ycor, int direction, int length){
+    if(direction==-1){
+      for(int i=0;i<length;i++){
+      if(isTouching(xcor,ycor-i)){
+        return true;
+      }
+    }
+    return false;
+  }
+    if(direction==1){
+      for(int i=0;i<length;i++){
+        if(isTouching(xcor+i,ycor)){
+          return true;
+    }
+  }
+    return false;
+  }
+
+}
+
+
+
+
+
+  public boolean isValidWord(Pieces[] p){
   String word = "";
   for (int i = 0; i < p.length; i++){
     word += p[i].getPieceChar();

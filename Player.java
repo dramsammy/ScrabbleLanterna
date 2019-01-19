@@ -142,12 +142,6 @@ public class Player{
     Score = Score * temp;
     return Score;
   }
-  public boolean hasValue(Pieces p){
-    if(p.getPieceChar()!=' '){
-      return false;
-    }
-    return true;
-  }
 
   public char[] drawPile(int numdraws) {
   	char[] r = new char[numdraws];
@@ -162,8 +156,9 @@ public class Player{
 
   //If a word is valid, it gets played on the board
   //needs to check that there are overlapping letters, in scrabble it cant be floating
-  public void playWord(int xcor, int ycor){
-    if (isValidWord(toBePlayed) && isTouching(xcor,ycor).size()>0){
+
+  public void playWord(int xcor, int ycor, int direction){//direction -1 for down and 1 for leftto right
+    if (Game.isValidWord(toBePlayed) && Game.isWordTouching(xcor, ycor,direction, toBePlayed.length)){
       updateScore();
       replaceHand();
       for (int i = xcor; i < x.length; i++){//needs to account for different directions
