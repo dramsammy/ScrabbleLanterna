@@ -197,20 +197,22 @@ public class Player{
 public boolean isValidPlay(Pieces[] p, int xcor, int ycor, int direction){
   if(isValidWord(p)){
     for(int i=0;i < p.length;i++){
-
+      
     }
   }
   return false;
 }
 public boolean isValidWord(Pieces[] p){
-    p = toBePlayed;
+    //p = toBePlayed;
     String word = "";
     for (int i = 0; i < p.length; i++){
       word += p[i].getPieceChar();
     }
+    word=word.toUpperCase();
+    System.out.println(word);
     Scanner wordCheck = new Scanner("words.txt");
     while (wordCheck.hasNextLine()){
-      if (word.equals(wordCheck.next())){
+      if (word.equals(wordCheck.next().toUpperCase())){
         return true;
       }
     }
