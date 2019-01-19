@@ -285,14 +285,14 @@ public class Board{
  	}
  	return false;
 }
-/*public boolean isValidPlay(Pieces[] p, int xcor, int ycor, int direction){
-  if(isValidWord(p)){
+public boolean isValidPlay(Pieces[] p, int xcor, int ycor, int direction){
+  if(isValidWord(p) && Game.isWordTouching(xcor, ycor,direction, p.length)){
     for(int i=0;i < p.length;i++){
 
     }
   }
   return false;
-}*/
+}
 /*public boolean isValidWord(Pieces[] p){
     //p = toBePlayed;
     String word = "";

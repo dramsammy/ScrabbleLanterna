@@ -158,7 +158,7 @@ public class Player{
   //needs to check that there are overlapping letters, in scrabble it cant be floating
 
   public void playWord(int xcor, int ycor, int direction){//direction -1 for down and 1 for leftto right
-    if (Game.isValidWord(toBePlayed) && Game.isWordTouching(xcor, ycor,direction, toBePlayed.length)){
+    if (Game.isValidWord(toBePlayed) && Game.isValidPlay(toBePlayed,xcor,ycor,direction)){
       updateScore();
       replaceHand();
       for (int i = xcor; i < x.length; i++){//needs to account for different directions
