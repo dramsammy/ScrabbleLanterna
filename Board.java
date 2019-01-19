@@ -1,4 +1,7 @@
 import java.util.*;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+
 public class Board{
   private Pieces[][] board= new Pieces[15][15];
   public static ArrayList<Character> pile = new ArrayList<Character>();
@@ -6,6 +9,7 @@ public class Board{
 
   //Constructor of Board. Prompts set up board method
   public Board(){
+    scanfile();
     setupboard();
     pile.add('X');
    pile.add('Z');
@@ -194,7 +198,7 @@ public class Board{
      return str;
   }
 
-  public ArrayList<Integer> isTouching(int xcor, int ycor){
+  /*public ArrayList<Integer> isTouching(int xcor, int ycor){
     ArrayList<Integer> dir = new ArrayList<Integer>();
     if (hasValue(Game.getPieces(xcor+1,ycor))){
       dir.add(3);
@@ -210,10 +214,14 @@ public class Board{
     }
     return dir;
 
-  }
+  }*/
 
-  public static boolean isValidWord2(Pieces p){
- 	word = word.toUpperCase();
+  public static boolean isValidWord(Pieces[] p){
+  String word = "";
+  for (int i = 0; i < p.length; i++){
+    word += p[i].getPieceChar();
+  }
+  word=word.toUpperCase();
  	int middle;
  	int highest = words.size();
  	int first = 0;
@@ -233,15 +241,15 @@ public class Board{
  	}
  	return false;
 }
-ublic boolean isValidPlay(Pieces[] p, int xcor, int ycor, int direction){
+/*public boolean isValidPlay(Pieces[] p, int xcor, int ycor, int direction){
   if(isValidWord(p)){
     for(int i=0;i < p.length;i++){
 
     }
   }
   return false;
-}
-public boolean isValidWord(Pieces[] p){
+}*/
+/*public boolean isValidWord(Pieces[] p){
     //p = toBePlayed;
     String word = "";
     for (int i = 0; i < p.length; i++){
@@ -257,5 +265,5 @@ public boolean isValidWord(Pieces[] p){
     }
     return false;
   }
-  
+*/
 }
