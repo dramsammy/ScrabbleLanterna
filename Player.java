@@ -14,7 +14,6 @@ public class Player{
   private Random hand = new Random();
   private String name;
   public ArrayList<Pieces> theHandArrayList;
-  public static ArrayList<String> word = new ArrayList<String>(267751);
 
 
   //Constructor for Player(needs to be created)
@@ -150,24 +149,6 @@ public class Player{
     return true;
   }
 
-
-  public ArrayList<Integer> isTouching(int xcor, int ycor){
-    ArrayList<Integer> dir = new ArrayList<Integer>();
-    if (hasValue(Game.getPieces(xcor+1,ycor))){
-      dir.add(3);
-    }
-    if (hasValue(Game.getPieces(xcor, ycor+1))){
-      dir.add(4);
-    }
-    if (hasValue(Game.getPieces(xcor-1, ycor))){
-      dir.add(1);
-    }
-    if (hasValue(Game.getPieces(xcor, ycor-1))){
-      dir.add(2);
-    }
-    return dir;
-
-  }
   public char[] drawPile(int numdraws) {
   	char[] r = new char[numdraws];
   	for(int i = 0;i < numdraws;i++) {
@@ -177,56 +158,8 @@ public class Player{
   	}
   	return r;
       }
-  public static boolean isValidWord2(String word){
- 	word = word.toUpperCase();
- 	int middle;
- 	int highest = dictionary.size();
- 	int first = 0;
- 	middle = highest/2;
- 	while(first < highest){ //searches until min matches max
- 	    //if word  in second half of dictionary
- 	    if(dictionary.get(middle).compareTo(word)>0){
- 		highest = middle;
- 		middle = (first+highest)/2;
- 	    }
- 	    //if word in first half of dictionary
- 	    else if (dictionary.get(middle).compareTo(word)<0){
- 		first = middle + 1;
- 		middle = (first+highest)/2;
- 	    }
- 	    //reaches only if dictionary.get(middle).compareTo(word) = 0, so the word must be in the dictionary
- 	    else{
- 		return true;
- 	    }
- 	}
- 	//if dictionary has been completely scanned through
- 	return false;
-}*/
 
-public boolean isValidPlay(Pieces[] p, int xcor, int ycor, int direction){
-  if(isValidWord(p)){
-    for(int i=0;i < p.length;i++){
 
-    }
-  }
-  return false;
-}
-public boolean isValidWord(Pieces[] p){
-    //p = toBePlayed;
-    String word = "";
-    for (int i = 0; i < p.length; i++){
-      word += p[i].getPieceChar();
-    }
-    word=word.toUpperCase();
-    System.out.println(word);
-    Scanner wordCheck = new Scanner("words.txt");
-    while (wordCheck.hasNextLine()){
-      if (word.equals(wordCheck.next().toUpperCase())){
-        return true;
-      }
-    }
-    return false;
-  }
   //If a word is valid, it gets played on the board
   //needs to check that there are overlapping letters, in scrabble it cant be floating
   public void playWord(int xcor, int ycor){

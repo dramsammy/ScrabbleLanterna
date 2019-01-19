@@ -2,6 +2,7 @@ import java.util.*;
 public class Board{
   private Pieces[][] board= new Pieces[15][15];
   public static ArrayList<Character> pile = new ArrayList<Character>();
+  public static ArrayList<String> words = new ArrayList<String>(267751);
 
   //Constructor of Board. Prompts set up board method
   public Board(){
@@ -58,6 +59,24 @@ public class Board{
      pile.add('E');
    }
   }
+
+  public Boolean scanfile(){
+    try{
+	    FileReader reader = new FileReader("words.txt");
+	    Scanner scanner = new Scanner(reader);
+	    for(int x = 0; scanner.hasNextLine(); x++){
+		  words.add(scanner.nextLine());
+	    }
+	    scanner.close();
+      return true;
+	}
+	  catch(FileNotFoundException e){
+	    return false;
+	}
+}
+
+
+
   public int getpilelength(){
   return pile.size();
 }
@@ -174,4 +193,69 @@ public class Board{
      //str+= "-------------------------------";
      return str;
   }
+
+  public ArrayList<Integer> isTouching(int xcor, int ycor){
+    ArrayList<Integer> dir = new ArrayList<Integer>();
+    if (hasValue(Game.getPieces(xcor+1,ycor))){
+      dir.add(3);
+    }
+    if (hasValue(Game.getPieces(xcor, ycor+1))){
+      dir.add(4);
+    }
+    if (hasValue(Game.getPieces(xcor-1, ycor))){
+      dir.add(1);
+    }
+    if (hasValue(Game.getPieces(xcor, ycor-1))){
+      dir.add(2);
+    }
+    return dir;
+
+  }
+
+  public static boolean isValidWord2(Pieces p){
+ 	word = word.toUpperCase();
+ 	int middle;
+ 	int highest = words.size();
+ 	int first = 0;
+ 	middle = highest/2;
+ 	while(first < highest){
+ 	    if(words.get(middle).compareTo(word)>0){
+ 		highest = middle;
+ 		middle = (first+highest)/2;
+ 	    }
+ 	    else if (words.get(middle).compareTo(word)<0){
+ 		first = middle + 1;
+ 		middle = (first+highest)/2;
+ 	    }
+ 	    else{
+ 		return true;
+ 	    }
+ 	}
+ 	return false;
+}
+ublic boolean isValidPlay(Pieces[] p, int xcor, int ycor, int direction){
+  if(isValidWord(p)){
+    for(int i=0;i < p.length;i++){
+
+    }
+  }
+  return false;
+}
+public boolean isValidWord(Pieces[] p){
+    //p = toBePlayed;
+    String word = "";
+    for (int i = 0; i < p.length; i++){
+      word += p[i].getPieceChar();
+    }
+    word=word.toUpperCase();
+    System.out.println(word);
+    Scanner wordCheck = new Scanner("words.txt");
+    while (wordCheck.hasNextLine()){
+      if (word.equals(wordCheck.next().toUpperCase())){
+        return true;
+      }
+    }
+    return false;
+  }
+  
 }
