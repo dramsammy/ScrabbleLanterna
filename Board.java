@@ -286,8 +286,10 @@ public class Board{
  	return false;
 }
 public boolean isValidPlay(Pieces[] p, int xcor, int ycor, int direction){
-  if(isValidWord(p) && Game.isWordTouching(xcor, ycor,direction, p.length)){
+  if(isValidWord(p) && isWordTouching(xcor,ycor,direction, p.length)){
+    //Create a case for each driection and movement
     for(int i=0;i < p.length;i++){
+
 
     }
   }
