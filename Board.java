@@ -327,7 +327,7 @@ public boolean isValidPlay(Pieces[] p, int xcor, int ycor, int direction){
                 hasNext=false;
               }
             }
-            Pieces[] nArray = n.toArray();
+            Pieces[] nArray = listToArray(n);
             if(isValidWord(nArray)==false){
               return false;
             }
@@ -346,7 +346,7 @@ public boolean isValidPlay(Pieces[] p, int xcor, int ycor, int direction){
                   hasNext=false;
                 }
               }
-              Pieces[] nArray = n.toArray();
+              Pieces[] nArray = listToArray(n);
               if(isValidWord(nArray)==false){
                 return false;
               }
@@ -391,7 +391,7 @@ public boolean isValidPlay(Pieces[] p, int xcor, int ycor, int direction){
                 hasNext=false;
               }
             }
-            Pieces[] nArray = n.toArray();
+            Pieces[] nArray = listToArray(n);
             if(isValidWord(nArray)==false){
               return false;
             }
@@ -410,7 +410,7 @@ public boolean isValidPlay(Pieces[] p, int xcor, int ycor, int direction){
                   hasNext=false;
                 }
               }
-              Pieces[] nArray = n.toArray();
+              Pieces[] nArray = listToArray(n);
               if(isValidWord(nArray)==false){
                 return false;
               }
@@ -426,8 +426,12 @@ public boolean isValidPlay(Pieces[] p, int xcor, int ycor, int direction){
 }
 
 public Pieces[] listToArray(ArrayList<Pieces> p ){
-  Pieces[] n = new Pieces[]();
-  
+  Pieces[] n = new Pieces[p.size()];
+  for(int i=0;i<p.size();i++){
+    n[i]=p.get(i);
+  }
+  return n;
+
 
 }
 /*public boolean isValidWord(Pieces[] p){
