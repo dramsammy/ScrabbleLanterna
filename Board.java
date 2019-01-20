@@ -294,6 +294,7 @@ public boolean isValidPlay(Pieces[] p, int xcor, int ycor, int direction){
       for(int i=0;i < p.length;i++){
         if(getPieceChar(xcor+i,ycor)!=' ' && getPieceChar(xcor+i,ycor)!=p[i].getCharacter()){
           return false;
+        }
         else if(isTouching(xcor+i,y)){
           if(touchingDirection(xcor+i,ycor).contains(2)){
             int l=ycor-1;
@@ -313,7 +314,7 @@ public boolean isValidPlay(Pieces[] p, int xcor, int ycor, int direction){
               }
             }
             boolean hasNext=true;
-            Pieces[] n = new Pieces[];
+            ArrayList<Pieces> n = new ArrayList<Pieces>();
             int currY=topY;
             while(hasNext){
               if(touchingDirection(xcor+i,currY).contains(4)){
@@ -324,17 +325,39 @@ public boolean isValidPlay(Pieces[] p, int xcor, int ycor, int direction){
                 hasNext=false;
               }
             }
-            if(isValidWord(n)==false){
+            Pieces[] nArray = n.toArray();
+            if(isValidWord(nArray)==false){
               return false;
             }
           }
           else{
-            if(touching)
+            if(touchingDirection(xcor+i,ycor).contains(4)){
+              boolean hasNext=true;
+              ArrayList<Pieces> n = new ArrayList<Pieces>();
+              int currY=ycor;
+              while(hasNext){
+                if(touchingDirection(xcor+i,currY).contains(4)){
+                  n.add(getPieces(xcor+i,currY));
+                  currY--;
+                }
+                else{
+                  hasNext=false;
+                }
+              }
+              Pieces[] nArray = n.toArray();
+              if(isValidWord(nArray)==false){
+                return false;
+              }
+            }
           }
         }
-
     }
-  }
+      return true;
+}
+    if(direction==-1){
+      
+    }
+
   return false;
 }
 /*public boolean isValidWord(Pieces[] p){
