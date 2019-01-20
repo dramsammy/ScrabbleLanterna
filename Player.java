@@ -25,6 +25,18 @@ public class Player{
     handtoArrayList();
 
   }
+  public void refillHand(){
+    int temp = 0;
+    if (theHandArrayList.size() != 7){
+      for (int i = 0; i < theHandArrayList.size(); i++){
+        theHand[i] = theHandArrayList.get(i);
+        temp = i;
+      }
+      for (int a = i+1; a < 7; a ++){
+        drawNewPiece(a, Game);
+      }
+    }
+  }
   public void handtoArrayList(){
     theHandArrayList = new ArrayList<Pieces>(7);
     for (int i = 0; i < theHand.length; i++){
