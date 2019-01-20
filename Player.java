@@ -26,7 +26,7 @@ public class Player{
 
   }
   public void handtoArrayList(){
-    theHandArrayList = new ArrayList<Pieces>();
+    theHandArrayList = new ArrayList<Pieces>(7);
     for (int i = 0; i < theHand.length; i++){
       theHandArrayList.add(theHand[i]);
     }

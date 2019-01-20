@@ -234,6 +234,7 @@ public class Board{
     if (hasValue(getPieces(xcor, ycor-1))){
       return true;
     }
+    return false;
   }
 
   public boolean isWordTouching(int xcor, int ycor, int direction, int length){
@@ -253,7 +254,7 @@ public class Board{
   }
     return false;
   }
-
+  return false;
 }
 
 
