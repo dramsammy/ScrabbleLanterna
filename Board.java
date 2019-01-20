@@ -285,7 +285,9 @@ public ArrayList<Integer> touchingDirection(int xcor, int ycor){
     dir.add(2);
   }
   return dir;
-
+}
+public char getPieceChar(int x,int y){
+  return (board[x][y]).getPieceChar();
 }
 
 public boolean isValidPlay(Pieces[] p, int xcor, int ycor, int direction){
@@ -295,7 +297,7 @@ public boolean isValidPlay(Pieces[] p, int xcor, int ycor, int direction){
         if(getPieceChar(xcor+i,ycor)!=' ' && getPieceChar(xcor+i,ycor)!=p[i].getCharacter()){
           return false;
         }
-        else if(isTouching(xcor+i,y)){
+        else if(isTouching(xcor+i,ycor)){
           if(touchingDirection(xcor+i,ycor).contains(2)){
             int l=ycor-1;
             int topY;
@@ -355,7 +357,69 @@ public boolean isValidPlay(Pieces[] p, int xcor, int ycor, int direction){
       return true;
 }
     if(direction==-1){
-      
+      for(int i=0;i < p.length;i++){
+        if(getPieceChar(xcor,ycor+i)!=' ' && getPieceChar(xcor,ycor+i)!=p[i].getCharacter()){
+          return false;
+        }
+        else if(isTouching(xcor,ycor+i)){
+          if(touchingDirection(xcor,ycor+i).contains(1)){
+            int l=xcor-1;
+            int topX;
+            boolean notTop=true;
+            while(l>-1 && notTop){
+              if(touchingDirection(l,ycor+i).contains(1)){
+                l--;
+              }
+              if(l==0){
+                topX=0;
+                notTop=false;
+              }
+              else{
+                topX=l;
+                notTop=false;
+              }
+            }
+            boolean hasNext=true;
+            ArrayList<Pieces> n = new ArrayList<Pieces>();
+            int currX=topX;
+            while(hasNext){
+              if(touchingDirection(currX,ycor+i).contains(3)){
+                n.add(getPieces(currX,ycor+i));
+                currX--;
+              }
+              else{
+                hasNext=false;
+              }
+            }
+            Pieces[] nArray = n.toArray();
+            if(isValidWord(nArray)==false){
+              return false;
+            }
+          }
+          else{
+            if(touchingDirection(xcor,ycor+i).contains(3)){
+              boolean hasNext=true;
+              ArrayList<Pieces> n = new ArrayList<Pieces>();
+              int currX=xcor;
+              while(hasNext){
+                if(touchingDirection(currX,ycor+i).contains(3)){
+                  n.add(getPieces(currX,ycor+i));
+                  currX--;
+                }
+                else{
+                  hasNext=false;
+                }
+              }
+              Pieces[] nArray = n.toArray();
+              if(isValidWord(nArray)==false){
+                return false;
+              }
+            }
+          }
+        }
+    }
+      return true;
+}
     }
 
   return false;
