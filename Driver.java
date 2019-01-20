@@ -12,5 +12,9 @@ public class Driver{
     g[1] = l;
     g[2] = r;
     System.out.println(b.isValidWord(g));
+    Player test = new Player(b, "hi");
+    System.out.println(test.theHandArrayList.get(0).handpiecetoString());
+    System.out.println(i);
+    System.out.println(test.theHandArrayList.remove(test.theHand[0]));
 }
 }
