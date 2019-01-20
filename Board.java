@@ -204,23 +204,6 @@ public class Board{
     return true;
   }
 
-  public ArrayList<Integer> touchingDirection(int xcor, int ycor){
-    ArrayList<Integer> dir = new ArrayList<Integer>();
-    if (hasValue(getPieces(xcor+1,ycor))){
-      dir.add(3);
-    }
-    if (hasValue(getPieces(xcor, ycor+1))){
-      dir.add(4);
-    }
-    if (hasValue(getPieces(xcor-1, ycor))){
-      dir.add(1);
-    }
-    if (hasValue(getPieces(xcor, ycor-1))){
-      dir.add(2);
-    }
-    return dir;
-
-  }
   public boolean isTouching(int xcor, int ycor){
     if (hasValue(getPieces(xcor+1,ycor))){
       return true;
@@ -286,11 +269,69 @@ public class Board{
  	}
  	return false;
 }
+
+public ArrayList<Integer> touchingDirection(int xcor, int ycor){
+  ArrayList<Integer> dir = new ArrayList<Integer>();
+  if (hasValue(getPieces(xcor+1,ycor))){
+    dir.add(3);
+  }
+  if (hasValue(getPieces(xcor, ycor+1))){
+    dir.add(4);
+  }
+  if (hasValue(getPieces(xcor-1, ycor))){
+    dir.add(1);
+  }
+  if (hasValue(getPieces(xcor, ycor-1))){
+    dir.add(2);
+  }
+  return dir;
+
+}
+
 public boolean isValidPlay(Pieces[] p, int xcor, int ycor, int direction){
   if(isValidWord(p) && isWordTouching(xcor,ycor,direction, p.length) && xcor>=0 && xcor<15 && ycor>=0 && ycor<15){
-    if(direction==1){
+    if(direction==1){//account for add ons
       for(int i=0;i < p.length;i++){
-        if(isTouchi)
+        if(getPieceChar(xcor+i,ycor)!=' ' && getPieceChar(xcor+i,ycor)!=p[i].getCharacter()){
+          return false;
+        else if(isTouching(xcor+i,y)){
+          if(touchingDirection(xcor+i,ycor).contains(2)){
+            int l=ycor-1;
+            int topY;
+            boolean notTop=true;
+            while(l>-1 && notTop){
+              if(touchingDirection(xcor+i,l).contains(2)){
+                l--;
+              }
+              if(l==0){
+                topY=0;
+                notTop=false;
+              }
+              else{
+                topY=l;
+                notTop=false;
+              }
+            }
+            boolean hasNext=true;
+            Pieces[] n = new Pieces[];
+            int currY=topY;
+            while(hasNext){
+              if(touchingDirection(xcor+i,currY).contains(4)){
+                n.add(getPieces(xcor+i,currY));
+                currY--;
+              }
+              else{
+                hasNext=false;
+              }
+            }
+            if(isValidWord(n)==false){
+              return false;
+            }
+          }
+          else{
+            if(touching)
+          }
+        }
 
     }
   }
