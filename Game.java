@@ -167,6 +167,7 @@ public static void putString(int r, int c, Terminal t, String s){
     String piece = "";
     String coordinates= "";
     int position = 8;
+    int amount = 0;
     while (menu){
       Key menuChoice = screen.readInput();
       screen.applyBackgroundColor(Terminal.Color.WHITE);
@@ -221,10 +222,11 @@ public static void putString(int r, int c, Terminal t, String s){
                   }
                 screen.applyBackgroundColor(Terminal.Color.WHITE);
                 screen.applyForegroundColor(Terminal.Color.BLACK);
-                putString(0, 0, screen, "To make a move, type in the numbers from 1-7 you will use in your hand in order and press the key s when finished");
+                putString(0, 0, screen, "To make a move, type in the numbers from 0-6 you will use in your hand in order and press the key s when finished");
                 if (key1 != null && (Character.toString(key1.getCharacter()).equals("0") || Character.toString(key1.getCharacter()).equals("1") || Character.toString(key1.getCharacter()).equals("2") || Character.toString(key1.getCharacter()).equals("3") || Character.toString(key1.getCharacter()).equals("4") || Character.toString(key1.getCharacter()).equals("5") || Character.toString(key1.getCharacter()).equals("6"))) {
                   putString(0, 1, screen, Character.toString(key1.getCharacter()));
                   piece += (newGame.player1.theHand)[(Character.getNumericValue(key1.getCharacter()))].handpiecetoString() + "";
+                  amount++;
                   newGame.player1.theHandArrayList.remove(newGame.player1.theHand[Character.getNumericValue(key1.getCharacter())]);
                 }
                 putString(0, 2, screen, piece);
@@ -252,10 +254,11 @@ public static void putString(int r, int c, Terminal t, String s){
                       putString(0, 7, screen, "                ");
                       coordinates = "";
                     }
-                    if (key2 != null && '/' == key2.getCharacter()){
+                    if (key2 != null && '/' == key2.getCharacter() && amount!= 0){
                       putString(0,position, screen, coordinates);
                       coordinates = "";
                       position++;
+                      amount--;
                       putString(0, 7, screen, "                ");
                     }
                     screen.applyBackgroundColor(Terminal.Color.DEFAULT);
