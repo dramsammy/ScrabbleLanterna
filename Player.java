@@ -32,7 +32,7 @@ public class Player{
         theHand[i] = theHandArrayList.get(i);
         temp = i;
       }
-      for (int a = i+1; a < 7; a ++){
+      for (int a = temp+1; a < 7; a ++){
         drawNewPiece(a, Game);
       }
     }
