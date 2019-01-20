@@ -300,7 +300,7 @@ public boolean isValidPlay(Pieces[] p, int xcor, int ycor, int direction){
         else if(isTouching(xcor+i,ycor)){
           if(touchingDirection(xcor+i,ycor).contains(2)){
             int l=ycor-1;
-            int topY;
+            int topY=l;
             boolean notTop=true;
             while(l>-1 && notTop){
               if(touchingDirection(xcor+i,l).contains(2)){
@@ -364,7 +364,7 @@ public boolean isValidPlay(Pieces[] p, int xcor, int ycor, int direction){
         else if(isTouching(xcor,ycor+i)){
           if(touchingDirection(xcor,ycor+i).contains(1)){
             int l=xcor-1;
-            int topX;
+            int topX=l;
             boolean notTop=true;
             while(l>-1 && notTop){
               if(touchingDirection(l,ycor+i).contains(1)){
