@@ -166,6 +166,7 @@ public static void putString(int r, int c, Terminal t, String s){
     boolean menu = true;
     String piece = "";
     String coordinates= "";
+    int position = 8;
     while (menu){
       Key menuChoice = screen.readInput();
       screen.applyBackgroundColor(Terminal.Color.WHITE);
@@ -242,7 +243,7 @@ public static void putString(int r, int c, Terminal t, String s){
                     putString(0, 3,screen, "To go back, press enter");
                     putString(0, 20, screen, "These are the Pieces you previously selected: " + piece);
                     putCoordinatedBoard(screen, newGame);
-                    if (key2 != null){
+                    if (key2 != null && key2.getCharacter() != '/'){
                       putString(0, 6, screen, Character.toString(key2.getCharacter()));
                       coordinates += key2.getCharacter() + "";
                       putString(0, 7, screen, coordinates);
@@ -250,6 +251,12 @@ public static void putString(int r, int c, Terminal t, String s){
                     if (key2 != null && key2.getKind() == Key.Kind.Backspace){
                       putString(0, 7, screen, "                ");
                       coordinates = "";
+                    }
+                    if (key2 != null && '/' == key2.getCharacter()){
+                      putString(0,position, screen, coordinates);
+                      coordinates = "";
+                      position++;
+                      putString(0, 7, screen, "                ");
                     }
                     screen.applyBackgroundColor(Terminal.Color.DEFAULT);
                     if (key2 != null && (key2.getKind() == Key.Kind.Enter)){
