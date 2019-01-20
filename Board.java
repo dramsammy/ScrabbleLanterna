@@ -424,6 +424,12 @@ public boolean isValidPlay(Pieces[] p, int xcor, int ycor, int direction){
 
   return false;
 }
+
+public Pieces[] listToArray(ArrayList<Pieces> p ){
+  Pieces[] n = new Pieces[]();
+  
+
+}
 /*public boolean isValidWord(Pieces[] p){
     //p = toBePlayed;
     String word = "";
