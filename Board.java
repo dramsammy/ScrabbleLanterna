@@ -294,7 +294,7 @@ public boolean isValidPlay(Pieces[] p, int xcor, int ycor, int direction){
   if(isValidWord(p) && isWordTouching(xcor,ycor,direction, p.length) && xcor>=0 && xcor<15 && ycor>=0 && ycor<15){
     if(direction==1){//account for add ons
       for(int i=0;i < p.length;i++){
-        if(getPieceChar(xcor+i,ycor)!=' ' && getPieceChar(xcor+i,ycor)!=p[i].getCharacter()){
+        if(getPieceChar(xcor+i,ycor)!=' ' && getPieceChar(xcor+i,ycor)!=p[i].getPieceChar()){
           return false;
         }
         else if(isTouching(xcor+i,ycor)){
@@ -358,7 +358,7 @@ public boolean isValidPlay(Pieces[] p, int xcor, int ycor, int direction){
 }
     if(direction==-1){
       for(int i=0;i < p.length;i++){
-        if(getPieceChar(xcor,ycor+i)!=' ' && getPieceChar(xcor,ycor+i)!=p[i].getCharacter()){
+        if(getPieceChar(xcor,ycor+i)!=' ' && getPieceChar(xcor,ycor+i)!=p[i].getPieceChar()){
           return false;
         }
         else if(isTouching(xcor,ycor+i)){
