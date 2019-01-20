@@ -18,7 +18,6 @@ import com.googlecode.lanterna.gui.component.TextBox;
 public class Game {
   private int Players;
   private Board gameBoard;
-  private TextBox theMove = new TextBox("Move", 5);
   private Player player1;
   private Player player2;
   private Player player3;
