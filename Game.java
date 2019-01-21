@@ -313,6 +313,9 @@ public static void main(String[] args) {
                       choices.clear();
                       screen.clearScreen();
                     }
+                    if (key2 != null && '.' == key2.getCharacter() && !(newGame.gameBoard.makePlay(play, 7, 7, -1, newGame.player1))){
+                      putString(1,21,screen, "INVALID MOVE PRESS ENTER TO GO BACK AND RETRY!");
+                    }
                     putString(1,10,screen, x + "");
                     putString(1,9,screen, y + "");
                     putString(1,8,screen, dir + "");
