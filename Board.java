@@ -8,7 +8,7 @@ public class Board{
   public static ArrayList<Character> pile = new ArrayList<Character>();
   public static ArrayList<String> words = new ArrayList<String>(267751);
   private static char[] letters = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
-  //Constructor of Board. Prompts set up board method
+  //Constructor of Board. Prompts set up board method as well as scanfile and addng proper pieces
   public Board(){
     scanfile();
     setupboard();
@@ -65,12 +65,6 @@ public class Board{
    }
   }
 
-  public void setTurn(Player p){
-    Turn=p;
-  }
-  public Player getTurn(){
-    return Turn;
-  }
   public Boolean scanfile(){
     try{
 	    FileReader reader = new FileReader("words.txt");
@@ -200,6 +194,13 @@ public class Board{
       board[14][14].setWordMultiplier(3);
 
   }
+  //mutator methods
+    public void setTurn(Player p){
+      Turn=p;
+    }
+    public Player getTurn(){
+      return Turn;
+    }
 
 /*  public boolean checkAllWords(){
     //checks all words on board using isValidWord
