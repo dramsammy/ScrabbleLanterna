@@ -530,7 +530,7 @@ public boolean isValidPlay(Pieces[] p,int xcor,int ycor, int direction){
       return false;
     }
     for(int i=0;i<p.length;i++){
-      if(getPieces(xcor+i,ycor).getPieceChar()!=' '|| getPieces(xcor+i,ycor).getPieceChar()!=p[i].getPieceChar()){
+      if(getPieces(xcor+i,ycor).getPieceChar()!=' ' && getPieces(xcor+i,ycor).getPieceChar()!=p[i].getPieceChar()){
         return false;
       }
     }
@@ -541,7 +541,7 @@ public boolean isValidPlay(Pieces[] p,int xcor,int ycor, int direction){
       return false;
     }
     for(int i=0;i<p.length;i++){
-      if(getPieces(xcor,ycor+i).getPieceChar()!=' '|| getPieces(xcor,ycor+i).getPieceChar()!=p[i].getPieceChar()){
+      if(getPieces(xcor,ycor+i).getPieceChar()!=' ' && getPieces(xcor,ycor+i).getPieceChar()!=p[i].getPieceChar()){
         return false;
       }
     }
