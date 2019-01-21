@@ -9,7 +9,14 @@ IN ORDER TO RUN OUR PROGRAM AND PLAY OUR WONDERFUL GAME, PLEASE FOLLOW OUR SIMPL
 1. In the terminal, run: bash run.sh
 2. Assuming you have made it here...  WELCOME TO OUR GAME!!!!
    This is our menu screen, press 1 to play the game(DO THIS), 2 to view the instructions(what you are already reading!) or e to exit.
-3. You are now in the main screen hub!!!!!
+3. You will now be prompted to enter how many players are playing, press enter, and then type name of each player and enter.
+4. You are now in the main screen hub!!!!! 
+   To your upper left you will see each players and their score, at this point they are all 0.
+   Just below that, you will see the piece to points key with how many points you will get from playing each tile. Followed by    the board color to multiplier key.
+   In the bottom left, you will see the individual instructions of this menu. Each menu will specify directly what buttons to    press to do what; this screen prompts you to press s to make a move or e to escape the program.
+   PRESS S!!!!!
+5. 
+   
 
 
 
