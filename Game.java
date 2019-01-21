@@ -121,7 +121,7 @@ public static void putchar(int r, int c, Terminal t, char s, Board g, String C){
   }
   if(C.equals("WHITE")){
     t.applyBackgroundColor(Terminal.Color.WHITE);
-  }
+  } 
   t.putCharacter(s);
 }
 
@@ -239,8 +239,12 @@ public static void main(String[] args) {
                   }
                 screen.applyBackgroundColor(Terminal.Color.WHITE);
                 screen.applyForegroundColor(Terminal.Color.BLACK);
-                putString(0, 0, screen, "Please enter the first character you would like to place, followed by the coordinate(xcor,ycor). example f (8,8)");
-                if (key1 != null && (Character.toString(key1.getCharacter()).equals("0") || Character.toString(key1.getCharacter()).equals("1") || Character.toString(key1.getCharacter()).equals("2") || Character.toString(key1.getCharacter()).equals("3") || Character.toString(key1.getCharacter()).equals("4") || Character.toString(key1.getCharacter()).equals("5") || Character.toString(key1.getCharacter()).equals("6"))) {
+                putString(0, 0, screen, "Please enter the x coordinate and y coordinate followed by the character you would like to play. Example: 5,5,p \n if you would like to use a piece already on the board, please place it over as if it was in your hand");
+                if (key1 != null &&
+
+
+
+                (Character.toString(key1.getCharacter()).equals("0") || Character.toString(key1.getCharacter()).equals("1") || Character.toString(key1.getCharacter()).equals("2") || Character.toString(key1.getCharacter()).equals("3") || Character.toString(key1.getCharacter()).equals("4") || Character.toString(key1.getCharacter()).equals("5") || Character.toString(key1.getCharacter()).equals("6"))) {
                   putString(0, 1, screen, Character.toString(key1.getCharacter()));
                   piece += (newGame.player1.theHand)[(Character.getNumericValue(key1.getCharacter()))].handpiecetoString() + "";
                   amount++;
