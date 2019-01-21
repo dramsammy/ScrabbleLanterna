@@ -307,7 +307,10 @@ public char getPieceChar(int x,int y){
 
 public boolean isValidPlay(Pieces[] p, int xcor, int ycor, int direction){
   if(isValidWord(p) && isWordTouching(xcor,ycor,direction, p.length) && xcor>=0 && xcor<15 && ycor>=0 && ycor<15){
-    if(direction==1){//account for add ons
+    if(direction==1){
+      if((xcor+p.length)>14){
+        return false;
+      }
       for(int i=0;i < p.length;i++){
         if(getPieceChar(xcor+i,ycor)!=' ' && getPieceChar(xcor+i,ycor)!=p[i].getPieceChar()){
           return false;
@@ -372,6 +375,9 @@ public boolean isValidPlay(Pieces[] p, int xcor, int ycor, int direction){
       return true;
 }
     if(direction==-1){
+      if((ycor+p.length)>14){
+        return false;
+      }
       for(int i=0;i < p.length;i++){
         if(getPieceChar(xcor,ycor+i)!=' ' && getPieceChar(xcor,ycor+i)!=p[i].getPieceChar()){
           return false;
