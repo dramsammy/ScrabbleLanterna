@@ -250,15 +250,13 @@ public static void main(String[] args) {
                 putString(0, 3,screen, "To go back or start over, press enter");
                 putString(0, 4, screen,"Player Hand:" + newGame.player1.handToString());
                 putString(0, 5, screen,"Hand Position:0 ,  1 ,  2 ,  3 ,  4 ,  5 ,  6 ");
-                putString(0, 6, screen,choices.size()+"");
-                if (key1 != null && key1.getCharacter() == '/'){
+                putString(0,6, screen, choices.toString());
+                if (key1 != null && key1.getCharacter() == 's'){
                   coords = new Pieces[amount];
                   play = new Pieces[amount];
                   for (int i = 0; i < choices.size(); i++){
                     play[i] = newGame.player1.theHand[choices.get(i)];
                   }
-                }
-                if (key1 != null && key1.getCharacter() == 's'){
                   begin = true;
                   screen.applyBackgroundColor(Terminal.Color.DEFAULT);
                   screen.clearScreen();

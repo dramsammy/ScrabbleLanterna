@@ -1,5 +1,5 @@
 //USED FOR TESTING AT DIFFERENT points
-//LOTS OF STUDD ADDED TESTED AND ERASED
+//LOTS OF STUFF ADDED TESTED AND ERASED
 public class Driver{
   public static void main(String[] args){
     Board b = new Board();
