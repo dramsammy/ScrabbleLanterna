@@ -199,7 +199,7 @@ public static void main(String[] args) {
           System.exit(1);
         }
       if (menuChoice != null && (menuChoice.getCharacter() == '2')){
-        putString(0, 5, screen, "To play Scrabble 2.0, please select New Game. You will be prompted for a player amount. Please enter the amount of players in the game. AFterwards, you will be presented with the scrabble GUI along with a key and a scoreboard. Follow the onscreen instructions to cycle through the screens in order to play the game. Have Fun!!!");
+        putString(0, 6, screen, "To play Scrabble 2.0, please select New Game. You will be prompted for a player amount. Please enter the amount of players in the game. Afterwards, you will be presented with the scrabble GUI along with a key and a scoreboard. Follow the onscreen instructions to cycle through the screens in order to play the game. Have Fun!!!");
       }
       if (menuChoice != null && (menuChoice.getCharacter() == '1')){
         display = true;
@@ -264,7 +264,7 @@ public static void main(String[] args) {
                     Key key2 = screen.readInput();
                     screen.applyBackgroundColor(Terminal.Color.WHITE);
                     screen.applyForegroundColor(Terminal.Color.BLACK);
-                    putString(0, 0, screen, "To finish your move, type in the coordinates of each piece you will use on the board in (letter,number) format (eg: (a,1)) and press the enter key /");
+                    putString(0, 0, screen, "To finish your move, type in the coordinates of each piece you will use on the board in (letter,number) format (eg: (a,01)) and press the enter key /");
                     putString(0, 3,screen, "To go back, press enter");
                     putString(0, 20, screen, "These are the Pieces you previously selected: " + piece);
                     putCoordinatedBoard(screen, newGame);
@@ -278,10 +278,10 @@ public static void main(String[] args) {
                       coordinates = "";
                     }
 
-                    if (key2 != null && '/' == key2.getCharacter() && amount!= 0){
+                    if (key2 != null && '/' == key2.getCharacter() && amount!= 0 && coordinates.length() == 6){
                       putString(0,position, screen, coordinates);
                       if (y == 0){
-                        y = Integer.parseInt(coordinates.substring(3,4)) - 1;
+                        y = Integer.parseInt(coordinates.substring(3,5)) - 1;
                         x = Board.getX(coordinates.charAt(1));
                       }
                       if (y < Integer.parseInt(coordinates.substring(3,4)) - 1 || y > Integer.parseInt(coordinates.substring(3,4)) - 1){
@@ -294,7 +294,7 @@ public static void main(String[] args) {
                       }
                       amount--;
                       if (coordinates.length() != 0){
-                        coords[position - 8] = (newGame.gameBoard.coordtoPiece(coordinates.charAt(1), Integer.parseInt(coordinates.substring(3,4)) - 1));
+                        coords[position - 8] = (newGame.gameBoard.coordtoPiece(coordinates.charAt(1), Integer.parseInt(coordinates.substring(3,5)) - 1));
                         coordinates = "";
                         position++;
                       }
