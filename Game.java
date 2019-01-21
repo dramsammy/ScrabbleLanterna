@@ -190,8 +190,8 @@ public static void main(String[] args) {
       putString(0, 0, screen, "MENU OPTIONS");
       putString(0, 1, screen, "New Game [1]");
       //putString(0, 2, screen, "Last Game Results [2]");
-      putString(0, 3, screen, "Instructions to Play [2]");
-      putString(0, 5, screen, "To exit PRESS the key: e");
+      putString(0, 2, screen, "Instructions to Play [2]");
+      putString(0, 4, screen, "To exit PRESS the key: e");
       if (menuChoice != null && (menuChoice.getCharacter() == 'e')){
           screen.exitPrivateMode();
           menu = false;
@@ -215,7 +215,7 @@ public static void main(String[] args) {
             //putString(0, 5, screen, "___________________________");
             putString(0, 5, screen, newGame.key());
             putString(0, 16, screen, newGame.colorkey());
-            putString(0, 22, screen, "To make a move PRESS the key: s");
+            putString(0, 22, screen, "To make a move PRESS the key: enter");
             putString(0, 23, screen, "To exit PRESS the key: e");
             screen.applyForegroundColor(Terminal.Color.BLACK);
             screen.moveCursor(0,0);
@@ -224,21 +224,21 @@ public static void main(String[] args) {
                 display = false;
                 System.exit(1);
               }
-            if (key != null && key.getCharacter() == 's'){
+            if (key != null && key.getKind()==Key.Kind.Enter){
               move = true;
               screen.applyBackgroundColor(Terminal.Color.DEFAULT);
               screen.clearScreen();
               while(move){
                 Key key1 = screen.readInput();
                 ArrayList<Integer> choices = new ArrayList<Integer>();
-                if (key1 != null && (key1.getKind() == Key.Kind.Enter)){
+                if (key1 != null && (key1.getCharacter() == 'e')){
                     move = false;
                     piece = "";
                     screen.clearScreen();
                   }
                 screen.applyBackgroundColor(Terminal.Color.WHITE);
                 screen.applyForegroundColor(Terminal.Color.BLACK);
-                putString(0, 0, screen, "To make a move, type in the numbers from 0-6 you will use in your hand in order and press the key s when finished");
+                putString(0, 0, screen, "To make a move, type in the numbers from 0-6 you will use in your hand in order and press the key enter when finished");
                 if (key1 != null && (Character.toString(key1.getCharacter()).equals("0") || Character.toString(key1.getCharacter()).equals("1") || Character.toString(key1.getCharacter()).equals("2") || Character.toString(key1.getCharacter()).equals("3") || Character.toString(key1.getCharacter()).equals("4") || Character.toString(key1.getCharacter()).equals("5") || Character.toString(key1.getCharacter()).equals("6"))) {
                   putString(0, 1, screen, Character.toString(key1.getCharacter()));
                   piece += (newGame.player1.theHand)[(Character.getNumericValue(key1.getCharacter()))].handpiecetoString() + "";
@@ -247,7 +247,7 @@ public static void main(String[] args) {
                   newGame.player1.theHandArrayList.remove(newGame.player1.theHand[Character.getNumericValue(key1.getCharacter())]);
                 }
                 putString(0, 2, screen, piece);
-                putString(0, 3,screen, "To go back or start over, press enter");
+                putString(0, 3,screen, "To go back or start over, press e");
                 putString(0, 4, screen,"Player Hand:" + newGame.player1.handToString());
                 putString(0, 5, screen,"Hand Position:0 ,  1 ,  2 ,  3 ,  4 ,  5 ,  6 ");
                 if (key1 != null && key1.getCharacter() == '/'){
@@ -257,29 +257,30 @@ public static void main(String[] args) {
                     play[i] = newGame.player1.theHand[choices.get(i)];
                   }
                 }
-                if (key1 != null && key1.getCharacter() == 's'){
+                if (key1 != null && key1.getKind()==Key.Kind.Enter){
                   begin = true;
                   screen.applyBackgroundColor(Terminal.Color.DEFAULT);
                   screen.clearScreen();
                   while(begin){
+                    ArrayList<Character> selected = new ArrayList<Character>(0);
                     Key key2 = screen.readInput();
                     screen.applyBackgroundColor(Terminal.Color.WHITE);
                     screen.applyForegroundColor(Terminal.Color.BLACK);
-                    putString(0, 0, screen, "To finish your move, type in the coordinates of each piece you will use on the board in (letter,number) format (eg: (a,1)) and press the enter key /");
+                    putString(0, 0, screen, "To finish your move, type in the coordinates of each piece you will use on the board in (letter,number) format (eg: (a,1)) and press the enter key");
                     putString(0, 3,screen, "To go back, press enter");
                     putString(0, 20, screen, "These are the Pieces you previously selected: " + piece);
                     putCoordinatedBoard(screen, newGame);
-                    if (key2 != null && key2.getCharacter() != '/'){
+                    if (key2 != null && key2.getKind()==Key.Kind.Enter){
                       putString(0, 6, screen, Character.toString(key2.getCharacter()));
                       coordinates += key2.getCharacter() + "";
                       putString(0, 7, screen, coordinates);
                     }
-                    if (key2 != null && key2.getKind() == Key.Kind.Backspace){
+                    if (key2 != null && key2.getKind()==Key.Kind.Backspace){
                       putString(0, 7, screen, "                ");
                       coordinates = "";
                     }
 
-                    if (key2 != null && '/' == key2.getCharacter() && amount!= 0){
+                    if (key2 != null && key2.getKind()==Key.Kind.Enter && amount!= 0){
                       putString(0,position, screen, coordinates);
                       if (y == 0){
                         y = Integer.parseInt(coordinates.substring(3,4)) - 1;
@@ -306,7 +307,7 @@ public static void main(String[] args) {
                     }
 
                       screen.applyBackgroundColor(Terminal.Color.DEFAULT);
-                    if (key2 != null && (key2.getKind() == Key.Kind.Enter)){
+                    if (key2 != null && (key2.getCharacter() == 'e')){
                         begin = false;
                         piece = "";
                         coordinates = "";
