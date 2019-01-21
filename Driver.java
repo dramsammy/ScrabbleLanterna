@@ -12,7 +12,7 @@ public class Driver{
     b.modifyBoard(4,1,'x');
     b.modifyBoard(4,2,'t');
     b.modifyBoard(4,3,'r');
-    b.modifyBoard(4,4,'a');
+    b.modifyBoard(4,4,'a'); 
 
     Pieces i = new Pieces();
     Pieces l = new Pieces();

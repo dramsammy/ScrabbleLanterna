@@ -327,8 +327,8 @@ public ArrayList<Integer> touchingDirection(int xcor, int ycor){
   }
   if(xcor>0){
     if (hasValue(getPieces(xcor-1, ycor))){
-    dir.add(1);
-  }
+      dir.add(1);
+    }
   }
   if(ycor>1){
     if(hasValue(getPieces(xcor, ycor-1))){
@@ -373,7 +373,7 @@ public boolean isValidPlay(Pieces[] p, int xcor, int ycor, int direction){
             ArrayList<Pieces> n = new ArrayList<Pieces>();
             int currY=topY;
             while(hasNext){
-              if(touchingDirection(xcor+i,currY).contains(4)){
+              if(touchingDirection(xcor+i,currY).contains(4) && currY>0){
                 n.add(getPieces(xcor+i,currY));
                 currY--;
               }
@@ -392,7 +392,7 @@ public boolean isValidPlay(Pieces[] p, int xcor, int ycor, int direction){
               ArrayList<Pieces> n = new ArrayList<Pieces>();
               int currY=ycor;
               while(hasNext){
-                if(touchingDirection(xcor+i,currY).contains(4)){
+                if(touchingDirection(xcor+i,currY).contains(4) && currY>0){
                   n.add(getPieces(xcor+i,currY));
                   currY--;
                 }
