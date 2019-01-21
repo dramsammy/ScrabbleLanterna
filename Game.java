@@ -168,6 +168,8 @@ public static void putString(int r, int c, Terminal t, String s){
     String coordinates= "";
     int position = 8;
     int amount = 0;
+    int y = 0;
+    int x = 0;
     while (menu){
       Key menuChoice = screen.readInput();
       screen.applyBackgroundColor(Terminal.Color.WHITE);
@@ -238,10 +240,11 @@ public static void putString(int r, int c, Terminal t, String s){
                   screen.applyBackgroundColor(Terminal.Color.DEFAULT);
                   screen.clearScreen();
                   while(begin){
+                    Pieces[] play = new Pieces[amount];
                     Key key2 = screen.readInput();
                     screen.applyBackgroundColor(Terminal.Color.WHITE);
                     screen.applyForegroundColor(Terminal.Color.BLACK);
-                    putString(0, 0, screen, "To finish your move, type in the coordinates of each piece you will use on the board in (letter,number) format (eg: (a , 1)) and press the enter key /");
+                    putString(0, 0, screen, "To finish your move, type in the coordinates of each piece you will use on the board in (letter,number) format (eg: (a,1)) and press the enter key /");
                     putString(0, 3,screen, "To go back, press enter");
                     putString(0, 20, screen, "These are the Pieces you previously selected: " + piece);
                     putCoordinatedBoard(screen, newGame);
@@ -256,10 +259,18 @@ public static void putString(int r, int c, Terminal t, String s){
                     }
                     if (key2 != null && '/' == key2.getCharacter() && amount!= 0){
                       putString(0,position, screen, coordinates);
-                      coordinates = "";
+                      if (y == 0){
+                        y = Integer.parseInt(coordinates.substring(3,4)) - 1);
+                        x = Board.getX(coordinates.charAt(1));
+                      }
                       position++;
                       amount--;
+                      play[position - 8] = (Board.coordtoPiece(coordinates.charAt(1), Integer.parseInt(coordinates.substring(3,4)) - 1));
+                      coordinates = "";
                       putString(0, 7, screen, "                ");
+                    }
+                    if (key2 != null && '/' == key2.getCharacter() && amount == 0){
+                      putString(1,20,screen,String.valueOf(Board.isValidPlay(play, ,)))
                     }
                     screen.applyBackgroundColor(Terminal.Color.DEFAULT);
                     if (key2 != null && (key2.getKind() == Key.Kind.Enter)){
