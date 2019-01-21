@@ -1,4 +1,7 @@
-public class Turn extends Board{
+//We originally thought it made the most sense to have a Turn class
+//We later realized making turn an instance variable of players made more sense
+
+public class Turn{
 
 
 
