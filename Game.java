@@ -138,9 +138,10 @@ public static void putCoordinatedBoard(Terminal t, Game g){
     putString(41, (3+i), t, p);
   }
   putString(43, 4, t, g.gameBoard.toString(), g.gameBoard);
-  putString(41, 3, t, "   A B C D E F G H I J K L M N O ");
+  putString(41, 3, t, "   0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 ");
 
 }
+
 
 //put string method when it does not need to deal with color of middle indenting
 public static void putString(int r, int c, Terminal t, String s){
@@ -238,7 +239,7 @@ public static void main(String[] args) {
                   }
                 screen.applyBackgroundColor(Terminal.Color.WHITE);
                 screen.applyForegroundColor(Terminal.Color.BLACK);
-                putString(0, 0, screen, "To make a move, type in the numbers from 0-6 you will use in your hand in order and press the key enter when finished");
+                putString(0, 0, screen, "Please enter the first character you would like to place, followed by the coordinate(xcor,ycor). example f (8,8)");
                 if (key1 != null && (Character.toString(key1.getCharacter()).equals("0") || Character.toString(key1.getCharacter()).equals("1") || Character.toString(key1.getCharacter()).equals("2") || Character.toString(key1.getCharacter()).equals("3") || Character.toString(key1.getCharacter()).equals("4") || Character.toString(key1.getCharacter()).equals("5") || Character.toString(key1.getCharacter()).equals("6"))) {
                   putString(0, 1, screen, Character.toString(key1.getCharacter()));
                   piece += (newGame.player1.theHand)[(Character.getNumericValue(key1.getCharacter()))].handpiecetoString() + "";
