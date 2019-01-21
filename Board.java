@@ -123,6 +123,7 @@ public class Board{
     }
     return board[position][y];
   }
+
   //creates a 15 by 15 2D array of Pieces with the correct multipliers
   public void setupboard(){
       for (int i = 0; i < 15; i++){
@@ -299,10 +300,17 @@ public class Board{
     }
     return s;
   }
-
-
-
-
+  public ArrayList<Pieces> onBoard(){
+    ArrayList<Pieces> p;
+    for(int i=0;i<board.length;i++){
+      for(int l=0;l<board[i].length;l++){
+        if(board[i][l].getPieceChar()!=' '){
+          p.add(board[i][l]);
+        }
+      }
+    }
+    return p;
+  }
 
   public boolean isValidWord(Pieces[] p){
   String word = "";
@@ -517,7 +525,6 @@ public boolean isValidPlay(Pieces[] p,int xcor,int ycor, int direction){
   if(isValidWord(p)==false){
     return false;
   }
-
   else if(direction==1){
     if((xcor+p.length)>14){
       return false;
@@ -540,7 +547,6 @@ public boolean isValidPlay(Pieces[] p,int xcor,int ycor, int direction){
     }
     return true;
   }
-  return false;
 }
 
 
