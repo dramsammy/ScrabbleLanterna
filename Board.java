@@ -64,7 +64,7 @@ public class Board{
      pile.add('E');
    }
   }
-
+  //scans the word file and puts it into array list words
   public Boolean scanfile(){
     try{
 	    FileReader reader = new FileReader("words.txt");
@@ -79,6 +79,8 @@ public class Board{
 	    return false;
 	}
 }
+
+  //accesor methods
   public static int getX(char x){
     int xvalue = 0;
     for (int i = 0; i < 26; i++){
@@ -96,6 +98,7 @@ public class Board{
   public char getpile(int index){
   return pile.get(index);
 }
+  //mutator methods
   public void removeFromPile(int index){
   pile.remove(index);
 }
@@ -202,9 +205,7 @@ public class Board{
       return Turn;
     }
 
-/*  public boolean checkAllWords(){
-    //checks all words on board using isValidWord
-  }*/
+  //toString for the main board
   public String toString(){
     String str ="";
     //str+= "          SCRABBLE 2.0       \n";
@@ -221,13 +222,14 @@ public class Board{
      //str+= "-------------------------------";
      return str;
   }
+  //checks if a piece has a value
   public boolean hasValue(Pieces p){
     if(p.getPieceChar()!=' '){
       return false;
     }
     return true;
   }
-
+  //checks if a piece is touching
   public boolean isTouching(int xcor, int ycor){
     if (hasValue(getPieces(xcor+1,ycor))){
       return true;
@@ -244,6 +246,7 @@ public class Board{
     return false;
   }
 
+  //makes sure word is overlapping
   public boolean isWordTouching(int xcor, int ycor, int direction, int length){
     if(direction==-1){
       for(int i=0;i<length;i++){
@@ -264,7 +267,7 @@ public class Board{
   return false;
 }
 
-
+  //gets the score of a given play of Pieces
   public int playScore(Pieces[] p){
     boolean d = false;
     boolean t = false;
@@ -287,10 +290,7 @@ public class Board{
     return s;
   }
 
-
-
-
-
+  //checks if a word is in the dictionary using a sort
   public boolean isValidWord(Pieces[] p){
   String word = "";
   for (int i = 0; i < p.length; i++){
@@ -317,6 +317,7 @@ public class Board{
  	return false;
 }
 
+//says which direction a piece is touching
 public ArrayList<Integer> touchingDirection(int xcor, int ycor){
   ArrayList<Integer> dir = new ArrayList<Integer>();
   if (hasValue(getPieces(xcor+1,ycor))){
@@ -333,10 +334,12 @@ public ArrayList<Integer> touchingDirection(int xcor, int ycor){
   }
   return dir;
 }
+//gets character of a piece
 public char getPieceChar(int x,int y){
   return (board[x][y]).getPieceChar();
 }
 
+//checks if a play causes any other errors
 public boolean isValidPlay(Pieces[] p, int xcor, int ycor, int direction){
   if(isValidWord(p) && isWordTouching(xcor,ycor,direction, p.length) && xcor>=0 && xcor<15 && ycor>=0 && ycor<15){
     if(direction==1){
@@ -478,6 +481,7 @@ public boolean isValidPlay(Pieces[] p, int xcor, int ycor, int direction){
   return false;
 }
 
+//helper method to make array from arraylist
 public Pieces[] listToArray(ArrayList<Pieces> p ){
   Pieces[] n = new Pieces[p.size()];
   for(int i=0;i<p.size();i++){
@@ -487,21 +491,5 @@ public Pieces[] listToArray(ArrayList<Pieces> p ){
 
 
 }
-/*public boolean isValidWord(Pieces[] p){
-    //p = toBePlayed;
-    String word = "";
-    for (int i = 0; i < p.length; i++){
-      word += p[i].getPieceChar();
-    }
-    word=word.toUpperCase();
-    System.out.println(word);
-    Scanner wordCheck = new Scanner("words.txt");
-    while (wordCheck.hasNextLine()){
-      if (word.equals(wordCheck.next().toUpperCase())){
-        return true;
-      }
-    }
-    return false;
-  }
-*/
+
 }
