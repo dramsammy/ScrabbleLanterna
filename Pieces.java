@@ -116,7 +116,7 @@ public class Pieces{
     if(Letter!=' '){
       c+=Letter + "";
     }
-    String str = c + Color + ")|)";
+    String str = c + Color + ")|)";//escape key for color
     return str;
   }
 
