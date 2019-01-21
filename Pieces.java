@@ -107,7 +107,6 @@ public class Pieces{
     return c;
   }
   public String toString(){
-    //String currscore="";
     String c="";
 
     if(Letter==' '){
