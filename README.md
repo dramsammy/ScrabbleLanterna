@@ -54,4 +54,4 @@ Logs!!
 
 1/17/19 - Oliver worked on fixing the indexing methods and has value methods. Devin continued making the game more functional and adding new windows.
 
-1/18-21/19 - We spent this time finishing our project and working on turns and logistics.
+1/18-21/19 - We spent this time finishing our project and working on turns and logistics. We had a lot of work to be done in order to meet our minimum viable product. We had a lot of trouble getting an input from the user and altering the board. 
