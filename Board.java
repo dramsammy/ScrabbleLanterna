@@ -68,6 +68,9 @@ public class Board{
   public void setTurn(Player p){
     Turn=p;
   }
+  public Player getTurn(){
+    return Turn;
+  }
   public Boolean scanfile(){
     try{
 	    FileReader reader = new FileReader("words.txt");
