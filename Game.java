@@ -301,7 +301,7 @@ public static void main(String[] args) {
                       putString(0, 7, screen, "                ");
                     }
                     if (key2 != null && '.' == key2.getCharacter()){
-                        putString(1,20,screen,String.valueOf(newGame.gameBoard.isValidPlay(play, 5, 5, -1)));
+                        putString(1,11,screen,String.valueOf(newGame.gameBoard.isValidPlay(play, x, y, dir)));
                     }
 
                       screen.applyBackgroundColor(Terminal.Color.DEFAULT);
@@ -309,6 +309,10 @@ public static void main(String[] args) {
                         begin = false;
                         piece = "";
                         coordinates = "";
+                        x = 0;
+                        y = 0;
+                        position = 8;
+                        choices.clear();
                         screen.clearScreen();
                       }
                   }
