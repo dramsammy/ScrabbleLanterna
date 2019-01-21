@@ -302,9 +302,11 @@ public static void main(String[] args) {
                       putString(0, 7, screen, "                ");
                     }
                     if (key2 != null && '.' == key2.getCharacter()){
-                        putString(1,11,screen,String.valueOf(newGame.gameBoard.makePlay(play, x, y, dir, newGame.player1)));
+                        putString(1,11,screen,String.valueOf(newGame.gameBoard.makePlay(play, 7, 7, -1, newGame.player1)));
                     }
-
+                    putString(1,10,screen, x + "");
+                    putString(1,9,screen, y + "");
+                    putString(1,8,screen, dir + "");
                       screen.applyBackgroundColor(Terminal.Color.DEFAULT);
                     if (key2 != null && (key2.getKind() == Key.Kind.Enter)){
                         begin = false;
