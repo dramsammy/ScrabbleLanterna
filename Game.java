@@ -251,7 +251,7 @@ public static void main(String[] args) {
                   screen.applyBackgroundColor(Terminal.Color.DEFAULT);
                   screen.clearScreen();
                   while(begin){
-                    Pieces[] play = new Pieces[amount + 1];
+                    Pieces[] play = new Pieces[amount];
                     Key key2 = screen.readInput();
                     screen.applyBackgroundColor(Terminal.Color.WHITE);
                     screen.applyForegroundColor(Terminal.Color.BLACK);
@@ -268,6 +268,7 @@ public static void main(String[] args) {
                       putString(0, 7, screen, "                ");
                       coordinates = "";
                     }
+                    putString(0,15,screen, play.length + "");
                     if (key2 != null && '/' == key2.getCharacter() && amount!= 0){
                       putString(0,position, screen, coordinates);
                       if (y == 0){
@@ -286,9 +287,10 @@ public static void main(String[] args) {
                       if (coordinates.length() != 0){
                         play[position - 8] = (newGame.gameBoard.coordtoPiece(coordinates.charAt(1), Integer.parseInt(coordinates.substring(3,4)) - 1));
                         coordinates = "";
+                        position++;
                       }
-                      position++;
                       putString(0, 7, screen, "                ");
+                      putString(0,15,screen, play.length + "");
                     }
                       if (key2 != null && '.' == key2.getCharacter()){
                         putString(1,20,screen,String.valueOf(newGame.gameBoard.isValidPlay(play, x, y, dir)));
