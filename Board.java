@@ -78,7 +78,14 @@ public class Board{
 	    return false;
 	}
 }
-
+  public void getX(char x){
+    int xvalue = 0;
+    for (int i = 0; i < 26; i++){
+      if (xvalue == letters[i]){
+        xvalue = i;
+      }
+    }
+  }
 
 
   public int getpilelength(){
@@ -108,11 +115,11 @@ public class Board{
   public Pieces coordtoPiece(char x, int y){
     int position = 0;
     for (int i = 0; i < 26; i++){
-      if (x.equals(letters[i])){
+      if (x == letters[i]){
         position = i;
       }
     }
-    return board[i][y];
+    return board[position][y];
   }
   //creates a 15 by 15 2D array of Pieces with the correct multipliers
   public void setupboard(){
