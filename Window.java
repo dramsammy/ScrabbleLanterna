@@ -1,3 +1,5 @@
+//originally, before we were using Lanterna, we were going to try to use JFrame
+//Pretty quickly we realized we should just use Lanterna and commented out all of the code WRITTEN
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
