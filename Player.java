@@ -154,7 +154,8 @@ public class Player{
     Score = Score * temp;
     return Score;
   }
-
+  //draws from the pile randomly numdraws amount of times
+  //returns an array of char[]
   public char[] drawPile(int numdraws) {
   	char[] r = new char[numdraws];
   	for(int i = 0;i < numdraws;i++) {
