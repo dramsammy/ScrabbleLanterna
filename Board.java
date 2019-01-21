@@ -257,6 +257,29 @@ public class Board{
 }
 
 
+  public int playScore(Pieces[] p){
+    boolean d = false;
+    boolean t = false;
+    int s=0;
+    for(int i=0;i<p.length;i++){
+      if(p[i].getWordMultiplier()==2){
+        d=true;
+      }
+      if(p[i].getWordMultiplier()==3){
+        t=true;
+      }
+      s+=(p[i].getLetterMultiplier())* (p[i].getValue());
+    }
+    if(d){
+      s=s*2;
+    }
+    if(t){
+      s=s*3;
+    }
+    return s;
+  }
+
+
 
 
 
