@@ -178,15 +178,15 @@ public static void putString(int r, int c, Terminal t, String s){
       screen.applyForegroundColor(Terminal.Color.BLACK);
       putString(0, 0, screen, "MENU OPTIONS");
       putString(0, 1, screen, "New Game [1]");
-      putString(0, 2, screen, "Last Game Results [2]");
-      putString(0, 3, screen, "Instructions to Play [3]");
+      //putString(0, 2, screen, "Last Game Results [2]");
+      putString(0, 3, screen, "Instructions to Play [2]");
       putString(0, 5, screen, "To exit PRESS the key: e");
       if (menuChoice != null && (menuChoice.getCharacter() == 'e')){
           screen.exitPrivateMode();
           menu = false;
           System.exit(1);
         }
-      if (menuChoice != null && (menuChoice.getCharacter() == '3')){
+      if (menuChoice != null && (menuChoice.getCharacter() == '2')){
         putString(0, 5, screen, "To play Scrabble 2.0, please select New Game. You will be prompted for a player amount. Please enter the amount of players in the game. AFterwards, you will be presented with the scrabble GUI along with a key and a scoreboard. Follow the onscreen instructions to cycle through the screens in order to play the game. Have Fun!!!");
       }
       if (menuChoice != null && (menuChoice.getCharacter() == '1')){
