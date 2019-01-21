@@ -166,6 +166,9 @@ public class Player{
   	return r;
       }
 
+  public void addScore(int i){
+    Score+=i;
+  }
 
   //If a word is valid, it gets played on the board
   //needs to check that there are overlapping letters, in scrabble it cant be floating

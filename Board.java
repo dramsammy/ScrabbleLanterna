@@ -265,19 +265,32 @@ public class Board{
 }
 
 
-  public int playScore(Pieces[] p){
+  public int playScore(Pieces[] p, int xcor, int ycor, int direction){
     boolean d = false;
     boolean t = false;
     int s=0;
-    for(int i=0;i<p.length;i++){
-      if(p[i].getWordMultiplier()==2){
-        d=true;
+    if(direction==1){
+      for(int i=0;i<p.length;i++){
+        if(getPieces(xcor+i,ycor).getWordMultiplier()==2){
+          d=true;
       }
-      if(p[i].getWordMultiplier()==3){
-        t=true;
+        if(getPieces(xcor+i,ycor).getWordMultiplier()==3){
+          t=true;
       }
-      s+=(p[i].getLetterMultiplier())* (p[i].getValue());
+        s+=(getPieces(xcor+i,ycor).getLetterMultiplier())*(p[i].getValue());
     }
+  }
+    else if(direction==-1){
+      for(int i=0;i<p.length;i++){
+        if(getPieces(xcor,ycor+i).getWordMultiplier()==2){
+          d=true;
+      }
+        if(getPieces(xcor,ycor+i).getWordMultiplier()==3){
+          t=true;
+      }
+        s+=(getPieces(xcor,ycor+i).getLetterMultiplier())*(p[i].getValue());
+    }
+  }
     if(d){
       s=s*2;
     }
@@ -481,15 +494,17 @@ public char getPieceChar(int x,int y){
 
   return false;
 }*/
-public boolean makePlay(Pieces[] p,int xcor,int ycor, int direction){
+public boolean makePlay(Pieces[] p,int xcor,int ycor, int direction, Player l){
   if(isValidPlay(p,xcor,ycor,direction)){
     if(direction==1){
+      l.addScore(playScore(p,xcor,ycor,1));
       for(int i=0;i<p.length;i++){
         modifyBoard(xcor+i,ycor,p[i].getPieceChar());
         }
     return true;
   }
   if(direction==-1){
+    l.addScore(playScore(p,xcor,ycor,-1));
     for(int i=0;i<p.length;i++){
       modifyBoard(xcor,ycor=i,p[i].getPieceChar());
       }
@@ -502,6 +517,7 @@ public boolean isValidPlay(Pieces[] p,int xcor,int ycor, int direction){
   if(isValidWord(p)==false){
     return false;
   }
+
   else if(direction==1){
     if((xcor+p.length)>14){
       return false;
