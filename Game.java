@@ -251,7 +251,7 @@ public static void main(String[] args) {
                   screen.applyBackgroundColor(Terminal.Color.DEFAULT);
                   screen.clearScreen();
                   while(begin){
-                    Pieces[] play = new Pieces[amount];
+                    Pieces[] play = new Pieces[amount + 1];
                     Key key2 = screen.readInput();
                     screen.applyBackgroundColor(Terminal.Color.WHITE);
                     screen.applyForegroundColor(Terminal.Color.BLACK);
