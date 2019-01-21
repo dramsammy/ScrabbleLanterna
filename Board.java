@@ -6,7 +6,7 @@ public class Board{
   private Pieces[][] board= new Pieces[15][15];
   public static ArrayList<Character> pile = new ArrayList<Character>();
   public static ArrayList<String> words = new ArrayList<String>(267751);
-
+  private char[] letters = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
   //Constructor of Board. Prompts set up board method
   public Board(){
     scanfile();
@@ -105,7 +105,15 @@ public class Board{
   public Pieces getPieces(int xcor, int ycor){
     return board[xcor][ycor];
   }
-
+  public Pieces coordtoPiece(char x, int y){
+    int position = 0;
+    for (int i = 0; i < 26; i++){
+      if (x.equals(letters[i])){
+        position = i;
+      }
+    }
+    return board[i][y];
+  }
   //creates a 15 by 15 2D array of Pieces with the correct multipliers
   public void setupboard(){
       for (int i = 0; i < 15; i++){
