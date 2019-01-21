@@ -325,11 +325,15 @@ public ArrayList<Integer> touchingDirection(int xcor, int ycor){
   if (hasValue(getPieces(xcor, ycor+1))){
     dir.add(4);
   }
-  if (hasValue(getPieces(xcor-1, ycor))){
+  if(xcor>0){
+    if (hasValue(getPieces(xcor-1, ycor))){
     dir.add(1);
   }
-  if (hasValue(getPieces(xcor, ycor-1))){
+  }
+  if(ycor>1){
+    if(hasValue(getPieces(xcor, ycor-1))){
     dir.add(2);
+  }
   }
   return dir;
 }
