@@ -341,7 +341,7 @@ public char getPieceChar(int x,int y){
   return (board[x][y]).getPieceChar();
 }
 
-public boolean isValidPlay(Pieces[] p, int xcor, int ycor, int direction){
+/*public boolean isValidPlay(Pieces[] p, int xcor, int ycor, int direction){
   if(isValidWord(p) && isWordTouching(xcor,ycor,direction, p.length) && xcor>=0 && xcor<15 && ycor>=0 && ycor<15){
     if(direction==1){
       if((xcor+p.length)>14){
@@ -480,7 +480,52 @@ public boolean isValidPlay(Pieces[] p, int xcor, int ycor, int direction){
     }
 
   return false;
+}*/
+public boolean makePlay(Pieces[] p,int xcor,int ycor, int direction){
+  if(isValidPlay(p,xcor,ycor,direction)){
+    if(direction==1){
+      for(int i=0;i<p.length;i++){
+        modifyBoard(xcor+i,ycor,p[i].getPieceChar());
+        }
+    return true;
+  }
+  if(direction==-1){
+    for(int i=0;i<p.length;i++){
+      modifyBoard(xcor,ycor=i,p[i].getPieceChar());
+      }
+  return true;
 }
+}
+  return false;
+}
+public boolean isValidPlay(Pieces[] p,int xcor,int ycor, int direction){
+  if(isValidWord(p)==false){
+    return false;
+  }
+  else if(direction==1){
+    if((xcor+p.length)>14){
+      return false;
+    }
+    for(int i=0;i<p.length;i++){
+      if(getPieces(xcor+i,ycor).getPieceChar()!=' '|| getPieces(xcor+i,ycor).getPieceChar()!=p[i].getPieceChar()){
+        return false;
+      }
+    }
+    return true;
+  }
+  else if(direction==-1){
+    if((ycor+p.length)>14){
+      return false;
+    }
+    for(int i=0;i<p.length;i++){
+      if(getPieces(xcor,ycor+i).getPieceChar()!=' '|| getPieces(xcor,ycor+i).getPieceChar()!=p[i].getPieceChar()){
+        return false;
+      }
+    }
+    return true;
+  }
+}
+
 
 public Pieces[] listToArray(ArrayList<Pieces> p ){
   Pieces[] n = new Pieces[p.size()];
