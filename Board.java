@@ -101,7 +101,7 @@ public class Board{
 }
   //imputs coordinates and a char and changes the board to display that char
   public boolean modifyBoard(int xcor, int ycor,char newval){//will start from zero
-    if(board[xcor][ycor].getPieceChar()!=' '){
+    if(board[xcor][ycor].getPieceChar()!=' ' && board[xcor][ycor].getPieceChar()!=newval){
       return false;
     }
     else{
