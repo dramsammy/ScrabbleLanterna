@@ -234,6 +234,7 @@ public static void main(String[] args) {
                 if (key1 != null && (key1.getKind() == Key.Kind.Enter)){
                     move = false;
                     piece = "";
+                    choices.clear();
                     screen.clearScreen();
                   }
                 screen.applyBackgroundColor(Terminal.Color.WHITE);
