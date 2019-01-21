@@ -248,16 +248,18 @@ public static void main(String[] args) {
                 putString(0, 3,screen, "To go back or start over, press enter");
                 putString(0, 4, screen,"Player Hand:" + newGame.player1.handToString());
                 putString(0, 5, screen,"Hand Position:0 ,  1 ,  2 ,  3 ,  4 ,  5 ,  6 ");
+                if (key1 != null && key1.getCharacter() == '/'){
+                  Pieces[] coords = new Pieces[amount];
+                  Pieces[] play = new Pieces[amount];
+                  for (int i = 0; i < choices.size(); i++){
+                    play[i] = newGame.player1.theHand[choices.get(i)];
+                  }
+                }
                 if (key1 != null && key1.getCharacter() == 's'){
                   begin = true;
                   screen.applyBackgroundColor(Terminal.Color.DEFAULT);
                   screen.clearScreen();
                   while(begin){
-                    Pieces[] coords = new Pieces[amount];
-                    Pieces[] play = new Pieces[amount];
-                    for (int i = 0; i < choices.size(); i++){
-                      play[i] = newGame.player1.theHand[choices.get(i)];
-                    }
                     Key key2 = screen.readInput();
                     screen.applyBackgroundColor(Terminal.Color.WHITE);
                     screen.applyForegroundColor(Terminal.Color.BLACK);
