@@ -15,7 +15,7 @@ import com.googlecode.lanterna.input.Key;
 import com.googlecode.lanterna.input.KeyMappingProfile;
 import com.googlecode.lanterna.screen.Screen;
 import com.googlecode.lanterna.gui.component.TextBox;
-public class Game {
+public class Game extends Board {
   private int Players;
   private Board gameBoard;
   private Player player1;
@@ -170,6 +170,8 @@ public static void putString(int r, int c, Terminal t, String s){
     int amount = 0;
     int y = 0;
     int x = 0;
+    int dir = 0;
+    int temp = 0;
     while (menu){
       Key menuChoice = screen.readInput();
       screen.applyBackgroundColor(Terminal.Color.WHITE);
@@ -260,19 +262,30 @@ public static void putString(int r, int c, Terminal t, String s){
                     if (key2 != null && '/' == key2.getCharacter() && amount!= 0){
                       putString(0,position, screen, coordinates);
                       if (y == 0){
-                        y = Integer.parseInt(coordinates.substring(3,4)) - 1);
+                        y = Integer.parseInt(coordinates.substring(3,4)) - 1;
                         x = Board.getX(coordinates.charAt(1));
                       }
-                      position++;
+                        if (y < Integer.parseInt(coordinates.substring(3,4)) - 1 || y > Integer.parseInt(coordinates.substring(3,4)) - 1){
+                          if (y != 0){
+                          dir = -1;
+                        }
+                          else{
+                            dir = 1;
+                          }
+                        }
                       amount--;
-                      play[position - 8] = (Board.coordtoPiece(coordinates.charAt(1), Integer.parseInt(coordinates.substring(3,4)) - 1));
-                      coordinates = "";
+                      if (coordinates.length() != 0){
+                        play[position - 8] = (newGame.gameBoard.coordtoPiece(coordinates.charAt(1), Integer.parseInt(coordinates.substring(3,4)) - 1));
+                        coordinates = "";
+                      }
+                      position++;
                       putString(0, 7, screen, "                ");
                     }
-                    if (key2 != null && '/' == key2.getCharacter() && amount == 0){
-                      putString(1,20,screen,String.valueOf(Board.isValidPlay(play, ,)))
-                    }
-                    screen.applyBackgroundColor(Terminal.Color.DEFAULT);
+                      if (key2 != null && '.' == key2.getCharacter()){
+                        putString(1,20,screen,String.valueOf(newGame.gameBoard.isValidPlay(play, x, y, dir)));
+                      }
+
+                      screen.applyBackgroundColor(Terminal.Color.DEFAULT);
                     if (key2 != null && (key2.getKind() == Key.Kind.Enter)){
                         begin = false;
                         piece = "";

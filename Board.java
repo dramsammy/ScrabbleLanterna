@@ -6,7 +6,7 @@ public class Board{
   private Pieces[][] board= new Pieces[15][15];
   public static ArrayList<Character> pile = new ArrayList<Character>();
   public static ArrayList<String> words = new ArrayList<String>(267751);
-  private char[] letters = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
+  private static char[] letters = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
   //Constructor of Board. Prompts set up board method
   public Board(){
     scanfile();
@@ -78,13 +78,14 @@ public class Board{
 	    return false;
 	}
 }
-  public void getX(char x){
+  public static int getX(char x){
     int xvalue = 0;
     for (int i = 0; i < 26; i++){
       if (xvalue == letters[i]){
         xvalue = i;
       }
     }
+    return xvalue;
   }
 
 
