@@ -228,7 +228,7 @@ public static void main(String[] args) {
               screen.clearScreen();
               while(move){
                 Key key1 = screen.readInput();
-                ArrayList<int> choices = new ArrayList<int>();
+                ArrayList<Integer> choices = new ArrayList<Integer>();
                 if (key1 != null && (key1.getKind() == Key.Kind.Enter)){
                     move = false;
                     piece = "";
@@ -281,14 +281,14 @@ public static void main(String[] args) {
                         y = Integer.parseInt(coordinates.substring(3,4)) - 1;
                         x = Board.getX(coordinates.charAt(1));
                       }
-                        if (y < Integer.parseInt(coordinates.substring(3,4)) - 1 || y > Integer.parseInt(coordinates.substring(3,4)) - 1){
-                          if (y != 0){
+                      if (y < Integer.parseInt(coordinates.substring(3,4)) - 1 || y > Integer.parseInt(coordinates.substring(3,4)) - 1){
+                        if (y != 0){
                           dir = -1;
                         }
-                          else{
-                            dir = 1;
-                          }
+                        else{
+                          dir = 1;
                         }
+                      }
                       amount--;
                       if (coordinates.length() != 0){
                         coords[position - 8] = (newGame.gameBoard.coordtoPiece(coordinates.charAt(1), Integer.parseInt(coordinates.substring(3,4)) - 1));
@@ -297,9 +297,9 @@ public static void main(String[] args) {
                       }
                       putString(0, 7, screen, "                ");
                     }
-                      if (key2 != null && '.' == key2.getCharacter()){
-                        putString(1,20,screen,String.valueOf(newGame.gameBoard.isValidPlay(play, x, y, dir)));
-                      }
+                    if (key2 != null && '.' == key2.getCharacter()){
+                        putString(1,20,screen,String.valueOf(newGame.gameBoard.isValidPlay(play, 5, 5, -1)));
+                    }
 
                       screen.applyBackgroundColor(Terminal.Color.DEFAULT);
                     if (key2 != null && (key2.getKind() == Key.Kind.Enter)){
