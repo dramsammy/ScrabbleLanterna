@@ -547,6 +547,7 @@ public boolean isValidPlay(Pieces[] p,int xcor,int ycor, int direction){
     }
     return true;
   }
+  return true;
 }
 
 
