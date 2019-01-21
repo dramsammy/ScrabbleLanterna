@@ -228,7 +228,7 @@ public static void main(String[] args) {
               screen.clearScreen();
               while(move){
                 Key key1 = screen.readInput();
-
+                ArrayList<int> choices = new ArrayList<int>();
                 if (key1 != null && (key1.getKind() == Key.Kind.Enter)){
                     move = false;
                     piece = "";
@@ -241,6 +241,7 @@ public static void main(String[] args) {
                   putString(0, 1, screen, Character.toString(key1.getCharacter()));
                   piece += (newGame.player1.theHand)[(Character.getNumericValue(key1.getCharacter()))].handpiecetoString() + "";
                   amount++;
+                  choices.add(Character.getNumericValue(key1.getCharacter()));
                   newGame.player1.theHandArrayList.remove(newGame.player1.theHand[Character.getNumericValue(key1.getCharacter())]);
                 }
                 putString(0, 2, screen, piece);
@@ -253,6 +254,10 @@ public static void main(String[] args) {
                   screen.clearScreen();
                   while(begin){
                     Pieces[] coords = new Pieces[amount];
+                    Pieces[] play = new Pieces[amount];
+                    for (int i = 0; i < choices.size(); i++){
+                      play[i] = newGame.player1.theHand[choices.get(i)];
+                    }
                     Key key2 = screen.readInput();
                     screen.applyBackgroundColor(Terminal.Color.WHITE);
                     screen.applyForegroundColor(Terminal.Color.BLACK);
