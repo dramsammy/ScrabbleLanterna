@@ -4,6 +4,7 @@ import java.io.FileReader;
 
 public class Board{
   private Pieces[][] board= new Pieces[15][15];
+  private Player Turn;
   public static ArrayList<Character> pile = new ArrayList<Character>();
   public static ArrayList<String> words = new ArrayList<String>(267751);
   private static char[] letters = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
@@ -64,6 +65,9 @@ public class Board{
    }
   }
 
+  public void setTurn(Player p){
+    Turn=p;
+  }
   public Boolean scanfile(){
     try{
 	    FileReader reader = new FileReader("words.txt");
