@@ -236,6 +236,7 @@ public static void main(String[] args) {
                     piece = "";
                     choices.clear();
                     screen.clearScreen();
+                    amount = 0;
                   }
                 screen.applyBackgroundColor(Terminal.Color.WHITE);
                 screen.applyForegroundColor(Terminal.Color.BLACK);
@@ -251,6 +252,7 @@ public static void main(String[] args) {
                 putString(0, 3,screen, "To go back or start over, press enter");
                 putString(0, 4, screen,"Player Hand:" + newGame.player1.handToString());
                 putString(0, 5, screen,"Hand Position:0 ,  1 ,  2 ,  3 ,  4 ,  5 ,  6 ");
+                putString(0,6,screen, amount +"");
                 if (key1 != null && key1.getCharacter() == 's' && choices.size() != 0){
                   coords = new Pieces[amount];
                   play = new Pieces[amount];
@@ -267,6 +269,7 @@ public static void main(String[] args) {
                     putString(0, 0, screen, "To finish your move, type in the coordinates of each piece you will use on the board in (letter,number) format (eg: (a,01)) and press the enter key /");
                     putString(0, 3,screen, "To go back, press enter");
                     putString(0, 20, screen, "These are the Pieces you previously selected: " + piece);
+                    putString(0,10,screen, play.length+"");
                     putCoordinatedBoard(screen, newGame);
                     if (key2 != null && key2.getCharacter() != '/'){
                       putString(0, 6, screen, Character.toString(key2.getCharacter()));
@@ -301,7 +304,7 @@ public static void main(String[] args) {
                       putString(0, 7, screen, "                ");
                     }
                     if (key2 != null && '.' == key2.getCharacter()){
-                        putString(1,11,screen,String.valueOf(newGame.gameBoard.isValidPlay(play, x, y, dir)));
+                        putString(1,11,screen,String.valueOf(newGame.gameBoard.isValidWord(play)));
                     }
 
                       screen.applyBackgroundColor(Terminal.Color.DEFAULT);
@@ -312,6 +315,7 @@ public static void main(String[] args) {
                         x = 0;
                         y = 0;
                         position = 8;
+                        amount = 0;
                         choices.clear();
                         screen.clearScreen();
                       }
