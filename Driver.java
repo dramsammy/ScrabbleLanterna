@@ -22,10 +22,10 @@ public class Driver{
     System.out.println(test.theHandArrayList.get(0).handpiecetoString());
     System.out.println(i);
     System.out.println(test.theHandArrayList.remove(test.theHand[0]));*/
-    String coordinates = "(a,1)";
+    String coordinates = "(a,01)";
     coordinates = coordinates.toUpperCase();
     coordinates.split(",");
     System.out.println(coordinates.charAt(1));
-    System.out.println(Integer.parseInt(coordinates.substring(3,4)) == 1);
+    System.out.println(Integer.parseInt(coordinates.substring(3,5)) == 1);
 }
 }
