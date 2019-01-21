@@ -301,7 +301,7 @@ public class Board{
     return s;
   }
   public ArrayList<Pieces> onBoard(){
-    ArrayList<Pieces> p;
+    ArrayList<Pieces> p=new ArrayList<Pieces>(0);
     for(int i=0;i<board.length;i++){
       for(int l=0;l<board[i].length;l++){
         if(board[i][l].getPieceChar()!=' '){
