@@ -12,7 +12,7 @@ public class Driver{
     b.modifyBoard(4,1,'x');
     b.modifyBoard(4,2,'t');
     b.modifyBoard(4,3,'r');
-    b.modifyBoard(4,4,'a'); 
+    b.modifyBoard(4,4,'a');
 
     Pieces i = new Pieces();
     Pieces l = new Pieces();
@@ -36,7 +36,7 @@ public class Driver{
     g[1] = l;
     g[2] = r;
     //g[3] = t;
-    System.out.println(b.isValidPlay(g,3,1,1));
+    System.out.println(b.isValidPlay(g,4,4,1));
     /*System.out.println("" +g[0].getPieceChar() +g[1].getPieceChar()+g[2].getPieceChar() + g[3].getPieceChar());
     System.out.println(b.isValidWord(g));
     /*Player test = new Player(b, "hi");
