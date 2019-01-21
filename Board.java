@@ -514,7 +514,7 @@ public boolean makePlay(Pieces[] p,int xcor,int ycor, int direction, Player l){
   if(direction==-1){
     l.addScore(playScore(p,xcor,ycor,-1));
     for(int i=0;i<p.length;i++){
-      modifyBoard(xcor,ycor=i,p[i].getPieceChar());
+      modifyBoard(xcor,ycor+i,p[i].getPieceChar());
       }
   return true;
 }
