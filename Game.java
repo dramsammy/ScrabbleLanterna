@@ -301,8 +301,17 @@ public static void main(String[] args) {
                       }
                       putString(0, 7, screen, "                ");
                     }
-                    if (key2 != null && '.' == key2.getCharacter()){
-                        putString(1,11,screen,String.valueOf(newGame.gameBoard.makePlay(play, 7, 7, -1, newGame.player1)));
+                    if (key2 != null && '.' == key2.getCharacter() && newGame.gameBoard.makePlay(play, 7, 7, -1, newGame.player1)){
+                      begin = false;
+                      move = false;
+                      piece = "";
+                      coordinates = "";
+                      x = 0;
+                      y = 0;
+                      position = 8;
+                      amount = 0;
+                      choices.clear();
+                      screen.clearScreen();
                     }
                     putString(1,10,screen, x + "");
                     putString(1,9,screen, y + "");
