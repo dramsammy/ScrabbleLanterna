@@ -26,12 +26,10 @@ public class Game extends Board {
 
 
   //Game constructor
-  //Starts by creating the pile of pieces
-  //Creates each player and their hand
   public Game(int play){
-    gameBoard = new Board();
+    gameBoard = new Board();//initializing board
     Players = play;
-    if (play<=4 && play >=1){
+    if (play<=4 && play >=1){//creating players with 4 possibilities for the different amount of players
       if(play>=1){
         player1 = new Player(gameBoard, "Player1");
         playerData += player1.toString();
@@ -58,9 +56,10 @@ public class Game extends Board {
   }
 
   //Figure out a way to reset the game
-  public void newgame(){
+  /*public void newgame(){
     //reinitialize game?
-  }
+  }*/
+  //prints toString for key on the side
   public String key(){
     String key ="PIECE TO POINTS KEY\n";
     key += "A = 1, B = 3, C = 3 \n";
@@ -74,6 +73,8 @@ public class Game extends Board {
     key += "   Y = 4, Z = 10    ";
     return key;
   }
+
+  //splits a string on the normal new line character and calls putline for each one
   public static void putString(int r, int c, Terminal t, String s, Board g){
     List<String> eachline = Arrays.asList(s.split("\n"));
     int curr=c;
@@ -83,6 +84,8 @@ public class Game extends Board {
     }
 
 }
+
+//splits on made up escape character to hold color and calls putchar with color
 public static void putLine(int r, int c, Terminal t, String s, Board g){
   List<String> eachpiece = Arrays.asList(s.split("\\)"));
   char curr;
@@ -100,7 +103,7 @@ public static void putLine(int r, int c, Terminal t, String s, Board g){
 
 
 }
-//put in mods so it includes |
+//puts in a char and uses the imputted color
 public static void putchar(int r, int c, Terminal t, char s, Board g, String C){
   t.moveCursor(r,c);
   if(C.equals("PURPLE")){
@@ -121,6 +124,8 @@ public static void putchar(int r, int c, Terminal t, char s, Board g, String C){
   }
   t.putCharacter(s);
 }
+
+//puts a game board with coordinates
 public static void putCoordinatedBoard(Terminal t, Game g){
   String p ="";
   for(int i=1; i<16;i++){
@@ -137,13 +142,17 @@ public static void putCoordinatedBoard(Terminal t, Game g){
 
 }
 
+//put string method when it does not need to deal with color of middle indenting
 public static void putString(int r, int c, Terminal t, String s){
     t.moveCursor(r,c);
     for(int i = 0; i < s.length();i++){
       t.putCharacter(s.charAt(i));
     }
   }
-  public String colorkey(){
+
+
+//key for the side of the home screen which shows the colors
+public String colorkey(){
     String colorkey = "COLOR TO MULTIPLIER KEY\n";
     colorkey+="Magenta: Double Word \nYellow: Triple Word\n";
     colorkey+="Cyan: Double Letter \nDeep Blue: Triple Letter";
@@ -152,8 +161,8 @@ public static void putString(int r, int c, Terminal t, String s){
 
 
 
-
-  public static void main(String[] args) {
+//add in comments
+public static void main(String[] args) {
     Game newGame = new Game(4);//replace with args
   //Player human = new Player(newGame.gameBoard);
     Terminal screen = TerminalFacade.createTextTerminal();
