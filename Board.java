@@ -551,6 +551,46 @@ public boolean makePlay(Pieces[] p,int xcor,int ycor, int direction, Player l, b
   return false;
 }
 public boolean isValidPlay(Pieces[] p,int xcor,int ycor, int direction){
+  int x = xcor;
+  int y = ycor;
+  int f = 1;
+  int count = 0;
+  int index = 0;
+  for (int a = 0; a < p.length; a++){
+    if (getPieces(x+1,y).getPieceChar()!=' ' && direction == -1){
+      while (getPieces(x + f).getPieceChar()!= ' '){
+        count++;
+        f++;
+      }
+      Pieces[] temp = new Pieces[count];
+      f = 0;
+      while (getPieces(x + f).getPieceChar()!= ' '){
+        temp[index] = getPieces(x + f);
+        f++;
+        index++;
+      }
+      return (isValidWord(temp));
+      f = 1;
+      index = 0;
+      count = 0;
+    }
+    if (getPieces(x,y+1).getPieceChar()!=' ' && direction == 1){
+      while (getPieces(x, y+ f).getPieceChar()!= ' '){
+        count++;
+        f++;
+      }
+      Pieces[] temp = new Pieces[count];
+      f = 0;
+      while (getPieces(x ,y+f).getPieceChar()!= ' '){
+        temp[index] = getPieces(x,y+f);
+        f++;
+        index++;
+      }
+      return (isValidWord(temp));
+    }
+    x++;
+    y++;
+  }
   if(isValidWord(p)==false){
     return false;
   }
