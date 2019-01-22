@@ -9,8 +9,7 @@ IN ORDER TO RUN OUR PROGRAM AND PLAY OUR WONDERFUL GAME, PLEASE FOLLOW OUR SIMPL
 1. In the terminal, run: bash run.sh
 2. Assuming you have made it here...  WELCOME TO OUR GAME!!!!
    This is our menu screen, press 1 to play the game(DO THIS), 2 to view the instructions(what you are already reading!) or e to exit.
-3. You will now be prompted to enter how many players are playing, press enter, and then type name of each player and enter.
-4. You are now in the main screen hub!!!!! 
+3. You are now in the main screen hub!!!!! 
    To your upper left you will see each players and their score, at this point they are all 0.
    Just below that, you will see the piece to points key with how many points you will get from playing each tile. Followed by    the board color to multiplier key.
    On the right, you can see the board!!!!!
@@ -19,10 +18,10 @@ IN ORDER TO RUN OUR PROGRAM AND PLAY OUR WONDERFUL GAME, PLEASE FOLLOW OUR SIMPL
    In the bottom left, you will see the individual instructions of this menu. Each menu will specify directly what buttons to    press to do what; this screen prompts you to press s to make a move or e to escape the program.
    PRESS S!!!!!
 5. You have now entered the hand menu!!!!
-   Here you will see your hand as you did in the last screen,but this time with a position key. In order to create a word,        press the index of the position for the piece you want. As you select pieces, they will show up above your hand. You cannot    choose the same two pieces twice.
-   Once you have selected all the pieces you want(ADRESS OVERLAP ISSUE), press s!!
+   Here you will see your hand as you did in the last screen,but this time with a position key. In order to create a word,        press the index of the position for the piece you want. Below that are the pieces currently on the board. You can use these     if they will help you with overlapping. As you select pieces, they will show up above your hand. Do not choose the same       piece twice.
+   Once you have selected all the pieces you want, press s!!
    If you would like to go back, press enter.
-6. 
+6. Now, following the instructions on the screen, type in the coordinates of where you want your piece to be played and the      direction. To go down, please put direction as -1. To go to the right, put 1. Follow this format:        (letter,number(with0),direction). When you finish that, press period and your move with occur.
    
 
 
