@@ -502,8 +502,36 @@ public char getPieceChar(int x,int y){
 
   return false;
 }*/
-public boolean makePlay(Pieces[] p,int xcor,int ycor, int direction, Player l){
-  if(isValidPlay(p,xcor,ycor,direction)){
+
+
+public boolean crossesOrigin(Pieces[] p,int xcor,int ycor, int direction){
+  boolean c=false;
+  if(direction==1){
+    if(ycor!=8){
+      return false;
+    }
+    else{
+      if(xcor<9 && xcor+p.length>7){
+        return true;
+      }
+      return false;
+    }
+      }
+    if(direction==1){
+      if(xcor!=8){
+        return false;
+        }
+      else{
+        if(ycor<9 && ycor+p.length>7){
+          return true;
+          }
+        return false;
+        }
+          }
+    return c;
+}
+public boolean makePlay(Pieces[] p,int xcor,int ycor, int direction, Player l, boolean firstturn){
+  if(isValidPlay(p,xcor,ycor,direction) && (firstturn==false || crossesOrigin(p,xcor,ycor,direction))){
     if(direction==1){
       l.addScore(playScore(p,xcor,ycor,1));
       for(int i=0;i<p.length;i++){
