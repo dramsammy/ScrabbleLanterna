@@ -25,17 +25,18 @@ public class Driver{
     i.setLetter('a');
     l.setLetter('x');
     r.setLetter('e');
-    /*t.setLetter('Y');
+    t.setLetter('Y');
     i2.setLetter('e');
     l2.setLetter('r');
     r2.setLetter('a');
-    t2.setLetter('Y');*/
+    t2.setLetter('Y');
 
     Pieces[] g = new Pieces[3];
     g[0] = i;
     g[1] = l;
     g[2] = r;
     //g[3] = t;
+    System.out.println(b.crossesOrigin(g,3,7,1));
     System.out.println(b.isValidPlay(g,4,4,1));
     /*System.out.println("" +g[0].getPieceChar() +g[1].getPieceChar()+g[2].getPieceChar() + g[3].getPieceChar());
     System.out.println(b.isValidWord(g));

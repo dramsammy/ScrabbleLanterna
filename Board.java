@@ -511,7 +511,7 @@ public boolean crossesOrigin(Pieces[] p,int xcor,int ycor, int direction){
       return false;
     }
     else{
-      if(xcor<8 && xcor+p.length>6){
+      if(xcor<8 && (xcor+p.length-1)>6){
         return true;
       }
       return false;
@@ -522,7 +522,7 @@ public boolean crossesOrigin(Pieces[] p,int xcor,int ycor, int direction){
         return false;
         }
       else{
-        if(ycor<8 && ycor+p.length>6){
+        if(ycor<8 && (ycor+p.length-1)>6){
           return true;
           }
         return false;
