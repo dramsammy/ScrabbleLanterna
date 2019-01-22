@@ -7,7 +7,7 @@ public class Board{
   private Player Turn;
   public static ArrayList<Character> pile = new ArrayList<Character>();
   public static ArrayList<String> words = new ArrayList<String>(267751);
-  private static char[] letters = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
+  private char[] letters = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
   //Constructor of Board. Prompts set up board method as well as scanfile and addng proper pieces
   public Board(){
     scanfile();
@@ -79,10 +79,10 @@ public class Board{
 	    return false;
 	}
 }
-  public static int getX(char x){
+  public int getX(char x){
     int xvalue = 0;
     for (int i = 0; i < 26; i++){
-      if (xvalue == letters[i]){
+      if (x ==( letters[i])){
         xvalue = i;
       }
     }
