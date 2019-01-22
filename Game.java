@@ -270,7 +270,7 @@ public static void main(String[] args) {
                     if (turn != 0){
                       first = false;
                     }
-                    putString(0, 0, screen, "To finish your move, type in the coordinates of each piece you will use on the board in (letter,number) format (eg: (a,01)) and press the enter key /");
+                    putString(0, 0, screen, "To finish your move, type in the coordinates of each piece you will use on the board in (letter,number) format (eg: (A,01,1)) MAKE SURE YOU HAVE A CAPITAL LETTER and press the enter key /");
                     putString(0, 3,screen, "To go back, press enter");
                     putString(0, 20, screen, "These are the Pieces you previously selected: " + piece);
                     putCoordinatedBoard(screen, newGame);
