@@ -291,13 +291,11 @@ public static void main(String[] args) {
                         x = newGame.gameBoard.getX(coordinates.charAt(1));
                       }
                       if (y < Integer.parseInt(coordinates.substring(3,5)) - 1 || y > Integer.parseInt(coordinates.substring(3,5)) - 1){
-                        if (y != 0){
-                          dir = -1;
-                        }
-                        else{
                           dir = 1;
                         }
-                      }
+                      if (x <newGame.gameBoard.getX(coordinates.charAt(1)) ||x > newGame.gameBoard.getX(coordinates.charAt(1)) ){
+                          dir = -1;
+                        }
                       amount--;
                       if (coordinates.length() != 0){
                         coords[position - 8] = (newGame.gameBoard.coordtoPiece(coordinates.charAt(1), Integer.parseInt(coordinates.substring(3,5)) - 1));
@@ -309,7 +307,7 @@ public static void main(String[] args) {
                     for (int i = 0; i<play.length; i++){
                       putString(0,i + 15, screen, play[i].handpiecetoString());
                     }
-                    if (key2 != null && '.' == key2.getCharacter() && newGame.gameBoard.makePlay(play, 7, 7, -1, newGame.player1, true)){
+                    if (key2 != null && '.' == key2.getCharacter() && newGame.gameBoard.makePlay(play, x, y, dir, newGame.player1, true)){
                       newGame.player1.refillHand();
                       newGame.player1.handtoArrayList();
                       turn++;
