@@ -284,12 +284,17 @@ public static void main(String[] args) {
                       coordinates = "";
                     }
 
-                    if (key2 != null && '/' == key2.getCharacter() && amount!= 0 && coordinates.length() == 8){
+                    if (key2 != null && '/' == key2.getCharacter() && amount!= 0 && (coordinates.length() == 8 || coordinates.length() == 9)){
                       putString(0,position, screen, coordinates);
                       if (y == 0){
                         y = Integer.parseInt(coordinates.substring(3,5)) - 1;
                         x = newGame.gameBoard.getX(coordinates.charAt(1));
-                        dir = Integer.parseInt(coordinates.substring(6,7));
+                        if (coordinates.length() == 8){
+                          dir = Integer.parseInt(coordinates.substring(6,7));
+                        }
+                        if (coordinates.length() == 9){
+                          dir = Integer.parseInt(coordinates.substring(6,8));
+                        }
                       }
                       amount--;
                       if (coordinates.length() != 0){
