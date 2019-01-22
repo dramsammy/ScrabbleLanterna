@@ -302,6 +302,8 @@ public static void main(String[] args) {
                       putString(0, 7, screen, "                ");
                     }
                     if (key2 != null && '.' == key2.getCharacter() && newGame.gameBoard.makePlay(play, 7, 7, -1, newGame.player1)){
+                      newGame.player1.refillHand();
+                      newGame.player1.handtoArrayList();
                       begin = false;
                       move = false;
                       piece = "";
