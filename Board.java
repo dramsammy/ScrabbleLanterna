@@ -531,7 +531,7 @@ public boolean crossesOrigin(Pieces[] p,int xcor,int ycor, int direction){
     return c;
 }
 public boolean makePlay(Pieces[] p,int xcor,int ycor, int direction, Player l, boolean firstturn){
-  if(isValidPlay(p,xcor,ycor,direction) && (firstturn==false || crossesOrigin(p,xcor,ycor,direction))){
+  if(isValidPlay(p,xcor,ycor,direction) && ((firstturn==false)|| crossesOrigin(p,xcor,ycor,direction))){
     if(direction==1){
       l.addScore(playScore(p,xcor,ycor,1));
       for(int i=0;i<p.length;i++){
