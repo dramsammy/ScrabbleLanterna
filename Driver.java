@@ -37,8 +37,8 @@ public class Driver{
     g[2] = r;
     //g[3] = t;
     System.out.println(b.crossesOrigin(g,5,7,1));
-    System.out.println(b.isValidPlay(g,4,4,1));
-    System.out.println(b.makePlay(g,5,7,1,w,true));
+    System.out.println(b.isValidPlay(g,4,4,-1));
+    System.out.println(b.makePlay(g,7,7,-1,w,true));
     /*System.out.println("" +g[0].getPieceChar() +g[1].getPieceChar()+g[2].getPieceChar() + g[3].getPieceChar());
     System.out.println(b.isValidWord(g));
     /*Player test = new Player(b, "hi");

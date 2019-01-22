@@ -528,6 +528,7 @@ public boolean crossesOrigin(Pieces[] p,int xcor,int ycor, int direction){
         return false;
         }
           }
+
     return c;
 }
 public boolean makePlay(Pieces[] p,int xcor,int ycor, int direction, Player l, boolean firstturn){

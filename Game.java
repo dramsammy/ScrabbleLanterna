@@ -290,7 +290,7 @@ public static void main(String[] args) {
                         y = Integer.parseInt(coordinates.substring(3,5)) - 1;
                         x = newGame.gameBoard.getX(coordinates.charAt(1));
                       }
-                      if (y < Integer.parseInt(coordinates.substring(3,4)) - 1 || y > Integer.parseInt(coordinates.substring(3,4)) - 1){
+                      if (y < Integer.parseInt(coordinates.substring(3,5)) - 1 || y > Integer.parseInt(coordinates.substring(3,5)) - 1){
                         if (y != 0){
                           dir = -1;
                         }
@@ -306,7 +306,10 @@ public static void main(String[] args) {
                       }
                       putString(0, 7, screen, "                ");
                     }
-                    if (key2 != null && '.' == key2.getCharacter() && newGame.gameBoard.makePlay(play, x, y, dir, newGame.player1, first)){
+                    for (int i = 0; i<play.length; i++){
+                      putString(0,i + 15, screen, play[i].handpiecetoString());
+                    }
+                    if (key2 != null && '.' == key2.getCharacter() && newGame.gameBoard.makePlay(play, 7, 7, -1, newGame.player1, true)){
                       newGame.player1.refillHand();
                       newGame.player1.handtoArrayList();
                       turn++;
