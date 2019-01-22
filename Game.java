@@ -163,7 +163,7 @@ public String colorkey(){
 
 //add in comments
 public static void main(String[] args) {
-    Game newGame = new Game(4);//replace with args
+    Game newGame = new Game(1);//replace with args
   //Player human = new Player(newGame.gameBoard);
     Terminal screen = TerminalFacade.createTextTerminal();
     screen.enterPrivateMode();
@@ -291,11 +291,13 @@ public static void main(String[] args) {
                         x = newGame.gameBoard.getX(coordinates.charAt(1));
                       }
                       if (y < Integer.parseInt(coordinates.substring(3,5)) - 1 || y > Integer.parseInt(coordinates.substring(3,5)) - 1){
-                          dir = 1;
-                        }
-                      if (x <newGame.gameBoard.getX(coordinates.charAt(1)) ||x > newGame.gameBoard.getX(coordinates.charAt(1)) ){
+                        if (y != 0){
                           dir = -1;
                         }
+                        else{
+                          dir = 1;
+                        }
+                      }
                       amount--;
                       if (coordinates.length() != 0){
                         coords[position - 8] = (newGame.gameBoard.coordtoPiece(coordinates.charAt(1), Integer.parseInt(coordinates.substring(3,5)) - 1));
@@ -304,18 +306,10 @@ public static void main(String[] args) {
                       }
                       putString(0, 7, screen, "                ");
                     }
-<<<<<<< HEAD
-                    if (key2 != null && '.' == key2.getCharacter() && (newGame.gameBoard.makePlay(play, x, y, dir, newGame.player1, first))){
-=======
                     for (int i = 0; i<play.length; i++){
                       putString(0,i + 15, screen, play[i].handpiecetoString());
                     }
-<<<<<<< HEAD
                     if (key2 != null && '.' == key2.getCharacter() && newGame.gameBoard.makePlay(play, 7, 7, -1, newGame.player1, true)){
->>>>>>> 66f0747ecfe78539eedad6f652fee100db21b2a6
-=======
-                    if (key2 != null && '.' == key2.getCharacter() && newGame.gameBoard.makePlay(play, x, y, dir, newGame.player1, true)){
->>>>>>> f1a361ccf93c91b943cff4f1c80040da1201119f
                       newGame.player1.refillHand();
                       newGame.player1.handtoArrayList();
                       turn++;
