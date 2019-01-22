@@ -21,8 +21,8 @@ IN ORDER TO RUN OUR PROGRAM AND PLAY OUR WONDERFUL GAME, PLEASE FOLLOW OUR SIMPL
    Here you will see your hand as you did in the last screen,but this time with a position key. In order to create a word,        press the index of the position for the piece you want. Do not choose the same piece twice.
    Once you have selected all the pieces you want, press s!!
    If you would like to go back, press enter.
-6. Now, following the instructions on the screen, type in the coordinates of where you want your piece to be played and the      direction. To go down, please put direction as -1. To go to the right, put 1. Follow this format:        (capitalletter,number(with0),direction). When you finish that, press period and your move will occur.
-7. Your move will either occur or prompt an error message, if you get an error, please make sure everything you previously entered is correct.
+6. Now, following the instructions on the screen, type in the coordinates of where you want your piece to be played and the      direction. To go down, please put direction as -1. To go to the right, put 1. Follow this format:            (capitalletter,number(with0),direction). When you finish that, press period and your move will occur.
+7. Your move will either occur or prompt an error message, if you get an error, please make sure everything you previously entered is correct. If your moved worked, CONGRATULATIONS!, it is your turn again, go AGAIN!
 
 Logs!!
 
