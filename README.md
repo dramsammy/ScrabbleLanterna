@@ -10,8 +10,7 @@ IN ORDER TO RUN OUR PROGRAM AND PLAY OUR WONDERFUL GAME, PLEASE FOLLOW OUR SIMPL
 2. Assuming you have made it here...  WELCOME TO OUR GAME!!!!
    This is our menu screen, press 1 to play the game(DO THIS), 2 to view the instructions(what you are already reading!) or e to exit.
 3. You are now in the main screen hub!!!!! 
-   To your upper left you will see each players and their score, at this point they are all 0.
-   Just below that, you will see the piece to points key with how many points you will get from playing each tile. Followed by    the board color to multiplier key.
+   On the left, you will see the piece to points key with how many points you will get from playing each tile. Followed by       the board color to multiplier key.
    On the right, you can see the board!!!!!
    The colors on the board can be interpretered from the previously mentioned color key.
    Below the board is your hand, 7 randomly drawn characters with their point values. The reason the point to key value and      this score are both valuable is because when pieces are on the board, they will no longer show their characters and you may    use them in overlapping words.
