@@ -507,22 +507,22 @@ public char getPieceChar(int x,int y){
 public boolean crossesOrigin(Pieces[] p,int xcor,int ycor, int direction){
   boolean c=false;
   if(direction==1){
-    if(ycor!=8){
+    if(ycor!=7){
       return false;
     }
     else{
-      if(xcor<9 && xcor+p.length>7){
+      if(xcor<8 && xcor+p.length>6){
         return true;
       }
       return false;
     }
       }
     if(direction==1){
-      if(xcor!=8){
+      if(xcor!=7){
         return false;
         }
       else{
-        if(ycor<9 && ycor+p.length>7){
+        if(ycor<8 && ycor+p.length>6){
           return true;
           }
         return false;
