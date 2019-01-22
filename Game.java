@@ -306,7 +306,7 @@ public static void main(String[] args) {
                       }
                       putString(0, 7, screen, "                ");
                     }
-                    if (key2 != null && '.' == key2.getCharacter() && newGame.gameBoard.makePlay(play, x, y, dir, newGame.player1, first)){
+                    if (key2 != null && '.' == key2.getCharacter() && (newGame.gameBoard.makePlay(play, x, y, dir, newGame.player1, first))){
                       newGame.player1.refillHand();
                       newGame.player1.handtoArrayList();
                       turn++;
