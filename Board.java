@@ -517,7 +517,7 @@ public boolean crossesOrigin(Pieces[] p,int xcor,int ycor, int direction){
       return false;
     }
       }
-    if(direction==1){
+    if(direction==-1){
       if(xcor!=7){
         return false;
         }
