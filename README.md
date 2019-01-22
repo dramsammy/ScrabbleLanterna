@@ -18,16 +18,11 @@ IN ORDER TO RUN OUR PROGRAM AND PLAY OUR WONDERFUL GAME, PLEASE FOLLOW OUR SIMPL
    In the bottom left, you will see the individual instructions of this menu. Each menu will specify directly what buttons to    press to do what; this screen prompts you to press s to make a move or e to escape the program.
    PRESS S!!!!!
 5. You have now entered the hand menu!!!!
-   Here you will see your hand as you did in the last screen,but this time with a position key. In order to create a word,        press the index of the position for the piece you want. Below that are the pieces currently on the board. You can use these     if they will help you with overlapping. As you select pieces, they will show up above your hand. Do not choose the same       piece twice.
+   Here you will see your hand as you did in the last screen,but this time with a position key. In order to create a word,        press the index of the position for the piece you want. Do not choose the same piece twice.
    Once you have selected all the pieces you want, press s!!
    If you would like to go back, press enter.
-6. Now, following the instructions on the screen, type in the coordinates of where you want your piece to be played and the      direction. To go down, please put direction as -1. To go to the right, put 1. Follow this format:        (letter,number(with0),direction). When you finish that, press period and your move with occur.
-   
-
-
-
-
-
+6. Now, following the instructions on the screen, type in the coordinates of where you want your piece to be played and the      direction. To go down, please put direction as -1. To go to the right, put 1. Follow this format:        (capitalletter,number(with0),direction). When you finish that, press period and your move will occur.
+7. Your move will either occur or prompt an error message, if you get an error, please make sure everything you previously entered is correct.
 
 Logs!!
 
