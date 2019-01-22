@@ -184,6 +184,8 @@ public static void main(String[] args) {
     Pieces[] play = new Pieces[1];
     Pieces[] coords = new Pieces[1];
     ArrayList<Integer> choices = new ArrayList<Integer>();
+    int turn = 0;
+    boolean first = true;
     while (menu){
       Key menuChoice = screen.readInput();
       screen.applyBackgroundColor(Terminal.Color.WHITE);
@@ -265,6 +267,9 @@ public static void main(String[] args) {
                     Key key2 = screen.readInput();
                     screen.applyBackgroundColor(Terminal.Color.WHITE);
                     screen.applyForegroundColor(Terminal.Color.BLACK);
+                    if (turn != 0){
+                      first = false;
+                    }
                     putString(0, 0, screen, "To finish your move, type in the coordinates of each piece you will use on the board in (letter,number) format (eg: (a,01)) and press the enter key /");
                     putString(0, 3,screen, "To go back, press enter");
                     putString(0, 20, screen, "These are the Pieces you previously selected: " + piece);
@@ -301,9 +306,10 @@ public static void main(String[] args) {
                       }
                       putString(0, 7, screen, "                ");
                     }
-                    if (key2 != null && '.' == key2.getCharacter() && newGame.gameBoard.makePlay(play, x, y, dir, newGame.player1)){
+                    if (key2 != null && '.' == key2.getCharacter() && newGame.gameBoard.makePlay(play, x, y, dir, newGame.player1, first)){
                       newGame.player1.refillHand();
                       newGame.player1.handtoArrayList();
+                      turn++;
                       begin = false;
                       move = false;
                       piece = "";
@@ -315,7 +321,7 @@ public static void main(String[] args) {
                       choices.clear();
                       screen.clearScreen();
                     }
-                    if (key2 != null && '.' == key2.getCharacter() && !(newGame.gameBoard.makePlay(play, x, y, dir, newGame.player1))){
+                    if (key2 != null && '.' == key2.getCharacter() && !(newGame.gameBoard.makePlay(play, x, y, dir, newGame.player1, first))){
                       putString(1,21,screen, "INVALID MOVE PRESS ENTER TO GO BACK AND RETRY!");
                     }
                     putString(1,11,screen, x + "");
