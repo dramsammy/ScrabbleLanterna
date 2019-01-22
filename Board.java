@@ -604,6 +604,7 @@ public boolean isValidPlay(Pieces[] p,int xcor,int ycor, int direction){
     }
     x++;
     y++;
+    return true;
   }
   if(isValidWord(p)==false){
     return false;
