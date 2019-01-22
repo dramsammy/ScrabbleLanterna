@@ -23,6 +23,13 @@ IN ORDER TO RUN OUR PROGRAM AND PLAY OUR WONDERFUL GAME, PLEASE FOLLOW OUR SIMPL
 6. Now, following the instructions on the screen, type in the coordinates of where you want your piece to be played and the      direction. To go down, please put direction as -1. To go to the right, put 1. Follow this format:            (capitalletter,number(with0),direction). When you finish that, press period and your move will occur.
 7. Your move will either occur or prompt an error message, if you get an error, please make sure everything you previously entered is correct. If your moved worked, CONGRATULATIONS!, it is your turn again, go AGAIN!
 
+Bugs/Unimplemented Features:
+-We put a lot of effort into the turn system and playing pieces with direction and overlapping... much of which did not come to fruition
+-The scoring system and having multiple players didn't end up working either
+-Overall, it was very dissapointing how much effort we put in and how close we felt we were, but ended up with very little result.
+
+
+
 Logs!!
 
 1/3/19 - We both created all the java files and added in the basic framework of their instance varibales and methods. We started with the Pieces and Board files and went through coding and adding new methods as well as starting to create construtors.
