@@ -307,7 +307,7 @@ public static void main(String[] args) {
                     for (int i = 0; i<play.length; i++){
                       putString(0,i + 15, screen, play[i].handpiecetoString());
                     }
-                    if (key2 != null && '.' == key2.getCharacter() && newGame.gameBoard.makePlay(play, x, y, dir, newGame.player1, true)){
+                    if (key2 != null && '.' == key2.getCharacter() && newGame.gameBoard.makePlay(play, x, y, dir, newGame.player1, first)){
                       newGame.player1.refillHand();
                       newGame.player1.handtoArrayList();
                       turn++;
