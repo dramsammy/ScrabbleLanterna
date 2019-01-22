@@ -556,13 +556,14 @@ public boolean isValidPlay(Pieces[] p,int xcor,int ycor, int direction){
   int f = 1;
   int count = 0;
   int index = 0;
+  Pieces[] temp = new Pieces[0];
   for (int a = 0; a < p.length; a++){
     if (getPieces(x+1,y).getPieceChar()!=' ' && direction == -1){
       while (getPieces(x + f,y).getPieceChar()!= ' '){
         count++;
         f++;
       }
-      Pieces[] temp = new Pieces[count];
+      temp = new Pieces[count];
       f = 0;
       while (getPieces(x + f,y).getPieceChar()!= ' '){
         temp[index] = getPieces(x + f,y);
@@ -581,7 +582,7 @@ public boolean isValidPlay(Pieces[] p,int xcor,int ycor, int direction){
         count++;
         f++;
       }
-      Pieces[] temp = new Pieces[count];
+      temp = new Pieces[count];
       f = 0;
       while (getPieces(x ,y+f).getPieceChar()!= ' '){
         temp[index] = getPieces(x,y+f);
