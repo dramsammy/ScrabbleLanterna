@@ -283,7 +283,7 @@ public static void main(String[] args) {
                       putString(0,position, screen, coordinates);
                       if (y == 0){
                         y = Integer.parseInt(coordinates.substring(3,5)) - 1;
-                        x = Board.getX(coordinates.charAt(1));
+                        x = newGame.gameBoard.getX(coordinates.charAt(1));
                       }
                       if (y < Integer.parseInt(coordinates.substring(3,4)) - 1 || y > Integer.parseInt(coordinates.substring(3,4)) - 1){
                         if (y != 0){
@@ -301,7 +301,7 @@ public static void main(String[] args) {
                       }
                       putString(0, 7, screen, "                ");
                     }
-                    if (key2 != null && '.' == key2.getCharacter() && newGame.gameBoard.makePlay(play, 7, 7, -1, newGame.player1)){
+                    if (key2 != null && '.' == key2.getCharacter() && newGame.gameBoard.makePlay(play, x, y, dir, newGame.player1)){
                       newGame.player1.refillHand();
                       newGame.player1.handtoArrayList();
                       begin = false;
@@ -315,12 +315,12 @@ public static void main(String[] args) {
                       choices.clear();
                       screen.clearScreen();
                     }
-                    if (key2 != null && '.' == key2.getCharacter() && !(newGame.gameBoard.makePlay(play, 7, 7, -1, newGame.player1))){
+                    if (key2 != null && '.' == key2.getCharacter() && !(newGame.gameBoard.makePlay(play, x, y, dir, newGame.player1))){
                       putString(1,21,screen, "INVALID MOVE PRESS ENTER TO GO BACK AND RETRY!");
                     }
-                    putString(1,10,screen, x + "");
-                    putString(1,9,screen, y + "");
-                    putString(1,8,screen, dir + "");
+                    putString(1,11,screen, x + "");
+                    putString(1,10,screen, y + "");
+                    putString(1,9,screen, dir + "");
                       screen.applyBackgroundColor(Terminal.Color.DEFAULT);
                     if (key2 != null && (key2.getKind() == Key.Kind.Enter)){
                         begin = false;
